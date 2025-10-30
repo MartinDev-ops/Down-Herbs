@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafb;
+}
+
+.logo-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #1f2937;
+    font-size: 1.25rem;
+    margin-left: 10px;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 40;
+    padding: 20px;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid #f3f4f6;
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+}
+
+.mobile-menu a:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu a:hover {
+    color: #059669;
+}
+
+@media (max-width: 1024px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+@media (min-width: 1025px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.fade-in-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+ /* Fade-in animation */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Floating animation */
+    @keyframes floatUpDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Apply fade + float */
+    .fade-in-up {
+      opacity: 0;
+      animation: fadeInUp 1.2s ease-out forwards, floatUpDown 3.5s ease-in-out infinite 1.2s;
+    }
+
+/* Featured Products Section */
+.featured-products-section {
+  background-color: #f9fafb; /* soft light-gray background */
+}
+
+/* Product Cards */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Add to Cart Button */
+.add-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-cart-btn:hover {
+  transform: scale(1.05);
+}
+
+/* View All Products Button */
+.view-all-btn {
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.view-all-btn:hover {
+  transform: scale(1.05);
+  background-color: #047857; /* darker green on hover */
+}
+
+.view-all-btn {
+  margin-top: 70px; /* adjust this value */
+  display: flex;
+  justify-content: center;
+}
