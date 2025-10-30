@@ -41,12 +41,28 @@ document.addEventListener('click', function(event) {
         aboutImage.style.opacity = 1;
       }, 500);
     }, 6000);
-
-
-    
     
   
     document.addEventListener("DOMContentLoaded", () => {
       const fadeElement = document.querySelector(".fade-in-up");
       fadeElement.classList.add("animate");
     });
+
+// Scroll-triggered animation for "Who We Are" section
+document.addEventListener('DOMContentLoaded', () => {
+  const whoWeAre = document.querySelector('.who-we-are-text');
+
+  function checkIfInView() {
+    const rect = whoWeAre.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    
+    if (rect.top <= windowHeight - 100) { // Trigger when 100px visible
+      whoWeAre.classList.add('in-view');
+      window.removeEventListener('scroll', checkIfInView); // Only trigger once
+    }
+  }
+
+  window.addEventListener('scroll', checkIfInView);
+  checkIfInView(); // Check on load in case already in view
+});
+
