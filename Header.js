@@ -66,3 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
   checkIfInView(); // Check on load in case already in view
 });
 
+
+
+  const waBtn = document.querySelector('.wa__btn_popup');
+  const waPopup = document.querySelector('.wa__popup_chat_box');
+
+  waBtn.addEventListener('click', () => {
+    waPopup.style.display = waPopup.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Optional: Close popup if clicked outside
+  document.addEventListener('click', (e) => {
+    if (!waBtn.contains(e.target) && !waPopup.contains(e.target)) {
+      waPopup.style.display = 'none';
+    }
+  });
+
