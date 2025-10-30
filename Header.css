@@ -180,82 +180,77 @@ body, h1, h2, h3, p, button {
 }
 
 /* Container for the whole widget */
-.wa__widget_container {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 9999;
-  font-family: sans-serif;
+/* WhatsApp Widget Container */
+#wa, .wa__widget_container {
+  position: fixed !important;
+  right: 25px;
+  bottom: 25px;
+  z-index: 99999 !important;
+  display: block !important;
+  font-family: Arial, sans-serif;
 }
 
-/* Floating button */
+/* WhatsApp Button */
 .wa__btn_popup {
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.2s ease;
 }
 
-.wa__btn_popup:hover {
+.wa__btn_popup_icon {
+  width: 60px;
+  height: 60px;
+  background-color: #2db742;
+  border-radius: 50%;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.wa__btn_popup_icon:hover {
   transform: scale(1.1);
+  background-color: #25d366;
 }
 
-/* Tooltip text */
+/* Tooltip next to button */
 .wa__btn_popup_txt {
   display: block;
-  background: #ffffff;
-  color: rgb(0, 0, 0);
+  background: rgba(255, 255, 255, 0.15); /* transparent */
+  color: #fff;
   padding: 8px 12px;
-  border-radius: 5px;
-  margin-right: 8px;
-  white-space: nowrap;
-  font-size: 14px;
-}
-
-/* Icon circle */
-.wa__btn_popup_icon {
-  width: 50px;
-  height: 50px;
-  background: #2db742;
-  border-radius: 50%;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.wa__btn_popup_icon::before {
-  content: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Chat popup box */
-.wa__popup_chat_box {
-  position: fixed;
-  bottom: 102px;
-  right: 30px;
-  width: 260px;
-  background: #fff;
   border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  overflow: hidden;
-  display: none; /* Hidden by default */
-  z-index: 9998;
-  font-size: 12px;
+  margin-right: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+  backdrop-filter: blur(5px);
 }
 
-/* Heading */
+/* Chat Box */
+.wa__popup_chat_box {
+  position: absolute;
+  right: 0;
+  bottom: 80px;
+  width: 280px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: none;
+}
+
+/* Header of popup */
 .wa__popup_heading {
-  padding: 10px;
-  background: #2db742;
+  background-color: #2db742;
+  padding: 12px;
+  color: white;
+  text-align: center;
 }
 
 .wa__popup_title {
-  font-size: 16px;
-  color: #fff;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -264,45 +259,74 @@ body, h1, h2, h3, p, button {
   color: #d9ebc6;
 }
 
-/* Chat list */
-.wa__popup_content_list {
-  max-height: 220px;
-  overflow-y: auto;
+/* Chat Content */
+.wa__popup_content {
+  padding: 12px;
+  background: #fff;
+}
+
+.wa__popup_notice {
+  font-size: 11px;
+  color: gray;
+  margin-bottom: 10px;
 }
 
 .wa__popup_content_item {
-  display: flex;
-  align-items: center;
-  padding: 6px 10px;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 8px;
 }
 
 .wa__popup_content_item a {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #000;
-  width: 100%;
+  color: #333;
+  border-radius: 8px;
+  padding: 6px;
+  transition: background 0.3s;
 }
 
-.wa__popup_avatar {
-  width: 40px;
-  height: 40px;
+.wa__popup_content_item a:hover {
+  background: #f1f1f1;
+}
+
+/* Avatar */
+.wa__popup_avatar img {
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  overflow: hidden;
   margin-right: 10px;
 }
 
-.wa__popup_txt {
-  display: flex;
-  flex-direction: column;
-}
-
+/* Member text */
 .wa__member_name {
-  font-weight: 600;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .wa__member_duty {
   font-size: 11px;
-  color: #555;
+  color: gray;
+}
+
+/* Show/hide popup */
+.wa__btn_popup:hover + .wa__popup_chat_box,
+.wa__popup_chat_box:hover {
+  display: block;
+}
+
+/* Make sure it shows on mobile */
+@media (max-width: 768px) {
+  #wa, .wa__widget_container {
+    display: block !important;
+    right: 15px;
+    bottom: 15px;
+  }
+  .wa__btn_popup_icon {
+    width: 55px;
+    height: 55px;
+  }
+  .wa__popup_chat_box {
+    width: 260px;
+    bottom: 70px;
+  }
 }
