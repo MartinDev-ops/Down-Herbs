@@ -1,0 +1,173 @@
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+
+.btn-primary {
+  background: linear-gradient(to right, #92400e, #92400e);
+  color: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-green);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-large {
+  height: 3rem;
+  font-size: 1.125rem;
+  padding: 0 2rem;
+  border-radius: 9999px;
+}
+
+/* WhatsApp Widget */
+.wa-widget {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 99999;
+  font-family: Arial, sans-serif;
+}
+
+.wa-btn-popup {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.wa-btn-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #2db742;
+  border-radius: 50%;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.wa-btn-icon:hover {
+  transform: scale(1.1);
+  background-color: #25d366;
+}
+
+.wa-btn-txt {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-right: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+  backdrop-filter: blur(5px);
+}
+
+.wa-popup-chat {
+  position: absolute;
+  right: 0;
+  bottom: 80px;
+  width: 280px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: none;
+}
+
+.wa-popup-heading {
+  background-color: #2db742;
+  padding: 12px;
+  color: white;
+  text-align: center;
+}
+
+.wa-popup-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.wa-popup-intro {
+  font-size: 12px;
+  color: #d9ebc6;
+}
+
+.wa-popup-content {
+  padding: 12px;
+  background: #fff;
+}
+
+.wa-popup-notice {
+  font-size: 11px;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.wa-popup-item {
+  margin-bottom: 8px;
+}
+
+.wa-contact {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  border-radius: 8px;
+  padding: 6px;
+  transition: background 0.3s;
+}
+
+.wa-contact:hover {
+  background: #f1f1f1;
+}
+
+.wa-avatar img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.wa-member-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.wa-member-duty {
+  font-size: 11px;
+  color: gray;
+}
+
+.wa-btn-popup:hover + .wa-popup-chat,
+.wa-popup-chat:hover {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .wa-widget {
+    right: 15px;
+    bottom: 15px;
+  }
+  .wa-btn-icon {
+    width: 55px;
+    height: 55px;
+  }
+  .wa-popup-chat {
+    width: 260px;
+    bottom: 70px;
+  }
+}

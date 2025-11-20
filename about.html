@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop - The Go Down Herbs</title>
+  <title>About Us - The Go Down Herbs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/shop.css">
+  <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
@@ -50,14 +50,13 @@
         
         <!-- Cart and Mobile Menu Button -->
         <div class="header-buttons">
-          <a href="cart.html" class="cart-link">
-            <button class="icon-button cart-button">
+          <a href="/cart">
+            <button class="icon-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
                 <circle cx="8" cy="21" r="1"></circle>
                 <circle cx="19" cy="21" r="1"></circle>
                 <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
               </svg>
-              <span class="cart-count" id="cartCount">0</span>
             </button>
           </a>
           <button class="mobile-menu-btn icon-button">
@@ -81,60 +80,97 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- Shop Page Content -->
-  <main class="shop-page">
+  <!-- About Page Content -->
+  <main class="about-page">
     <div class="container">
-      <!-- Page Header -->
-      <section class="shop-header">
-        <h1 class="page-title">Shop Our Products</h1>
-        <p class="page-subtitle">Discover our range of herbal beverages, health products, and merchandise</p>
-      </section>
-
-      <!-- Category Filter -->
-      <section class="filter-section">
-        <div class="filter-container">
-          <label for="category-filter" class="filter-label">Filter by Category</label>
-          <select id="category-filter" class="category-filter">
-            <option value="all">All Products</option>
-            <option value="Beverages">Beverages</option>
-            <option value="Merchandise">Merchandise</option>
-            <option value="Health Products">Health Products</option>
-          </select>
+      <!-- Who We Are Section -->
+      <section class="about-hero">
+        <div class="about-hero-content">
+          <h1 class="about-main-title">About Go Down Herbs</h1>
+          <p class="about-hero-text">Go-Down Herbs is a South African-based company specializing in the production, distribution, and sales of unique herbal mixture drinks and beverages designed to promote health and wellness.</p>
+          <p class="about-hero-text">Founded with a vision to bridge traditional herbal knowledge with modern health needs, we've grown from a small local operation to a trusted name in natural wellness products across South Africa.</p>
         </div>
       </section>
 
-      <!-- Products Grid -->
-      <section class="products-section">
-        <div class="products-grid" id="productsGrid">
-          <!-- Products will be populated by JavaScript -->
+      <!-- Our Story Section -->
+      <section class="our-story">
+        <h2 class="section-title">Our Story</h2>
+        <div class="story-content">
+          <p class="story-text">Born from a passion for South Africa's rich herbal heritage, Go-Down Herbs began as a small family venture in the heart of the Western Cape. Our founders, drawing from generations of traditional knowledge, recognized the need for accessible, high-quality herbal products in modern life.</p>
+          <p class="story-text">Today, we continue to honor our roots while embracing innovation. Our journey is one of growth, learning, and unwavering commitment to natural wellness. Every product we create carries the essence of our heritage and the promise of better health for our customers.</p>
+        </div>
+      </section>
+
+      <!-- What Sets Us Apart Section -->
+      <section class="features-section">
+        <h2 class="section-title">What Sets Us Apart</h2>
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-card">
+            <img src="images/herb2/natural.jpg" alt="Sourcing Natural Ingredients" class="feature-image">
+            <div class="feature-content">
+              <h3 class="feature-title">Sourcing Natural Ingredients</h3>
+              <p class="feature-description">We source our herbs directly from sustainable South African farms, ensuring freshness and supporting local communities. Our commitment to natural ingredients means no artificial additives or preservatives.</p>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card">
+            <img src="images/herb2/quality.jpg" alt="Advanced Quality Control" class="feature-image">
+            <div class="feature-content">
+              <h3 class="feature-title">Advanced Quality Control</h3>
+              <p class="feature-description">Every batch undergoes rigorous laboratory testing for potency, purity, and safety. Our state-of-the-art facilities combine traditional herbal wisdom with modern scientific methods.</p>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card">
+            <img src="images/herb2/delivery.jpg" alt="Nationwide Distribution Network" class="feature-image">
+            <div class="feature-content">
+              <h3 class="feature-title">Nationwide Distribution Network</h3>
+              <p class="feature-description">With strategic partnerships across South Africa, we ensure your orders reach you quickly and safely. Our eco-friendly packaging maintains product quality during transit.</p>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card">
+            <img src="images/herb2/health.jpg" alt="Holistic Health Approach" class="feature-image">
+            <div class="feature-content">
+              <h3 class="feature-title">Holistic Health Approach</h3>
+              <p class="feature-description">Our products are designed to support overall wellness, drawing from centuries of traditional healing practices. We focus on preventive health through natural, balanced formulations.</p>
+            </div>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="feature-card">
+            <img src="images/herb2/product-warehouse.jpg" alt="Sustainable Production" class="feature-image">
+            <div class="feature-content">
+              <h3 class="feature-title">Sustainable Production</h3>
+              <p class="feature-description">Our production process minimizes environmental impact through energy-efficient methods and waste reduction. We're committed to preserving South Africa's rich herbal heritage for future generations.</p>
+            </div>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="feature-card">
+            <img src="images/herb2/sales-person.jpg" alt="Expert Customer Support" class="feature-image">
+            <div class="feature-content">
+              <h3 class="feature-title">Expert Customer Support</h3>
+              <p class="feature-description">Our knowledgeable team is passionate about herbal wellness and ready to help you choose the right products. We provide personalized recommendations and ongoing support for your health journey.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="about-cta">
+        <div class="cta-content">
+          <h3 class="cta-title">Join Our Wellness Journey</h3>
+          <p class="cta-description">Discover the power of natural herbs and experience the Go-Down Herbs difference today.</p>
+          <a href="shop.html" class="btn btn-primary btn-large">Explore Our Products</a>
         </div>
       </section>
     </div>
   </main>
-
-  <!-- Product Preview Modal -->
-  <div id="productModal" class="product-modal">
-    <div class="modal-content">
-      <button class="modal-close" id="modalClose">&times;</button>
-      <div class="modal-body">
-        <div class="modal-image">
-          <img id="modalProductImage" src="" alt="" class="product-modal-image">
-        </div>
-        <div class="modal-info">
-          <h2 id="modalProductName" class="modal-product-name"></h2>
-          <p id="modalProductDescription" class="modal-product-description"></p>
-          <div class="modal-details">
-            <span id="modalProductCategory" class="modal-category"></span>
-            <span id="modalProductQuantity" class="modal-quantity"></span>
-          </div>
-          <div class="modal-price" id="modalProductPrice"></div>
-          <button class="btn btn-primary btn-large add-to-cart-btn" id="addToCartBtn">
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- WhatsApp Widget -->
   <div id="wa" class="wa-widget">
@@ -264,9 +300,6 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
   <script src="js/main.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/shop.js"></script>
 </body>
 </html>

@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop - The Go Down Herbs</title>
+  <title>Our Stores - The Go Down Herbs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/shop.css">
+  <link rel="stylesheet" href="css/stores.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
@@ -50,14 +51,13 @@
         
         <!-- Cart and Mobile Menu Button -->
         <div class="header-buttons">
-          <a href="cart.html" class="cart-link">
-            <button class="icon-button cart-button">
+          <a href="/cart">
+            <button class="icon-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
                 <circle cx="8" cy="21" r="1"></circle>
                 <circle cx="19" cy="21" r="1"></circle>
                 <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
               </svg>
-              <span class="cart-count" id="cartCount">0</span>
             </button>
           </a>
           <button class="mobile-menu-btn icon-button">
@@ -81,60 +81,54 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- Shop Page Content -->
-  <main class="shop-page">
+  <!-- Our Stores Page Content -->
+  <main class="stores-page">
     <div class="container">
       <!-- Page Header -->
-      <section class="shop-header">
-        <h1 class="page-title">Shop Our Products</h1>
-        <p class="page-subtitle">Discover our range of herbal beverages, health products, and merchandise</p>
+      <section class="stores-header">
+        <h1 class="page-title">Our Stores</h1>
+        <p class="page-subtitle">Find our products at various locations across South Africa. We are committed to making our herbal health solutions accessible to everyone.</p>
       </section>
 
-      <!-- Category Filter -->
-      <section class="filter-section">
+      <!-- Store Filter -->
+      <section class="store-filter-section">
         <div class="filter-container">
-          <label for="category-filter" class="filter-label">Filter by Category</label>
-          <select id="category-filter" class="category-filter">
-            <option value="all">All Products</option>
-            <option value="Beverages">Beverages</option>
-            <option value="Merchandise">Merchandise</option>
-            <option value="Health Products">Health Products</option>
+          <label for="city-filter" class="filter-label">Filter by City</label>
+          <select id="city-filter" class="city-filter">
+            <option value="">All Cities</option>
+            <option value="Pretoria">Pretoria</option>
+            <option value="Johannesburg">Johannesburg</option>
+            <option value="Thohoyandou">Thohoyandou</option>
+            <option value="Musina">Musina</option>
+            <option value="Nzhelele">Nzhelele</option>
+            <option value="Polokwane">Polokwane</option>
+            <option value="Louis Trichardt">Louis Trichardt</option>
           </select>
         </div>
       </section>
 
-      <!-- Products Grid -->
-      <section class="products-section">
-        <div class="products-grid" id="productsGrid">
-          <!-- Products will be populated by JavaScript -->
+      <!-- Stores Content -->
+      <section class="stores-content">
+        <div class="stores-grid">
+          <!-- Store List Column -->
+          <div class="stores-list-column">
+            <h2 class="section-subtitle">Store Locations</h2>
+            <div class="stores-list" id="storesList">
+              <!-- Store items will be populated by JavaScript -->
+            </div>
+          </div>
+
+          <!-- Map Column -->
+          <div class="stores-map-column">
+            <h2 class="section-subtitle">Map View</h2>
+            <div class="map-container">
+              <div id="storeMap" class="store-map"></div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
   </main>
-
-  <!-- Product Preview Modal -->
-  <div id="productModal" class="product-modal">
-    <div class="modal-content">
-      <button class="modal-close" id="modalClose">&times;</button>
-      <div class="modal-body">
-        <div class="modal-image">
-          <img id="modalProductImage" src="" alt="" class="product-modal-image">
-        </div>
-        <div class="modal-info">
-          <h2 id="modalProductName" class="modal-product-name"></h2>
-          <p id="modalProductDescription" class="modal-product-description"></p>
-          <div class="modal-details">
-            <span id="modalProductCategory" class="modal-category"></span>
-            <span id="modalProductQuantity" class="modal-quantity"></span>
-          </div>
-          <div class="modal-price" id="modalProductPrice"></div>
-          <button class="btn btn-primary btn-large add-to-cart-btn" id="addToCartBtn">
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- WhatsApp Widget -->
   <div id="wa" class="wa-widget">
@@ -265,8 +259,8 @@
   </footer>
 
   <!-- JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/shop.js"></script>
+  <script src="js/stores.js"></script>
 </body>
 </html>
