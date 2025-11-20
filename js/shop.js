@@ -1,220 +1,478 @@
-// Products data
+// Enhanced Product Data with Herbal Theme
 const products = [
     {
         id: 1,
-        name: 'Go Down Herb (Ndaa)',
-        price: 150,
-        image: 'images/product/godown.jpg',
-        description: 'Premium herbal mixture drink for wellness. Our signature product made from traditional South African herbs.',
-        category: 'Beverages',
-        quantity: 50,
+        name: "Organic Chamomile Calming Tea",
+        category: "teas",
+        price: 89.99,
+        oldPrice: 99.99,
         rating: 4.5,
-        reviewCount: 24,
-        inStock: true
+        reviews: 128,
+        description: "Soothing organic chamomile flowers hand-picked at peak freshness for deep relaxation and restful sleep.",
+        image: "https://images.unsplash.com/photo-1597481499750-3e11b3df8ded?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        inStock: true,
+        featured: true,
+        badge: "Best Seller",
+        benefits: ["sleep", "stress"],
+        ingredients: ["Organic Chamomile", "Lavender", "Lemon Balm"],
+        usage: "Steep 1-2 teaspoons in hot water for 5-7 minutes",
+        origin: "Egyptian Fields",
+        organic: true,
+        tags: ["calming", "sleep", "relaxation"]
     },
     {
         id: 2,
-        name: 'Silent Herb (Ndaa)',
-        price: 250,
-        image: 'images/product/silentHerb.jpg',
-        description: 'Effective herbal beverage for health. Special formula with powerful natural properties.',
-        category: 'Beverages',
-        quantity: 30,
+        name: "Immune Shield Tincture",
+        category: "tinctures",
+        price: 149.99,
+        oldPrice: null,
         rating: 4.8,
-        reviewCount: 36,
-        inStock: true
+        reviews: 89,
+        description: "Potent herbal extract with echinacea, elderberry, and astragalus to fortify your natural defenses.",
+        image: "https://images.unsplash.com/photo-1585435557343-3b092031d5ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        inStock: true,
+        featured: true,
+        badge: "New",
+        benefits: ["immunity", "energy"],
+        ingredients: ["Echinacea", "Elderberry", "Astragalus", "Ginger Root"],
+        usage: "Take 1-2 droppers under tongue or in water daily",
+        origin: "North American Forests",
+        organic: true,
+        tags: ["immunity", "wellness", "prevention"]
     },
     {
         id: 3,
-        name: 'Go Down Mpesu',
-        price: 50,
-        image: 'images/product/mpesu.jpg',
-        description: 'Traditional cleansing herb mixture for natural body purification and wellness.',
-        category: 'Beverages',
-        quantity: 40,
+        name: "Stress Relief Herbal Capsules",
+        category: "capsules",
+        price: 119.99,
+        oldPrice: 139.99,
         rating: 4.3,
-        reviewCount: 18,
-        inStock: true
+        reviews: 204,
+        description: "Advanced stress support formula with ashwagandha and rhodiola to help manage daily stress naturally.",
+        image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        inStock: true,
+        featured: false,
+        badge: "Sale",
+        benefits: ["stress", "energy"],
+        ingredients: ["Ashwagandha", "Rhodiola", "L-Theanine", "B Vitamins"],
+        usage: "Take 2 capsules daily with meals",
+        origin: "Indian & Siberian Regions",
+        organic: true,
+        tags: ["stress", "adaptogen", "balance"]
     },
     {
         id: 4,
-        name: 'Green Shirt',
-        price: 200,
-        image: 'images/merch/green-shirt.png',
-        description: 'Comfortable green shirt with Go Down Herbs logo. 100% cotton.',
-        category: 'Merchandise',
-        quantity: 20,
+        name: "Deep Cleanse Detox Tea",
+        category: "teas",
+        price: 79.99,
+        oldPrice: null,
         rating: 4.2,
-        reviewCount: 15,
-        inStock: true
+        reviews: 95,
+        description: "Cleansing herbal blend with dandelion, milk thistle, and burdock root to support natural detoxification.",
+        image: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        inStock: true,
+        featured: false,
+        badge: "Detox",
+        benefits: ["digestion", "skin"],
+        ingredients: ["Dandelion Root", "Milk Thistle", "Burdock Root", "Nettle Leaf"],
+        usage: "Steep 1 tablespoon in hot water for 10 minutes",
+        origin: "European Meadows",
+        organic: true,
+        tags: ["detox", "cleanse", "liver"]
     },
     {
         id: 5,
-        name: 'Black Shirt',
-        price: 200,
-        image: 'images/merch/black-shirt.png',
-        description: 'Stylish black shirt with Go Down Herbs logo. Premium quality fabric.',
-        category: 'Merchandise',
-        quantity: 25,
-        rating: 4.4,
-        reviewCount: 22,
-        inStock: true
+        name: "Artisan Herbal Ceramic Mug",
+        category: "merchandise",
+        price: 199.99,
+        oldPrice: 249.99,
+        rating: 4.7,
+        reviews: 56,
+        description: "Handcrafted ceramic mug with herbal motifs, perfect for enjoying your daily herbal infusions.",
+        image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        inStock: true,
+        featured: false,
+        badge: "Limited",
+        benefits: [],
+        ingredients: ["Ceramic", "Food-safe Glaze"],
+        usage: "Microwave and dishwasher safe",
+        origin: "Local Artisan",
+        organic: false,
+        tags: ["merchandise", "tea", "wellness"]
     },
     {
         id: 6,
-        name: 'White Shirt',
-        price: 200,
-        image: 'images/merch/white-shirt.png',
-        description: 'Classic white shirt with Go Down Herbs logo. Perfect for everyday wear.',
-        category: 'Merchandise',
-        quantity: 15,
-        rating: 4.1,
-        reviewCount: 11,
-        inStock: true
+        name: "Radiant Skin Herbal Cream",
+        category: "skincare",
+        price: 129.99,
+        oldPrice: null,
+        rating: 4.6,
+        reviews: 167,
+        description: "Nourishing facial cream with calendula, chamomile, and rosehip oil for radiant, hydrated skin.",
+        image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        inStock: false,
+        featured: false,
+        badge: "Out of Stock",
+        benefits: ["skin"],
+        ingredients: ["Calendula", "Chamomile", "Rosehip Oil", "Shea Butter"],
+        usage: "Apply to face and neck morning and evening",
+        origin: "Mediterranean Gardens",
+        organic: true,
+        tags: ["skincare", "moisturizing", "natural"]
     },
     {
         id: 7,
-        name: 'Cooler Cap',
-        price: 150,
-        image: 'images/merch/cap-cooler.png',
-        description: 'Cooler cap for outdoor activities. Features our herbal-inspired design.',
-        category: 'Merchandise',
-        quantity: 35,
-        rating: 4.6,
-        reviewCount: 29,
-        inStock: true
+        name: "Vitality Boost Energy Tea",
+        category: "teas",
+        price: 99.99,
+        oldPrice: 119.99,
+        rating: 4.4,
+        reviews: 142,
+        description: "Natural energy booster with yerba mate, green tea, and ginseng for sustained vitality without crash.",
+        image: "https://images.unsplash.com/photo-1597481499750-3e11b3df8ded?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        inStock: true,
+        featured: true,
+        badge: "Popular",
+        benefits: ["energy", "stress"],
+        ingredients: ["Yerba Mate", "Green Tea", "Ginseng", "Maca Root"],
+        usage: "Steep 1-2 teaspoons in hot water for 3-5 minutes",
+        origin: "South American Highlands",
+        organic: true,
+        tags: ["energy", "focus", "vitality"]
     },
     {
         id: 8,
-        name: 'Herbal Oil',
-        price: 300,
-        image: 'images/products/oil.png',
-        description: 'Pure herbal oil for various uses. Extracted from natural South African plants.',
-        category: 'Health Products',
-        quantity: 10,
-        rating: 4.7,
-        reviewCount: 31,
-        inStock: true
+        name: "Herbal Hair Growth Shampoo Bar",
+        category: "skincare",
+        price: 69.99,
+        oldPrice: null,
+        rating: 4.1,
+        reviews: 78,
+        description: "Eco-friendly shampoo bar with rosemary, lavender, and tea tree oil for healthy hair and scalp.",
+        image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        inStock: true,
+        featured: false,
+        badge: "Eco",
+        benefits: ["skin"],
+        ingredients: ["Rosemary", "Lavender", "Tea Tree Oil", "Coconut Oil"],
+        usage: "Lather in hands and massage into wet hair",
+        origin: "Local Production",
+        organic: true,
+        tags: ["haircare", "eco", "natural"]
     },
     {
         id: 9,
-        name: 'Natural Cleaner',
-        price: 120,
-        image: 'images/product/cleaner.png',
-        description: 'Eco-friendly natural cleaner made from herbal extracts. Safe for home use.',
-        category: 'Health Products',
-        quantity: 60,
+        name: "Soothing Digestive Tincture",
+        category: "tinctures",
+        price: 89.99,
+        oldPrice: 109.99,
         rating: 4.5,
-        reviewCount: 24,
-        inStock: true
+        reviews: 113,
+        description: "Gentle digestive support with peppermint, ginger, and fennel to soothe stomach discomfort naturally.",
+        image: "https://images.unsplash.com/photo-1585435557343-3b092031d5ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        inStock: true,
+        featured: false,
+        badge: "Digestive",
+        benefits: ["digestion"],
+        ingredients: ["Peppermint", "Ginger", "Fennel", "Chamomile"],
+        usage: "Take 1 dropper before or after meals as needed",
+        origin: "European Herb Gardens",
+        organic: true,
+        tags: ["digestion", "soothing", "comfort"]
     },
     {
         id: 10,
-        name: 'Blue Refreshment',
-        price: 180,
-        image: 'images/products/blue-refreshment.png',
-        description: 'Refreshing blue herbal drink. Perfect for hot days and wellness routines.',
-        category: 'Beverages',
-        quantity: 45,
+        name: "Deep Sleep Support Capsules",
+        category: "capsules",
+        price: 109.99,
+        oldPrice: null,
+        rating: 4.7,
+        reviews: 198,
+        description: "Natural sleep aid with valerian root, passionflower, and melatonin for restful, rejuvenating sleep.",
+        image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        inStock: true,
+        featured: true,
+        badge: "Staff Pick",
+        benefits: ["sleep"],
+        ingredients: ["Valerian Root", "Passionflower", "Melatonin", "Magnesium"],
+        usage: "Take 2 capsules 30 minutes before bedtime",
+        origin: "Global Sourcing",
+        organic: true,
+        tags: ["sleep", "relaxation", "rest"]
+    },
+    {
+        id: 11,
+        name: "Comprehensive Herbal First Aid Kit",
+        category: "merchandise",
+        price: 299.99,
+        oldPrice: 349.99,
         rating: 4.9,
-        reviewCount: 47,
-        inStock: true
+        reviews: 45,
+        description: "Complete natural first aid kit with herbal remedies for common ailments and emergency situations.",
+        image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        inStock: true,
+        featured: true,
+        badge: "Essential",
+        benefits: ["immunity", "stress", "digestion"],
+        ingredients: ["Various Herbal Extracts", "Essential Oils", "Natural Bandages"],
+        usage: "Various applications for different situations",
+        origin: "Curated Collection",
+        organic: true,
+        tags: ["firstaid", "emergency", "wellness"]
+    },
+    {
+        id: 12,
+        name: "Insulated Herbal Tea Tumbler",
+        category: "merchandise",
+        price: 149.99,
+        oldPrice: null,
+        rating: 4.5,
+        reviews: 67,
+        description: "Premium stainless steel tumbler to keep your herbal teas and infusions at perfect temperature all day.",
+        image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        inStock: true,
+        featured: false,
+        badge: "New",
+        benefits: [],
+        ingredients: ["Stainless Steel", "BPA-Free Lid"],
+        usage: "Hand wash recommended",
+        origin: "Sustainable Manufacturing",
+        organic: false,
+        tags: ["merchandise", "tea", "eco"]
     }
 ];
 
-// Global variables
-let currentCategory = 'all';
-let selectedProduct = null;
-let currentView = 'grid';
+// DOM Elements
+const productsGrid = document.getElementById('productsGrid');
+const pagination = document.getElementById('pagination');
+const resultsCount = document.getElementById('resultsCount');
+const sortSelect = document.getElementById('sortSelect');
+const viewButtons = document.querySelectorAll('.view-btn');
+const filterToggle = document.getElementById('filterToggle');
+const filtersSidebar = document.querySelector('.filters-sidebar');
+const searchInput = document.getElementById('productSearch');
+const clearFiltersBtn = document.getElementById('clearFilters');
+const resetSearchBtn = document.getElementById('resetSearch');
+const activeFilters = document.getElementById('activeFilters');
+const quickViewModal = document.getElementById('quickViewModal');
+const closeModal = document.getElementById('closeModal');
+const modalBody = document.getElementById('modalBody');
+const cartBtn = document.querySelector('.cart-btn');
+const cartSidebar = document.getElementById('cartSidebar');
+const closeCart = document.querySelector('.close-cart');
+const cartItems = document.getElementById('cartItems');
+const cartSubtotal = document.getElementById('cartSubtotal');
+const cartCount = document.querySelector('.cart-count');
+const wishlistCount = document.querySelector('.wishlist-count');
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeMenu = document.querySelector('.close-menu');
+const backToTop = document.getElementById('backToTop');
+const loadingScreen = document.getElementById('loadingScreen');
+const newsletterForm = document.getElementById('newsletterForm');
+
+// State Variables
 let currentPage = 1;
 const productsPerPage = 9;
 let filteredProducts = [...products];
-let comparedProducts = [];
-let currentSort = 'featured';
+let currentView = 'grid';
+let cart = JSON.parse(localStorage.getItem('herbalCart')) || [];
+let wishlist = JSON.parse(localStorage.getItem('herbalWishlist')) || [];
+let filters = {
+    search: '',
+    categories: ['all'],
+    priceRange: [0, 1000],
+    rating: 0,
+    benefits: [],
+    availability: ['in-stock']
+};
 
-// Initialize the shop page
-function initShopPage() {
-    if (!document.querySelector('.shop-page')) return;
+// Initialize the shop
+function initShop() {
+    // Simulate loading
+    setTimeout(() => {
+        loadingScreen.classList.add('loaded');
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500);
+    }, 1500);
 
     renderProducts();
-    setupEventListeners();
-    updateCartCount();
-    updateResultsCount();
+    renderPagination();
+    updateCartUI();
+    updateWishlistUI();
+    attachEventListeners();
+    updateActiveFilters();
 }
 
-// Render products based on current filter, sort, and view
+// Attach event listeners
+function attachEventListeners() {
+    // Search and filters
+    searchInput.addEventListener('input', handleSearch);
+    clearFiltersBtn.addEventListener('click', resetFilters);
+    resetSearchBtn.addEventListener('click', resetFilters);
+    
+    // Sort and view
+    sortSelect.addEventListener('change', handleSortChange);
+    viewButtons.forEach(btn => {
+        btn.addEventListener('click', handleViewChange);
+    });
+    
+    // Modal and cart
+    closeModal.addEventListener('click', closeQuickView);
+    cartBtn.addEventListener('click', toggleCart);
+    closeCart.addEventListener('click', toggleCart);
+    
+    // Mobile menu
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    closeMenu.addEventListener('click', toggleMobileMenu);
+    
+    // Filter changes
+    document.querySelectorAll('input[name="category"]').forEach(input => {
+        input.addEventListener('change', handleCategoryChange);
+    });
+    
+    document.querySelectorAll('input[name="rating"]').forEach(input => {
+        input.addEventListener('change', handleRatingChange);
+    });
+    
+    document.querySelectorAll('input[name="benefit"]').forEach(input => {
+        input.addEventListener('change', handleBenefitChange);
+    });
+    
+    document.querySelectorAll('input[name="availability"]').forEach(input => {
+        input.addEventListener('change', handleAvailabilityChange);
+    });
+    
+    // Price range
+    const minPriceInput = document.getElementById('minPrice');
+    const maxPriceInput = document.getElementById('maxPrice');
+    const rangeMin = document.querySelector('.range-min');
+    const rangeMax = document.querySelector('.range-max');
+    
+    minPriceInput.addEventListener('change', handlePriceChange);
+    maxPriceInput.addEventListener('change', handlePriceChange);
+    rangeMin.addEventListener('input', handleRangeChange);
+    rangeMax.addEventListener('input', handleRangeChange);
+    
+    // Quick categories
+    document.querySelectorAll('.category-card').forEach(card => {
+        card.addEventListener('click', handleQuickCategory);
+    });
+    
+    // Newsletter
+    newsletterForm.addEventListener('submit', handleNewsletterSubmit);
+    
+    // Back to top
+    backToTop.addEventListener('click', scrollToTop);
+    window.addEventListener('scroll', handleScroll);
+    
+    // Close modals on outside click
+    quickViewModal.addEventListener('click', (e) => {
+        if (e.target === quickViewModal) closeQuickView();
+    });
+    
+    cartSidebar.addEventListener('click', (e) => {
+        if (e.target === cartSidebar) toggleCart();
+    });
+    
+    // Filter toggle for mobile
+    filterToggle.addEventListener('click', () => {
+        filtersSidebar.classList.toggle('active');
+    });
+}
+
+// Render products based on current filters and page
 function renderProducts() {
-    const productsGrid = document.getElementById('productsGrid');
-    
-    // Apply filters and sorting
-    filterProducts();
-    sortProducts();
-    
-    // Calculate pagination
     const startIndex = (currentPage - 1) * productsPerPage;
     const endIndex = startIndex + productsPerPage;
     const productsToShow = filteredProducts.slice(startIndex, endIndex);
-
+    
+    productsGrid.innerHTML = '';
+    
     if (productsToShow.length === 0) {
-        productsGrid.innerHTML = `
-            <div class="no-products">
-                <h3>No products found</h3>
-                <p>Try adjusting your search or filters</p>
-            </div>
-        `;
-        renderPagination();
+        document.getElementById('noResults').style.display = 'block';
+        document.getElementById('loadingState').style.display = 'none';
         return;
     }
+    
+    document.getElementById('noResults').style.display = 'none';
+    document.getElementById('loadingState').style.display = 'none';
+    
+    productsToShow.forEach((product, index) => {
+        setTimeout(() => {
+            const productElement = createProductElement(product);
+            productsGrid.appendChild(productElement);
+        }, index * 100);
+    });
+    
+    updateResultsCount();
+}
 
-    // Set grid/list view class
-    productsGrid.className = currentView === 'grid' ? 'products-grid' : 'products-list';
-
-    // Render products
-    productsGrid.innerHTML = productsToShow.map(product => `
-        <div class="product-card ${currentView === 'list' ? 'list-view' : ''}" data-product-id="${product.id}">
-            <div class="product-image-container">
-                <img src="${product.image}" alt="${product.name}" class="product-image">
-                ${!product.inStock ? '<div class="out-of-stock-badge">Out of Stock</div>' : ''}
-            </div>
-            <div class="product-info">
-                <div class="product-category">${product.category}</div>
-                <h3 class="product-name">${product.name}</h3>
-                <p class="product-description">${product.description}</p>
-                <div class="product-rating">
-                    <div class="stars">${generateStars(product.rating)}</div>
-                    <span class="rating-count">(${product.reviewCount})</span>
-                </div>
-                <div class="product-price">R${product.price.toFixed(2)}</div>
-                <div class="product-actions">
-                    <button class="btn btn-primary add-to-cart" ${!product.inStock ? 'disabled' : ''}>
-                        ${!product.inStock ? 'Out of Stock' : 'Add to Cart'}
-                    </button>
-                    <button class="wishlist-btn" title="Add to Wishlist">
-                        <i class="far fa-heart"></i>
-                    </button>
-                    <button class="quick-view-btn" title="Quick View">
-                        <i class="far fa-eye"></i>
-                    </button>
-                    <button class="compare-btn" title="Compare Product">
-                        <i class="fas fa-balance-scale"></i>
-                    </button>
-                </div>
+// Create product card element
+function createProductElement(product) {
+    const productCard = document.createElement('div');
+    productCard.className = `product-card ${currentView === 'list' ? 'list-view' : ''}`;
+    
+    const stars = generateStarRating(product.rating);
+    const oldPrice = product.oldPrice ? 
+        `<span class="product-old-price">R${product.oldPrice.toFixed(2)}</span>` : '';
+    const badge = product.badge ? `<div class="product-badge ${product.badge.toLowerCase().replace(' ', '-')}">${product.badge}</div>` : '';
+    const isInWishlist = wishlist.includes(product.id);
+    
+    productCard.innerHTML = `
+        <div class="product-image">
+            <img src="${product.image}" alt="${product.name}" loading="lazy">
+            ${badge}
+            <div class="product-actions">
+                <button class="action-btn quick-view" data-id="${product.id}" title="Quick View">
+                    <i class="fas fa-eye"></i>
+                </button>
+                <button class="action-btn wishlist-btn ${isInWishlist ? 'active' : ''}" data-id="${product.id}" title="${isInWishlist ? 'Remove from Wishlist' : 'Add to Wishlist'}">
+                    <i class="${isInWishlist ? 'fas' : 'far'} fa-heart"></i>
+                </button>
             </div>
         </div>
-    `).join('');
-
-    // Add event listeners to product cards
-    setupProductCardEvents();
+        <div class="product-info">
+            <div class="product-category">${product.category}</div>
+            <h3 class="product-name">${product.name}</h3>
+            <p class="product-description">${product.description}</p>
+            <div class="product-rating">
+                <div class="rating-stars">${stars}</div>
+                <span class="rating-value">${product.rating} (${product.reviews})</span>
+            </div>
+            <div class="product-footer">
+                <div class="product-price">
+                    ${oldPrice}
+                    R${product.price.toFixed(2)}
+                </div>
+                <button class="add-to-cart ${!product.inStock ? 'disabled' : ''}" 
+                        data-id="${product.id}"
+                        ${!product.inStock ? 'disabled' : ''}>
+                    <i class="fas fa-shopping-basket"></i>
+                    ${!product.inStock ? 'Out of Stock' : 'Add to Cart'}
+                </button>
+            </div>
+        </div>
+    `;
     
-    // Render pagination
-    renderPagination();
+    // Add event listeners
+    const quickViewBtn = productCard.querySelector('.quick-view');
+    const addToCartBtn = productCard.querySelector('.add-to-cart');
+    const wishlistBtn = productCard.querySelector('.wishlist-btn');
+    
+    quickViewBtn.addEventListener('click', () => openQuickView(product.id));
+    addToCartBtn.addEventListener('click', () => addToCart(product.id));
+    wishlistBtn.addEventListener('click', () => toggleWishlist(product.id));
+    
+    return productCard;
 }
 
 // Generate star rating HTML
-function generateStars(rating) {
+function generateStarRating(rating) {
     let stars = '';
     const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 !== 0;
+    const hasHalfStar = rating % 1 >= 0.5;
     
     for (let i = 0; i < fullStars; i++) {
         stars += '<i class="fas fa-star"></i>';
@@ -232,108 +490,419 @@ function generateStars(rating) {
     return stars;
 }
 
-// Setup event listeners for product cards
-function setupProductCardEvents() {
-    document.querySelectorAll('.product-card').forEach(card => {
-        const productId = parseInt(card.getAttribute('data-product-id'));
-        const product = products.find(p => p.id === productId);
-        
-        if (!product) return;
-
-        const addToCartBtn = card.querySelector('.add-to-cart');
-        const wishlistBtn = card.querySelector('.wishlist-btn');
-        const quickViewBtn = card.querySelector('.quick-view-btn');
-        const compareBtn = card.querySelector('.compare-btn');
-
-        // Add to cart
-        addToCartBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            addToCart(product.id);
-        });
-
-        // Wishlist
-        wishlistBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleWishlist(product.id, wishlistBtn);
-        });
-
-        // Quick view
-        quickViewBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openProductModal(product);
-        });
-
-        // Compare
-        compareBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            addToCompare(product, compareBtn);
-        });
-
-        // Card click for quick view
-        card.addEventListener('click', function(e) {
-            if (!e.target.closest('.product-actions')) {
-                openProductModal(product);
-            }
-        });
-    });
+// Update results count
+function updateResultsCount() {
+    const total = filteredProducts.length;
+    const start = (currentPage - 1) * productsPerPage + 1;
+    const end = Math.min(currentPage * productsPerPage, total);
+    
+    resultsCount.textContent = `Showing ${start}-${end} of ${total} products`;
 }
 
-// Filter products based on selected filters
-function filterProducts() {
-    // Start with all products
-    filteredProducts = [...products];
+// Update active filters display
+function updateActiveFilters() {
+    activeFilters.innerHTML = '';
+    let activeCount = 0;
+
+    // Search filter
+    if (filters.search) {
+        activeCount++;
+        const filterElement = document.createElement('div');
+        filterElement.className = 'active-filter';
+        filterElement.innerHTML = `
+            Search: "${filters.search}"
+            <button onclick="removeSearchFilter()">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        activeFilters.appendChild(filterElement);
+    }
+
+    // Category filters (excluding 'all')
+    const categoryFilters = filters.categories.filter(cat => cat !== 'all');
+    if (categoryFilters.length > 0) {
+        activeCount++;
+        const filterElement = document.createElement('div');
+        filterElement.className = 'active-filter';
+        filterElement.innerHTML = `
+            Categories: ${categoryFilters.join(', ')}
+            <button onclick="removeCategoryFilters()">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        activeFilters.appendChild(filterElement);
+    }
+
+    // Price range
+    if (filters.priceRange[0] > 0 || filters.priceRange[1] < 1000) {
+        activeCount++;
+        const filterElement = document.createElement('div');
+        filterElement.className = 'active-filter';
+        filterElement.innerHTML = `
+            Price: R${filters.priceRange[0]} - R${filters.priceRange[1]}
+            <button onclick="removePriceFilter()">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        activeFilters.appendChild(filterElement);
+    }
+
+    // Rating
+    if (filters.rating > 0) {
+        activeCount++;
+        const filterElement = document.createElement('div');
+        filterElement.className = 'active-filter';
+        filterElement.innerHTML = `
+            Rating: ${filters.rating}+ Stars
+            <button onclick="removeRatingFilter()">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        activeFilters.appendChild(filterElement);
+    }
+
+    // Benefits
+    if (filters.benefits.length > 0) {
+        activeCount++;
+        const filterElement = document.createElement('div');
+        filterElement.className = 'active-filter';
+        filterElement.innerHTML = `
+            Benefits: ${filters.benefits.length} selected
+            <button onclick="removeBenefitFilters()">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        activeFilters.appendChild(filterElement);
+    }
+
+    // Update active filters count
+    document.querySelector('.active-filters-count').textContent = activeCount;
+}
+
+// Filter removal functions
+function removeSearchFilter() {
+    filters.search = '';
+    searchInput.value = '';
+    applyFilters();
+}
+
+function removeCategoryFilters() {
+    filters.categories = ['all'];
+    document.querySelectorAll('input[name="category"]').forEach(input => {
+        input.checked = input.value === 'all';
+    });
+    applyFilters();
+}
+
+function removePriceFilter() {
+    filters.priceRange = [0, 1000];
+    document.getElementById('minPrice').value = '';
+    document.getElementById('maxPrice').value = '';
+    document.querySelector('.range-min').value = 0;
+    document.querySelector('.range-max').value = 1000;
+    updatePriceDisplay();
+    applyFilters();
+}
+
+function removeRatingFilter() {
+    filters.rating = 0;
+    document.querySelector('input[name="rating"][value="0"]').checked = true;
+    applyFilters();
+}
+
+function removeBenefitFilters() {
+    filters.benefits = [];
+    document.querySelectorAll('input[name="benefit"]').forEach(input => {
+        input.checked = false;
+    });
+    applyFilters();
+}
+
+// Render pagination
+function renderPagination() {
+    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
     
-    // Category filter
-    const selectedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked'))
-        .map(cb => cb.value);
-    
-    if (!selectedCategories.includes('all')) {
-        filteredProducts = filteredProducts.filter(product => 
-            selectedCategories.includes(product.category)
-        );
+    if (totalPages <= 1) {
+        pagination.innerHTML = '';
+        return;
     }
     
-    // Rating filter
-    const minRating = parseFloat(document.querySelector('input[name="rating"]:checked')?.value || 0);
-    if (minRating > 0) {
-        filteredProducts = filteredProducts.filter(product => product.rating >= minRating);
-    }
+    let paginationHTML = '';
     
-    // Availability filter
-    const selectedAvailability = Array.from(document.querySelectorAll('input[name="availability"]:checked'))
-        .map(cb => cb.value);
+    // Previous button
+    paginationHTML += `
+        <button class="pagination-btn ${currentPage === 1 ? 'disabled' : ''}" 
+                ${currentPage === 1 ? 'disabled' : ''} 
+                onclick="changePage(${currentPage - 1})">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+    `;
     
-    if (selectedAvailability.length === 1) {
-        if (selectedAvailability.includes('in-stock')) {
-            filteredProducts = filteredProducts.filter(product => product.inStock);
-        } else if (selectedAvailability.includes('out-of-stock')) {
-            filteredProducts = filteredProducts.filter(product => !product.inStock);
+    // Page numbers
+    for (let i = 1; i <= totalPages; i++) {
+        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+            paginationHTML += `
+                <button class="pagination-btn ${i === currentPage ? 'active' : ''}" 
+                        onclick="changePage(${i})">
+                    ${i}
+                </button>
+            `;
+        } else if (i === currentPage - 2 || i === currentPage + 2) {
+            paginationHTML += `<span>...</span>`;
         }
     }
     
-    // Price filter
-    const minPrice = parseFloat(document.getElementById('minPrice')?.value) || 0;
-    const maxPrice = parseFloat(document.getElementById('maxPrice')?.value) || Infinity;
+    // Next button
+    paginationHTML += `
+        <button class="pagination-btn ${currentPage === totalPages ? 'disabled' : ''}" 
+                ${currentPage === totalPages ? 'disabled' : ''} 
+                onclick="changePage(${currentPage + 1})">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    `;
     
-    if (minPrice > 0 || maxPrice < Infinity) {
-        filteredProducts = filteredProducts.filter(product => 
-            product.price >= minPrice && product.price <= maxPrice
-        );
-    }
-    
-    // Search filter
-    const searchTerm = document.getElementById('searchInput')?.value.toLowerCase() || '';
-    if (searchTerm) {
-        filteredProducts = filteredProducts.filter(product => 
-            product.name.toLowerCase().includes(searchTerm) || 
-            product.description.toLowerCase().includes(searchTerm)
-        );
-    }
+    pagination.innerHTML = paginationHTML;
 }
 
-// Sort products based on selected sort option
-function sortProducts() {
-    switch(currentSort) {
+// Change page
+function changePage(page) {
+    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+    
+    if (page < 1 || page > totalPages) return;
+    
+    currentPage = page;
+    renderProducts();
+    renderPagination();
+    
+    // Scroll to top of products
+    window.scrollTo({
+        top: productsGrid.offsetTop - 100,
+        behavior: 'smooth'
+    });
+}
+
+// Handle search
+function handleSearch(e) {
+    filters.search = e.target.value.toLowerCase();
+    applyFilters();
+}
+
+// Handle category changes
+function handleCategoryChange(e) {
+    const value = e.target.value;
+    
+    if (value === 'all') {
+        // If "all" is checked, uncheck others and set categories to ['all']
+        document.querySelectorAll('input[name="category"]').forEach(input => {
+            if (input.value !== 'all') input.checked = false;
+        });
+        filters.categories = ['all'];
+    } else {
+        // If a specific category is checked, uncheck "all"
+        const allCheckbox = document.querySelector('input[name="category"][value="all"]');
+        allCheckbox.checked = false;
+        
+        if (e.target.checked) {
+            filters.categories.push(value);
+        } else {
+            filters.categories = filters.categories.filter(cat => cat !== value);
+        }
+        
+        // If no categories selected, check "all"
+        if (filters.categories.length === 0) {
+            allCheckbox.checked = true;
+            filters.categories = ['all'];
+        }
+    }
+    
+    applyFilters();
+}
+
+// Handle rating changes
+function handleRatingChange(e) {
+    filters.rating = parseInt(e.target.value);
+    applyFilters();
+}
+
+// Handle benefit changes
+function handleBenefitChange(e) {
+    const value = e.target.value;
+    
+    if (e.target.checked) {
+        filters.benefits.push(value);
+    } else {
+        filters.benefits = filters.benefits.filter(benefit => benefit !== value);
+    }
+    
+    applyFilters();
+}
+
+// Handle availability changes
+function handleAvailabilityChange(e) {
+    const value = e.target.value;
+    
+    if (e.target.checked) {
+        filters.availability.push(value);
+    } else {
+        filters.availability = filters.availability.filter(avail => avail !== value);
+    }
+    
+    applyFilters();
+}
+
+// Handle price changes
+function handlePriceChange() {
+    const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+    const maxPrice = parseFloat(document.getElementById('maxPrice').value) || 1000;
+    
+    filters.priceRange = [minPrice, maxPrice];
+    updateRangeInputs();
+    applyFilters();
+}
+
+// Handle range changes
+function handleRangeChange() {
+    const minRange = parseInt(document.querySelector('.range-min').value);
+    const maxRange = parseInt(document.querySelector('.range-max').value);
+    
+    filters.priceRange = [minRange, maxRange];
+    updatePriceInputs();
+    updatePriceDisplay();
+    applyFilters();
+}
+
+// Update range inputs based on price inputs
+function updateRangeInputs() {
+    document.querySelector('.range-min').value = filters.priceRange[0];
+    document.querySelector('.range-max').value = filters.priceRange[1];
+    updateSliderTrack();
+}
+
+// Update price inputs based on range inputs
+function updatePriceInputs() {
+    document.getElementById('minPrice').value = filters.priceRange[0];
+    document.getElementById('maxPrice').value = filters.priceRange[1];
+}
+
+// Update price display
+function updatePriceDisplay() {
+    document.getElementById('minPriceDisplay').textContent = filters.priceRange[0];
+    document.getElementById('maxPriceDisplay').textContent = filters.priceRange[1];
+    updateSliderTrack();
+}
+
+// Update slider track
+function updateSliderTrack() {
+    const min = filters.priceRange[0];
+    const max = filters.priceRange[1];
+    const track = document.querySelector('.slider-track');
+    track.style.left = `${(min / 1000) * 100}%`;
+    track.style.right = `${100 - (max / 1000) * 100}%`;
+}
+
+// Handle quick category selection
+function handleQuickCategory(e) {
+    e.preventDefault();
+    const category = e.currentTarget.dataset.category;
+    
+    // Set category filter
+    filters.categories = [category];
+    document.querySelectorAll('input[name="category"]').forEach(input => {
+        input.checked = input.value === category;
+    });
+    
+    applyFilters();
+    
+    // Scroll to products section
+    document.querySelector('.products-section').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+// Apply all filters
+function applyFilters() {
+    filteredProducts = products.filter(product => {
+        // Search filter
+        const matchesSearch = !filters.search || 
+            product.name.toLowerCase().includes(filters.search) ||
+            product.description.toLowerCase().includes(filters.search) ||
+            product.tags.some(tag => tag.includes(filters.search));
+        
+        // Category filter
+        const matchesCategory = filters.categories.includes('all') || 
+            filters.categories.includes(product.category);
+        
+        // Rating filter
+        const matchesRating = product.rating >= filters.rating;
+        
+        // Price filter
+        const matchesPrice = product.price >= filters.priceRange[0] && 
+            product.price <= filters.priceRange[1];
+        
+        // Benefits filter
+        const matchesBenefits = filters.benefits.length === 0 ||
+            filters.benefits.some(benefit => product.benefits.includes(benefit));
+        
+        // Availability filter
+        const inStockSelected = filters.availability.includes('in-stock');
+        const outOfStockSelected = filters.availability.includes('out-of-stock');
+        let matchesAvailability = false;
+        
+        if (inStockSelected && outOfStockSelected) {
+            matchesAvailability = true;
+        } else if (inStockSelected) {
+            matchesAvailability = product.inStock;
+        } else if (outOfStockSelected) {
+            matchesAvailability = !product.inStock;
+        }
+        
+        return matchesSearch && matchesCategory && matchesRating && matchesPrice && matchesBenefits && matchesAvailability;
+    });
+    
+    currentPage = 1;
+    renderProducts();
+    renderPagination();
+    updateActiveFilters();
+}
+
+// Reset all filters
+function resetFilters() {
+    // Reset filter state
+    filters = {
+        search: '',
+        categories: ['all'],
+        priceRange: [0, 1000],
+        rating: 0,
+        benefits: [],
+        availability: ['in-stock']
+    };
+    
+    // Reset UI elements
+    searchInput.value = '';
+    document.querySelectorAll('input[name="category"]').forEach(input => {
+        input.checked = input.value === 'all';
+    });
+    document.querySelector('input[name="rating"][value="0"]').checked = true;
+    document.querySelectorAll('input[name="benefit"]').forEach(input => {
+        input.checked = false;
+    });
+    document.querySelectorAll('input[name="availability"]').forEach(input => {
+        input.checked = input.value === 'in-stock';
+    });
+    document.getElementById('minPrice').value = '';
+    document.getElementById('maxPrice').value = '';
+    document.querySelector('.range-min').value = 0;
+    document.querySelector('.range-max').value = 1000;
+    
+    updatePriceDisplay();
+    applyFilters();
+}
+
+// Handle sort change
+function handleSortChange() {
+    const sortValue = sortSelect.value;
+    
+    switch (sortValue) {
         case 'price-low':
             filteredProducts.sort((a, b) => a.price - b.price);
             break;
@@ -350,500 +919,446 @@ function sortProducts() {
             // Assuming newer products have higher IDs
             filteredProducts.sort((a, b) => b.id - a.id);
             break;
+        case 'popular':
+            // Sort by reviews (popularity)
+            filteredProducts.sort((a, b) => b.reviews - a.reviews);
+            break;
+        case 'featured':
         default:
-            // Featured - no sorting or custom logic
+            // Featured products first, then by name
+            filteredProducts.sort((a, b) => {
+                if (a.featured && !b.featured) return -1;
+                if (!a.featured && b.featured) return 1;
+                return a.name.localeCompare(b.name);
+            });
             break;
     }
+    
+    currentPage = 1;
+    renderProducts();
+    renderPagination();
 }
 
-// Render pagination
-function renderPagination() {
-    const pagination = document.getElementById('pagination');
-    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+// Handle view change
+function handleViewChange(e) {
+    const view = e.currentTarget.dataset.view;
     
-    if (totalPages <= 1) {
-        pagination.innerHTML = '';
-        return;
-    }
+    if (view === currentView) return;
     
-    let paginationHTML = '';
+    currentView = view;
     
-    // Previous button
-    if (currentPage > 1) {
-        paginationHTML += `<button class="pagination-btn" data-page="${currentPage - 1}">Previous</button>`;
-    }
-    
-    // Page numbers
-    for (let i = 1; i <= totalPages; i++) {
-        if (
-            i === 1 || 
-            i === totalPages || 
-            (i >= currentPage - 1 && i <= currentPage + 1)
-        ) {
-            paginationHTML += `
-                <button class="pagination-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">
-                    ${i}
-                </button>
-            `;
-        } else if (i === currentPage - 2 || i === currentPage + 2) {
-            paginationHTML += `<span class="pagination-ellipsis">...</span>`;
-        }
-    }
-    
-    // Next button
-    if (currentPage < totalPages) {
-        paginationHTML += `<button class="pagination-btn" data-page="${currentPage + 1}">Next</button>`;
-    }
-    
-    pagination.innerHTML = paginationHTML;
-    
-    // Add event listeners to pagination buttons
-    pagination.querySelectorAll('.pagination-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            currentPage = parseInt(btn.getAttribute('data-page'));
-            renderProducts();
-            updateResultsCount();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+    // Update active button
+    viewButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.view === view);
     });
+    
+    // Update products grid class
+    productsGrid.classList.toggle('list-view', view === 'list');
+    
+    // Re-render products
+    renderProducts();
 }
 
-// Update results count
-function updateResultsCount() {
-    const resultsCount = document.getElementById('resultsCount');
-    if (!resultsCount) return;
-    
-    const startIndex = (currentPage - 1) * productsPerPage + 1;
-    const endIndex = Math.min(currentPage * productsPerPage, filteredProducts.length);
-    resultsCount.textContent = `Showing ${startIndex}-${endIndex} of ${filteredProducts.length} products`;
-}
-
-// Open product modal
-function openProductModal(product) {
-    selectedProduct = product;
-    
-    // Update modal content
-    document.getElementById('modalProductImage').src = product.image;
-    document.getElementById('modalProductImage').alt = product.name;
-    document.getElementById('modalProductName').textContent = product.name;
-    document.getElementById('modalProductDescription').textContent = product.description;
-    document.getElementById('modalProductCategory').textContent = product.category;
-    document.getElementById('modalProductQuantity').textContent = `${product.quantity} in stock`;
-    document.getElementById('modalProductPrice').textContent = `R${product.price.toFixed(2)}`;
-    
-    // Set up add to cart button in modal
-    const addToCartBtn = document.getElementById('addToCartBtn');
-    addToCartBtn.onclick = () => addToCart(product.id);
-    if (!product.inStock) {
-        addToCartBtn.disabled = true;
-        addToCartBtn.textContent = 'Out of Stock';
-    } else {
-        addToCartBtn.disabled = false;
-        addToCartBtn.textContent = 'Add to Cart';
-    }
-    
-    // Show modal
-    document.getElementById('productModal').classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-// Close product modal
-function closeProductModal() {
-    document.getElementById('productModal').classList.remove('active');
-    document.body.style.overflow = 'auto';
-    selectedProduct = null;
-}
-
-// Add product to cart
-function addToCart(productId) {
+// Open quick view modal
+function openQuickView(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
-
-    const cart = getCart();
-    const existingItem = cart.find(item => item.id === product.id);
-
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({
-            ...product,
-            quantity: 1
-        });
-    }
-
-    saveCart(cart);
-    updateCartCount();
     
-    // Show success message
-    showMessage('Product added to cart!', 'success');
-}
-
-// Toggle wishlist
-function toggleWishlist(productId, button) {
-    const icon = button.querySelector('i');
-    if (icon.classList.contains('far')) {
-        icon.classList.remove('far');
-        icon.classList.add('fas');
-        button.classList.add('active');
-        showMessage('Product added to wishlist!', 'success');
-    } else {
-        icon.classList.remove('fas');
-        icon.classList.add('far');
-        button.classList.remove('active');
-        showMessage('Product removed from wishlist!', 'info');
-    }
-}
-
-// Add to compare
-function addToCompare(product, button) {
-    if (comparedProducts.some(p => p.id === product.id)) {
-        // Remove from compare
-        comparedProducts = comparedProducts.filter(p => p.id !== product.id);
-        button.classList.remove('active');
-        showMessage('Product removed from comparison!', 'info');
-    } else {
-        // Add to compare (max 3 products)
-        if (comparedProducts.length >= 3) {
-            showMessage('You can compare up to 3 products at a time', 'info');
-            return;
-        }
-        comparedProducts.push(product);
-        button.classList.add('active');
-        showMessage('Product added to comparison!', 'success');
-    }
+    const stars = generateStarRating(product.rating);
+    const oldPrice = product.oldPrice ? 
+        `<span class="product-old-price">R${product.oldPrice.toFixed(2)}</span>` : '';
+    const benefitsHTML = product.benefits.map(benefit => 
+        `<span class="benefit-tag">${getBenefitName(benefit)}</span>`
+    ).join('');
+    const tagsHTML = product.tags.map(tag => 
+        `<span class="product-tag">#${tag}</span>`
+    ).join('');
     
-    updateCompareBar();
-}
-
-// Update compare bar
-function updateCompareBar() {
-    const compareBar = document.getElementById('compareBar');
-    const compareItems = document.getElementById('compareItems');
-    
-    if (comparedProducts.length === 0) {
-        compareBar.classList.remove('active');
-        return;
-    }
-    
-    compareBar.classList.add('active');
-    compareItems.innerHTML = '';
-    
-    comparedProducts.forEach(product => {
-        const compareItem = document.createElement('div');
-        compareItem.className = 'compare-item';
-        compareItem.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <div class="compare-item-name">${product.name}</div>
-            <button class="remove-compare" data-id="${product.id}">
-                <i class="fas fa-times"></i>
-            </button>
-        `;
-        compareItems.appendChild(compareItem);
-    });
-    
-    // Add event listeners to remove buttons
-    compareItems.querySelectorAll('.remove-compare').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const productId = parseInt(this.getAttribute('data-id'));
-            comparedProducts = comparedProducts.filter(p => p.id !== productId);
-            updateCompareBar();
-            
-            // Update the compare button in the product card
-            const productCard = document.querySelector(`.product-card[data-id="${productId}"]`);
-            if (productCard) {
-                const compareBtn = productCard.querySelector('.compare-btn');
-                compareBtn.classList.remove('active');
-            }
-            
-            showMessage('Product removed from comparison!', 'info');
-        });
-    });
-}
-
-// Clear compare
-function clearCompare() {
-    comparedProducts = [];
-    updateCompareBar();
-    
-    // Update all compare buttons
-    document.querySelectorAll('.compare-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    
-    showMessage('Comparison cleared!', 'info');
-}
-
-// Show compare modal
-function showCompareModal() {
-    if (comparedProducts.length < 2) {
-        showMessage('Please select at least 2 products to compare', 'info');
-        return;
-    }
-    
-    // Create comparison table
-    const comparisonHTML = `
-        <div class="comparison-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        ${comparedProducts.map(product => `
-                            <th>
-                                <img src="${product.image}" alt="${product.name}" class="compare-product-image">
-                                <div class="compare-product-name">${product.name}</div>
-                            </th>
-                        `).join('')}
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Price</td>
-                        ${comparedProducts.map(product => `<td>R${product.price.toFixed(2)}</td>`).join('')}
-                    </tr>
-                    <tr>
-                        <td>Rating</td>
-                        ${comparedProducts.map(product => `<td>${product.rating} ★ (${product.reviewCount} reviews)</td>`).join('')}
-                    </tr>
-                    <tr>
-                        <td>Category</td>
-                        ${comparedProducts.map(product => `<td>${product.category}</td>`).join('')}
-                    </tr>
-                    <tr>
-                        <td>Stock</td>
-                        ${comparedProducts.map(product => `<td>${product.quantity} in stock</td>`).join('')}
-                    </tr>
-                </tbody>
-            </table>
+    modalBody.innerHTML = `
+        <div class="quick-view-content">
+            <div class="product-gallery">
+                <img src="${product.image}" alt="${product.name}" class="main-image">
+                <div class="product-badge">${product.badge || 'Premium'}</div>
+            </div>
+            <div class="product-details">
+                <h2>${product.name}</h2>
+                <div class="product-meta">
+                    <div class="product-rating">
+                        <div class="rating-stars">${stars}</div>
+                        <span class="rating-value">${product.rating} (${product.reviews} reviews)</span>
+                    </div>
+                    <div class="product-origin">
+                        <i class="fas fa-globe-africa"></i>
+                        Sourced from ${product.origin}
+                    </div>
+                    ${product.organic ? '<div class="organic-badge"><i class="fas fa-leaf"></i> Certified Organic</div>' : ''}
+                </div>
+                
+                <div class="product-price">
+                    ${oldPrice}
+                    <span class="current-price">R${product.price.toFixed(2)}</span>
+                </div>
+                
+                <p class="product-description">${product.description}</p>
+                
+                <div class="product-benefits">
+                    <h4>Wellness Benefits</h4>
+                    <div class="benefits-list">
+                        ${benefitsHTML}
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <div class="info-section">
+                        <h5><i class="fas fa-list"></i> Ingredients</h5>
+                        <p>${product.ingredients.join(', ')}</p>
+                    </div>
+                    <div class="info-section">
+                        <h5><i class="fas fa-info-circle"></i> Usage</h5>
+                        <p>${product.usage}</p>
+                    </div>
+                </div>
+                
+                <div class="product-tags">
+                    ${tagsHTML}
+                </div>
+                
+                <div class="add-to-cart-section">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                        <input type="number" class="quantity-input" value="1" min="1" max="10">
+                        <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <button class="btn btn-primary add-to-cart-large" 
+                            ${!product.inStock ? 'disabled' : ''}>
+                        <i class="fas fa-shopping-basket"></i>
+                        ${!product.inStock ? 'Out of Stock' : 'Add to Cart - R' + product.price.toFixed(2)}
+                    </button>
+                    <button class="btn btn-outline wishlist-large" data-id="${product.id}">
+                        <i class="${wishlist.includes(product.id) ? 'fas' : 'far'} fa-heart"></i>
+                        ${wishlist.includes(product.id) ? 'In Wishlist' : 'Add to Wishlist'}
+                    </button>
+                </div>
+            </div>
         </div>
     `;
     
-    // Show comparison in modal (you might want to create a separate modal for this)
-    showMessage(`Comparing ${comparedProducts.map(p => p.name).join(', ')} - check the console for details`, 'info');
-    console.log('Comparison Data:', comparedProducts);
+    // Add event listeners
+    const quantityInput = modalBody.querySelector('.quantity-input');
+    const minusBtn = modalBody.querySelector('.quantity-btn.minus');
+    const plusBtn = modalBody.querySelector('.quantity-btn.plus');
+    const addToCartLarge = modalBody.querySelector('.add-to-cart-large');
+    const wishlistLarge = modalBody.querySelector('.wishlist-large');
+    
+    minusBtn.addEventListener('click', () => {
+        const value = parseInt(quantityInput.value);
+        if (value > 1) quantityInput.value = value - 1;
+    });
+    
+    plusBtn.addEventListener('click', () => {
+        const value = parseInt(quantityInput.value);
+        if (value < 10) quantityInput.value = value + 1;
+    });
+    
+    addToCartLarge.addEventListener('click', () => {
+        const quantity = parseInt(quantityInput.value);
+        addToCart(product.id, quantity);
+        closeQuickView();
+    });
+    
+    wishlistLarge.addEventListener('click', () => {
+        toggleWishlist(product.id);
+        wishlistLarge.innerHTML = `
+            <i class="${wishlist.includes(product.id) ? 'fas' : 'far'} fa-heart"></i>
+            ${wishlist.includes(product.id) ? 'In Wishlist' : 'Add to Wishlist'}
+        `;
+    });
+    
+    quickViewModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
 
-// Apply filters
-function applyFilters() {
-    currentPage = 1;
-    renderProducts();
-    updateResultsCount();
+// Get benefit display name
+function getBenefitName(benefit) {
+    const benefitNames = {
+        'sleep': 'Sleep Support',
+        'energy': 'Energy Boost',
+        'immunity': 'Immune Support',
+        'digestion': 'Digestive Health',
+        'stress': 'Stress Relief',
+        'skin': 'Skin Health'
+    };
+    return benefitNames[benefit] || benefit;
 }
 
-// Reset filters
-function resetFilters() {
-    // Reset search
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) searchInput.value = '';
+// Close quick view modal
+function closeQuickView() {
+    quickViewModal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Add product to cart
+function addToCart(productId, quantity = 1) {
+    const product = products.find(p => p.id === productId);
+    if (!product || !product.inStock) return;
     
-    // Reset sort
-    const sortSelect = document.getElementById('sortSelect');
-    if (sortSelect) sortSelect.value = 'featured';
-    currentSort = 'featured';
+    const existingItem = cart.find(item => item.id === productId);
     
-    // Reset category filters
-    document.querySelectorAll('input[name="category"]').forEach(cb => {
-        if (cb.value === 'all') cb.checked = true;
-        else cb.checked = false;
-    });
-    
-    // Reset rating filters
-    document.querySelectorAll('input[name="rating"]').forEach(rb => {
-        if (rb.value === '0') rb.checked = true;
-        else rb.checked = false;
-    });
-    
-    // Reset availability filters
-    document.querySelectorAll('input[name="availability"]').forEach(cb => {
-        if (cb.value === 'in-stock') cb.checked = true;
-        else cb.checked = false;
-    });
-    
-    // Reset price filters
-    const minPrice = document.getElementById('minPrice');
-    const maxPrice = document.getElementById('maxPrice');
-    if (minPrice) minPrice.value = '';
-    if (maxPrice) maxPrice.value = '';
-    
-    // Reset view
-    const gridViewBtn = document.querySelector('.view-btn.grid-view');
-    const listViewBtn = document.querySelector('.view-btn.list-view');
-    if (gridViewBtn && listViewBtn) {
-        gridViewBtn.classList.add('active');
-        listViewBtn.classList.remove('active');
-        currentView = 'grid';
+    if (existingItem) {
+        existingItem.quantity += quantity;
+    } else {
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            quantity: quantity
+        });
     }
     
-    filteredProducts = [...products];
-    currentPage = 1;
-    renderProducts();
-    updateResultsCount();
-    
-    showMessage('Filters reset!', 'info');
+    localStorage.setItem('herbalCart', JSON.stringify(cart));
+    updateCartUI();
+    showNotification(`${product.name} added to cart`, 'success');
 }
 
-// Show message
-function showMessage(message, type = 'info') {
-    const messageEl = document.createElement('div');
-    messageEl.className = `message message-${type}`;
-    messageEl.textContent = message;
-    messageEl.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        z-index: 1001;
-        animation: slideInRight 0.3s ease;
+// Update cart UI
+function updateCartUI() {
+    // Update cart count
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    cartCount.textContent = totalItems;
+    
+    // Update cart sidebar
+    cartItems.innerHTML = '';
+    
+    if (cart.length === 0) {
+        cartItems.innerHTML = `
+            <div class="empty-cart">
+                <i class="fas fa-shopping-basket"></i>
+                <h4>Your wellness cart is empty</h4>
+                <p>Add some natural goodness to get started</p>
+                <button class="btn btn-primary" onclick="toggleCart()">Continue Shopping</button>
+            </div>
+        `;
+        cartSubtotal.textContent = 'R0.00';
+        return;
+    }
+    
+    let subtotal = 0;
+    
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <div class="cart-item-details">
+                <h4>${item.name}</h4>
+                <div class="cart-item-price">R${item.price.toFixed(2)}</div>
+                <div class="cart-item-quantity">
+                    <button class="quantity-btn minus" data-id="${item.id}"><i class="fas fa-minus"></i></button>
+                    <span>${item.quantity}</span>
+                    <button class="quantity-btn plus" data-id="${item.id}"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            <button class="remove-item" data-id="${item.id}">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        
+        cartItems.appendChild(cartItem);
+    });
+    
+    // Add event listeners for cart items
+    cartItems.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+        btn.addEventListener('click', () => updateCartQuantity(btn.dataset.id, -1));
+    });
+    
+    cartItems.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+        btn.addEventListener('click', () => updateCartQuantity(btn.dataset.id, 1));
+    });
+    
+    cartItems.querySelectorAll('.remove-item').forEach(btn => {
+        btn.addEventListener('click', () => removeFromCart(btn.dataset.id));
+    });
+    
+    cartSubtotal.textContent = `R${subtotal.toFixed(2)}`;
+}
+
+// Update cart quantity
+function updateCartQuantity(productId, change) {
+    const item = cart.find(item => item.id === parseInt(productId));
+    if (!item) return;
+    
+    item.quantity += change;
+    
+    if (item.quantity <= 0) {
+        cart = cart.filter(item => item.id !== parseInt(productId));
+    }
+    
+    localStorage.setItem('herbalCart', JSON.stringify(cart));
+    updateCartUI();
+}
+
+// Remove from cart
+function removeFromCart(productId) {
+    const item = cart.find(item => item.id === parseInt(productId));
+    if (item) {
+        cart = cart.filter(item => item.id !== parseInt(productId));
+        localStorage.setItem('herbalCart', JSON.stringify(cart));
+        updateCartUI();
+        showNotification(`${item.name} removed from cart`, 'info');
+    }
+}
+
+// Toggle cart sidebar
+function toggleCart() {
+    cartSidebar.classList.toggle('active');
+    document.body.style.overflow = cartSidebar.classList.contains('active') ? 'hidden' : '';
+}
+
+// Toggle wishlist
+function toggleWishlist(productId) {
+    if (wishlist.includes(productId)) {
+        wishlist = wishlist.filter(id => id !== productId);
+        showNotification('Product removed from wishlist', 'info');
+    } else {
+        wishlist.push(productId);
+        showNotification('Product added to wishlist', 'success');
+    }
+    
+    localStorage.setItem('herbalWishlist', JSON.stringify(wishlist));
+    updateWishlistUI();
+    renderProducts(); // Re-render to update wishlist buttons
+}
+
+// Update wishlist UI
+function updateWishlistUI() {
+    wishlistCount.textContent = wishlist.length;
+}
+
+// Toggle mobile menu
+function toggleMobileMenu() {
+    mobileMenu.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+}
+
+// Handle newsletter submission
+function handleNewsletterSubmit(e) {
+    e.preventDefault();
+    const email = e.target.querySelector('input[type="email"]').value;
+    
+    // Simulate API call
+    showNotification('Thank you for joining our herbal community!', 'success');
+    e.target.reset();
+}
+
+// Handle scroll
+function handleScroll() {
+    // Back to top button
+    if (window.scrollY > 500) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+    
+    // Header shadow
+    const header = document.querySelector('.header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+}
+
+// Scroll to top
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Show notification
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas fa-${getNotificationIcon(type)}"></i>
+            <span>${message}</span>
+        </div>
+        <button class="notification-close">
+            <i class="fas fa-times"></i>
+        </button>
     `;
     
-    document.body.appendChild(messageEl);
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: ${getNotificationColor(type)};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        box-shadow: var(--shadow-lg);
+        z-index: 4000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        max-width: 400px;
+    `;
     
-    setTimeout(() => {
-        messageEl.style.animation = 'slideOutRight 0.3s ease';
+    document.body.appendChild(notification);
+    
+    // Close button
+    notification.querySelector('.notification-close').addEventListener('click', () => {
+        notification.style.transform = 'translateX(100%)';
         setTimeout(() => {
-            if (document.body.contains(messageEl)) {
-                document.body.removeChild(messageEl);
+            document.body.removeChild(notification);
+        }, 300);
+    });
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 10);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (document.body.contains(notification)) {
+                document.body.removeChild(notification);
             }
         }, 300);
-    }, 3000);
+    }, 5000);
 }
 
-// Setup event listeners
-function setupEventListeners() {
-    // Filter toggle (mobile)
-    const filterToggle = document.getElementById('filterToggle');
-    const shopSidebar = document.getElementById('shopSidebar');
-
-    if (filterToggle && shopSidebar) {
-        filterToggle.addEventListener('click', function() {
-            shopSidebar.classList.toggle('active');
-            this.classList.toggle('active');
-        });
-    }
-
-    // Collapsible filter sections
-    document.querySelectorAll('.filter-title').forEach(title => {
-        title.addEventListener('click', function() {
-            this.classList.toggle('collapsed');
-            const options = this.nextElementSibling;
-            if (options) {
-                options.style.display = options.style.display === 'none' ? 'flex' : 'none';
-            }
-        });
-    });
-
-    // Search
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-        searchInput.addEventListener('input', () => {
-            currentPage = 1;
-            renderProducts();
-            updateResultsCount();
-        });
-    }
-    
-    // Sort
-    const sortSelect = document.getElementById('sortSelect');
-    if (sortSelect) {
-        sortSelect.addEventListener('change', function() {
-            currentSort = this.value;
-            renderProducts();
-        });
-    }
-    
-    // View toggle
-    const viewButtons = document.querySelectorAll('.view-btn');
-    viewButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            viewButtons.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            currentView = this.getAttribute('data-view');
-            renderProducts();
-        });
-    });
-    
-    // Filter application
-    const applyFiltersBtn = document.getElementById('applyFilters');
-    if (applyFiltersBtn) {
-        applyFiltersBtn.addEventListener('click', applyFilters);
-    }
-    
-    const resetFiltersBtn = document.getElementById('resetFilters');
-    if (resetFiltersBtn) {
-        resetFiltersBtn.addEventListener('click', resetFilters);
-    }
-    
-    const applyPriceFilterBtn = document.getElementById('applyPriceFilter');
-    if (applyPriceFilterBtn) {
-        applyPriceFilterBtn.addEventListener('click', applyFilters);
-    }
-    
-    // Compare functionality
-    const clearCompareBtn = document.getElementById('clearCompare');
-    if (clearCompareBtn) {
-        clearCompareBtn.addEventListener('click', clearCompare);
-    }
-    
-    const compareProductsBtn = document.getElementById('compareProducts');
-    if (compareProductsBtn) {
-        compareProductsBtn.addEventListener('click', showCompareModal);
-    }
-    
-    // Modal close button
-    const modalClose = document.getElementById('modalClose');
-    if (modalClose) {
-        modalClose.addEventListener('click', closeProductModal);
-    }
-
-    // Add to cart button in modal
-    const addToCartBtn = document.getElementById('addToCartBtn');
-    if (addToCartBtn) {
-        addToCartBtn.addEventListener('click', () => {
-            if (selectedProduct) {
-                addToCart(selectedProduct.id);
-                closeProductModal();
-            }
-        });
-    }
-
-    // Close modal when clicking outside
-    const productModal = document.getElementById('productModal');
-    if (productModal) {
-        productModal.addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeProductModal();
-            }
-        });
-    }
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeProductModal();
-        }
-    });
+// Get notification icon
+function getNotificationIcon(type) {
+    const icons = {
+        'success': 'check-circle',
+        'error': 'exclamation-circle',
+        'warning': 'exclamation-triangle',
+        'info': 'info-circle'
+    };
+    return icons[type] || 'info-circle';
 }
 
-// Cart functions (assuming these exist in cart.js)
-function getCart() {
-    return JSON.parse(localStorage.getItem('cart')) || [];
+// Get notification color
+function getNotificationColor(type) {
+    const colors = {
+        'success': '#10b981',
+        'error': '#ef4444',
+        'warning': '#f59e0b',
+        'info': '#3b82f6'
+    };
+    return colors[type] || '#3b82f6';
 }
 
-function saveCart(cart) {
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-function updateCartCount() {
-    const cart = getCart();
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const cartCount = document.getElementById('cartCount');
-    if (cartCount) {
-        cartCount.textContent = totalItems;
-    }
-}
-
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', initShopPage);
+// Initialize the shop when DOM is loaded
+document.addEventListener('DOMContentLoaded', initShop);

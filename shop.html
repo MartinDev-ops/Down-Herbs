@@ -1,327 +1,758 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop - The Go Down Herbs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/shop.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal Haven - Premium Natural Products | The Go Down Herbs</title>
+    <meta name="description" content="Discover premium herbal products for natural wellness. Organic teas, tinctures, supplements and more from The Go Down Herbs.">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Sticky Header -->
-  <header class="header">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="herb-spinner">
+                <div class="leaf leaf-1"></div>
+                <div class="leaf leaf-2"></div>
+                <div class="leaf leaf-3"></div>
+            </div>
+            <p>Loading Natural Goodness...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <!-- Header -->
+<header class="header">
     <div class="container">
-      <div class="header-content">
-        <!-- Logo -->
-        <a class="logo-link" href="index.html">
-          <div class="logo-container">
-            <img src="images/godown(logo).png" alt="The Go Down Herbs Logo" class="logo-image">
-          </div>
-        </a>
+        <!-- Logo Section - Centered at top -->
+        <div class="logo-section">
+            <a href="index.html" class="logo">
+                <img src="images/godown(logo).png" alt="The Go Down Herbs - Natural Wellness">
+                <span class="logo-text">The Go Down Herbs</span>
+            </a>
+        </div>
         
-        <!-- Desktop Navigation -->
-        <nav class="desktop-nav">
-          <a class="nav-link" href="index.html">
-            Home
-            <span class="nav-underline"></span>
-          </a>
-          <a class="nav-link active" href="shop.html">
-            Shop
-            <span class="nav-underline"></span>
-          </a>
-          <a class="nav-link" href="about.html">
-            About
-            <span class="nav-underline"></span>
-          </a>
-          <a class="nav-link" href="stores.html">
-            Our Stores
-            <span class="nav-underline"></span>
-          </a>
-          <a class="nav-link" href="contact.html">
-            Contact
-            <span class="nav-underline"></span>
-          </a>
-        </nav>
-        
-        <!-- Cart and Mobile Menu Button -->
-        <div class="header-buttons">
-          <a href="cart.html">
-            <button class="icon-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
-                <circle cx="8" cy="21" r="1"></circle>
-                <circle cx="19" cy="21" r="1"></circle>
-                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
-              </svg>
-              <span id="cartCount" class="cart-count">0</span>
-            </button>
-          </a>
-          <button class="mobile-menu-btn icon-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
-              <line x1="4" x2="20" y1="12" y2="12"></line>
-              <line x1="4" x2="20" y1="6" y2="6"></line>
-              <line x1="4" x2="20" y1="18" y2="18"></line>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="about.html">About</a>
-    <a href="stores.html">Our Stores</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <!-- Shop Page -->
-  <div class="shop-page">
-    <div class="container">
-      <div class="shop-header">
-        <h1 class="shop-title">Our Products</h1>
-        <p class="shop-subtitle">Discover our range of natural herbal products for wellness and health.</p>
-      </div>
-
-      <div class="shop-content">
-        <!-- Filter Toggle Button (Mobile) -->
-        <button class="filter-toggle" id="filterToggle">
-          <i class="fas fa-filter"></i>
-          <span>Filters</span>
-        </button>
-
-        <!-- Sidebar Filters -->
-        <aside class="shop-sidebar" id="shopSidebar">
-          <div class="filter-section">
-            <h3 class="filter-title">Search</h3>
-            <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
-          </div>
-
-          <div class="filter-section">
-            <h3 class="filter-title">Category</h3>
-            <div class="filter-options">
-              <label class="filter-option">
-                <input type="checkbox" name="category" value="all" checked> All Categories
-              </label>
-              <label class="filter-option">
-                <input type="checkbox" name="category" value="Beverages"> Beverages
-              </label>
-              <label class="filter-option">
-                <input type="checkbox" name="category" value="Merchandise"> Merchandise
-              </label>
-              <label class="filter-option">
-                <input type="checkbox" name="category" value="Health Products"> Health Products
-              </label>
-            </div>
-          </div>
-
-          <div class="filter-section">
-            <h3 class="filter-title">Rating</h3>
-            <div class="filter-options">
-              <label class="filter-option">
-                <input type="radio" name="rating" value="0" checked> All Ratings
-              </label>
-              <label class="filter-option">
-                <input type="radio" name="rating" value="4"> 4+ Stars
-              </label>
-              <label class="filter-option">
-                <input type="radio" name="rating" value="3"> 3+ Stars
-              </label>
-              <label class="filter-option">
-                <input type="radio" name="rating" value="2"> 2+ Stars
-              </label>
-            </div>
-          </div>
-
-          <div class="filter-section">
-            <h3 class="filter-title">Availability</h3>
-            <div class="filter-options">
-              <label class="filter-option">
-                <input type="checkbox" name="availability" value="in-stock" checked> In Stock
-              </label>
-              <label class="filter-option">
-                <input type="checkbox" name="availability" value="out-of-stock"> Out of Stock
-              </label>
-            </div>
-          </div>
-
-          <div class="filter-section">
-            <h3 class="filter-title">Price Range</h3>
-            <div class="price-filter">
-              <input type="number" id="minPrice" placeholder="Min" class="price-input">
-              <span>to</span>
-              <input type="number" id="maxPrice" placeholder="Max" class="price-input">
-              <button id="applyPriceFilter" class="btn btn-small">Apply</button>
-            </div>
-          </div>
-
-          <div class="filter-actions">
-            <button id="applyFilters" class="btn btn-primary">Apply Filters</button>
-            <button id="resetFilters" class="btn btn-secondary">Reset All</button>
-          </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="shop-main">
-          <!-- Toolbar -->
-          <div class="shop-toolbar">
-            <div class="results-info">
-              <span id="resultsCount">Showing 1-9 of 10 products</span>
-            </div>
-            <div class="toolbar-controls">
-              <div class="sort-control">
-                <label for="sortSelect">Sort by:</label>
-                <select id="sortSelect" class="sort-select">
-                  <option value="featured">Featured</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                  <option value="name">Name</option>
-                  <option value="rating">Rating</option>
-                  <option value="newest">Newest</option>
-                </select>
-              </div>
-              <div class="view-controls">
-                <button class="view-btn grid-view active" data-view="grid">
-                  <i class="fas fa-th"></i>
-                </button>
-                <button class="view-btn list-view" data-view="list">
-                  <i class="fas fa-list"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Products Grid -->
-          <div id="productsGrid" class="products-grid">
-            <!-- Products will be rendered here by JavaScript -->
-          </div>
-
-          <!-- Pagination -->
-          <div id="pagination" class="pagination">
-            <!-- Pagination will be rendered here by JavaScript -->
-          </div>
-        </main>
-      </div>
-    </div>
-  </div>
-
-  <!-- Compare Bar -->
-  <div id="compareBar" class="compare-bar">
-    <div class="container">
-      <div class="compare-bar-content">
-        <div id="compareItems" class="compare-items">
-          <!-- Compared products will be shown here -->
-        </div>
-        <div class="compare-actions">
-          <button id="clearCompare" class="btn btn-small">Clear All</button>
-          <button id="compareProducts" class="btn btn-primary">Compare Products</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Product Modal -->
-  <div id="productModal" class="product-modal">
-    <div class="modal-content">
-      <button id="modalClose" class="modal-close">
-        <i class="fas fa-times"></i>
-      </button>
-      <div class="modal-body">
-        <div class="modal-image">
-          <img id="modalProductImage" src="" alt="" class="modal-product-image">
-        </div>
-        <div class="modal-info">
-          <h2 id="modalProductName" class="modal-product-name"></h2>
-          <p id="modalProductDescription" class="modal-product-description"></p>
-          <div class="modal-product-details">
-            <span id="modalProductCategory" class="modal-product-category"></span>
-            <span id="modalProductQuantity" class="modal-product-quantity"></span>
-          </div>
-          <div id="modalProductPrice" class="modal-product-price"></div>
-          <button id="addToCartBtn" class="btn btn-primary">Add to Cart</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        
-        <!-- Logo & Description -->
-        <div class="footer-column">
-          <img src="images/logo.png" alt="The Go Down Herbs Logo" class="footer-logo">
-          <p class="footer-description">
-            South African-based company specializing in herbal health solutions promoting natural wellness.
-          </p>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="footer-column">
-          <h3 class="footer-title">Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="index.html" class="footer-link">Home</a></li>
-            <li><a href="shop.html" class="footer-link">Shop</a></li>
-            <li><a href="about.html" class="footer-link">About</a></li>
-            <li><a href="stores.html" class="footer-link">Our Stores</a></li>
-            <li><a href="contact.html" class="footer-link">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="footer-column">
-          <h3 class="footer-title">Contact Us</h3>
-          <ul class="footer-contact">
-            <li class="contact-item">
-              <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-              </svg>
-              <span>+27 71 533 6706 / +27 64 502 8037</span>
-            </li>
-            <li class="contact-item">
-              <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-              </svg>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@godownherbs.co.za" target="_blank">
-                   info@godownherbs.co.za
+        <!-- Navigation Section -->
+        <div class="nav-section">
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    Home
                 </a>
-            </li>
-          </ul>
+                <a href="shop.html" class="nav-link active">
+                    <i class="fas fa-leaf"></i>
+                    Shop
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-heart"></i>
+                    About
+                </a>
+                <a href="stores.html" class="nav-link">
+                    <i class="fas fa-store"></i>
+                    Stores
+                </a>
+                <a href="blog.html" class="nav-link">
+                    <i class="fas fa-book-open"></i>
+                    Blog
+                </a>
+                <a href="contact.html" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </a>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search herbs, products..." id="globalSearch">
+                </div>
+                <button class="action-btn wishlist-btn" title="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="wishlist-count">0</span>
+                </button>
+                <button class="action-btn cart-btn" title="Cart">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="action-btn user-btn" title="Account">
+                    <i class="fas fa-user"></i>
+                </button>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-
-        <!-- Social Media -->
-        <div class="footer-column">
-          <h3 class="footer-title">Follow Us</h3>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/Godownherb" target="_blank" rel="noopener noreferrer" class="social-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-            </a>
-            <a href="https://www.instagram.com/go_down_herbs/" target="_blank" rel="noopener noreferrer" class="social-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-            </a>
-            <a href="http://www.youtube.com/@Go-Down-Herbs" target="_blank" rel="noopener noreferrer" class="social-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Copyright -->
-      <div class="footer-bottom">
-        <p>© 2025 Go Down Herbs (PTY) LTD. All rights reserved.</p>
-      </div>
     </div>
-  </footer>
+</header>
+    
 
-  <script src="js/main.js"></script>
-  <script src="js/shop.js"></script>
+    <!-- Hero Section with Background -->
+    <!-- Add your herbal background image here: -->
+    <!-- Recommended: A high-quality image of herbal plants, tea leaves, or natural ingredients -->
+    <!-- Example: images/herbal-hero-bg.jpg -->
+    <section class="shop-hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-seedling"></i>
+                    Naturally Crafted
+                </div>
+                <h1 class="hero-title">Nature's Finest Herbal Collection</h1>
+                <p class="hero-subtitle">Discover handcrafted herbal remedies, organic teas, and natural wellness products sourced from the heart of nature</p>
+                
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-award"></i>
+                        <span>Premium Quality</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-leaf"></i>
+                        <span>100% Organic</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-truck"></i>
+                        <span>Free Shipping</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Lab Tested</span>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large">
+                        <i class="fas fa-star"></i>
+                        Featured Products
+                    </button>
+                    <button class="btn btn-outline btn-large">
+                        <i class="fas fa-book"></i>
+                        Learn About Herbs
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Categories -->
+    <section class="quick-categories">
+        <div class="container">
+            <div class="categories-grid">
+                <a href="#teas" class="category-card" data-category="teas">
+                    <div class="category-icon">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <h3>Herbal Teas</h3>
+                    <p>Soothing blends for wellness</p>
+                    <span class="product-count">24 Products</span>
+                </a>
+                <a href="#tinctures" class="category-card" data-category="tinctures">
+                    <div class="category-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Tinctures</h3>
+                    <p>Potent herbal extracts</p>
+                    <span class="product-count">18 Products</span>
+                </a>
+                <a href="#capsules" class="category-card" data-category="capsules">
+                    <div class="category-icon">
+                        <i class="fas fa-capsules"></i>
+                    </div>
+                    <h3>Capsules</h3>
+                    <p>Easy-to-take supplements</p>
+                    <span class="product-count">32 Products</span>
+                </a>
+                <a href="#skincare" class="category-card" data-category="skincare">
+                    <div class="category-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Skincare</h3>
+                    <p>Natural beauty products</p>
+                    <span class="product-count">15 Products</span>
+                </a>
+                <a href="#merchandise" class="category-card" data-category="merchandise">
+                    <div class="category-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Merchandise</h3>
+                    <p>Branded wellness items</p>
+                    <span class="product-count">8 Products</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Main Content -->
+    <main class="shop-main">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filters-header">
+                        <h3>
+                            <i class="fas fa-filter"></i>
+                            Filter Products
+                        </h3>
+                        <button class="clear-filters" id="clearFilters">
+                            <i class="fas fa-undo"></i>
+                            Reset All
+                        </button>
+                    </div>
+
+                    <!-- Search Filter -->
+                    <div class="filter-group">
+                        <div class="search-box filter-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="productSearch" placeholder="Search herbs and products...">
+                            <button class="search-clear">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Categories Filter -->
+                    <div class="filter-group">
+                        <div class="filter-header">
+                            <h4>
+                                <i class="fas fa-tags"></i>
+                                Categories
+                            </h4>
+                            <span class="filter-count" id="categoryCount">5</span>
+                        </div>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="all" checked>
+                                <span class="custom-checkbox"></span>
+                                <span class="filter-label">
+                                    All Products
+                                    <span class="product-count">127</span>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="teas">
+                                <span class="custom-checkbox"></span>
+                                <span class="filter-label">
+                                    Herbal Teas
+                                    <span class="product-count">24</span>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="tinctures">
+                                <span class="custom-checkbox"></span>
+                                <span class="filter-label">
+                                    Tinctures
+                                    <span class="product-count">18</span>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="capsules">
+                                <span class="custom-checkbox"></span>
+                                <span class="filter-label">
+                                    Capsules
+                                    <span class="product-count">32</span>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="skincare">
+                                <span class="custom-checkbox"></span>
+                                <span class="filter-label">
+                                    Skincare
+                                    <span class="product-count">15</span>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="merchandise">
+                                <span class="custom-checkbox"></span>
+                                <span class="filter-label">
+                                    Merchandise
+                                    <span class="product-count">8</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div class="filter-group">
+                        <div class="filter-header">
+                            <h4>
+                                <i class="fas fa-tag"></i>
+                                Price Range
+                            </h4>
+                        </div>
+                        <div class="price-range">
+                            <div class="price-inputs">
+                                <div class="price-input-group">
+                                    <label>Min</label>
+                                    <input type="number" id="minPrice" placeholder="0" min="0" max="1000">
+                                </div>
+                                <div class="price-input-group">
+                                    <label>Max</label>
+                                    <input type="number" id="maxPrice" placeholder="1000" min="0" max="1000">
+                                </div>
+                            </div>
+                            <div class="price-slider">
+                                <div class="slider-track"></div>
+                                <input type="range" class="range-min" min="0" max="1000" value="0">
+                                <input type="range" class="range-max" min="0" max="1000" value="1000">
+                            </div>
+                            <div class="price-display">
+                                <span>R<span id="minPriceDisplay">0</span> - R<span id="maxPriceDisplay">1000</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rating Filter -->
+                    <div class="filter-group">
+                        <div class="filter-header">
+                            <h4>
+                                <i class="fas fa-star"></i>
+                                Customer Rating
+                            </h4>
+                        </div>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="5">
+                                <span class="custom-radio"></span>
+                                <span class="filter-label">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>5 Stars</span>
+                                    </div>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="4">
+                                <span class="custom-radio"></span>
+                                <span class="filter-label">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span>4+ Stars</span>
+                                    </div>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="3">
+                                <span class="custom-radio"></span>
+                                <span class="filter-label">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span>3+ Stars</span>
+                                    </div>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="0" checked>
+                                <span class="custom-radio"></span>
+                                <span class="filter-label">All Ratings</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Benefits Filter -->
+                    <div class="filter-group">
+                        <div class="filter-header">
+                            <h4>
+                                <i class="fas fa-heart"></i>
+                                Wellness Benefits
+                            </h4>
+                        </div>
+                        <div class="benefits-grid">
+                            <label class="benefit-option">
+                                <input type="checkbox" name="benefit" value="sleep">
+                                <span class="benefit-card">
+                                    <i class="fas fa-moon"></i>
+                                    Sleep Aid
+                                </span>
+                            </label>
+                            <label class="benefit-option">
+                                <input type="checkbox" name="benefit" value="energy">
+                                <span class="benefit-card">
+                                    <i class="fas fa-bolt"></i>
+                                    Energy Boost
+                                </span>
+                            </label>
+                            <label class="benefit-option">
+                                <input type="checkbox" name="benefit" value="immunity">
+                                <span class="benefit-card">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Immunity
+                                </span>
+                            </label>
+                            <label class="benefit-option">
+                                <input type="checkbox" name="benefit" value="digestion">
+                                <span class="benefit-card">
+                                    <i class="fas fa-stomach"></i>
+                                    Digestion
+                                </span>
+                            </label>
+                            <label class="benefit-option">
+                                <input type="checkbox" name="benefit" value="stress">
+                                <span class="benefit-card">
+                                    <i class="fas fa-brain"></i>
+                                    Stress Relief
+                                </span>
+                            </label>
+                            <label class="benefit-option">
+                                <input type="checkbox" name="benefit" value="skin">
+                                <span class="benefit-card">
+                                    <i class="fas fa-spa"></i>
+                                    Skin Health
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Availability Filter -->
+                    <div class="filter-group">
+                        <div class="filter-header">
+                            <h4>
+                                <i class="fas fa-box"></i>
+                                Availability
+                            </h4>
+                        </div>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="availability" value="in-stock" checked>
+                                <span class="custom-checkbox"></span>
+                                <span class="filter-label">
+                                    In Stock
+                                    <span class="stock-badge in-stock">Available</span>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="availability" value="out-of-stock">
+                                <span class="custom-checkbox"></span>
+                                <span class="filter-label">
+                                    Out of Stock
+                                    <span class="stock-badge out-of-stock">Soon</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Products Section -->
+                <section class="products-section">
+                    <!-- Products Toolbar -->
+                    <div class="products-toolbar">
+                        <div class="toolbar-left">
+                            <button class="filter-toggle" id="filterToggle">
+                                <i class="fas fa-filter"></i>
+                                Filters
+                                <span class="active-filters-count">0</span>
+                            </button>
+                            <div class="results-info">
+                                <span id="resultsCount">Showing 12 of 127 products</span>
+                                <div class="active-filters" id="activeFilters">
+                                    <!-- Active filters will appear here -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toolbar-right">
+                            <div class="sort-by">
+                                <label for="sortSelect">
+                                    <i class="fas fa-sort"></i>
+                                    Sort by:
+                                </label>
+                                <select id="sortSelect">
+                                    <option value="featured">Featured</option>
+                                    <option value="popular">Most Popular</option>
+                                    <option value="rating">Highest Rated</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="name">Name A-Z</option>
+                                    <option value="newest">Newest First</option>
+                                </select>
+                            </div>
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid" title="Grid View">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                                <button class="view-btn" data-view="list" title="List View">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded here by JavaScript -->
+                    </div>
+
+                    <!-- Loading State -->
+                    <div class="loading-state" id="loadingState">
+                        <div class="herb-spinner">
+                            <div class="leaf leaf-1"></div>
+                            <div class="leaf leaf-2"></div>
+                            <div class="leaf leaf-3"></div>
+                        </div>
+                        <p>Loading natural products...</p>
+                    </div>
+
+                    <!-- No Results State -->
+                    <div class="no-results" id="noResults" style="display: none;">
+                        <div class="no-results-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>No products found</h3>
+                        <p>Try adjusting your filters or search terms to find what you're looking for.</p>
+                        <button class="btn btn-primary" id="resetSearch">
+                            <i class="fas fa-undo"></i>
+                            Reset All Filters
+                        </button>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination" id="pagination">
+                        <!-- Pagination will be loaded here by JavaScript -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>
+                        <i class="fas fa-seedling"></i>
+                        Join Our Herbal Community
+                    </h3>
+                    <p>Get exclusive offers, herbal wisdom, and wellness tips delivered to your inbox</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="input-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span class="custom-checkbox small"></span>
+                        I agree to receive wellness updates and special offers
+                    </label>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Column -->
+                <div class="footer-column">
+                    <div class="footer-brand">
+                        <img src="images/godown(logo).png" alt="The Go Down Herbs" class="footer-logo">
+                        <div class="brand-text">
+                            <h3>The Go Down Herbs</h3>
+                            <p>Nurturing wellness through nature's finest herbs since 2010</p>
+                        </div>
+                    </div>
+                    <div class="footer-features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>100% Organic Ingredients</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <span>Premium Quality</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-truck"></i>
+                            <span>Free Shipping Over R500</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html">
+                            <i class="fas fa-chevron-right"></i>
+                            Home
+                        </a>
+                        <a href="shop.html">
+                            <i class="fas fa-chevron-right"></i>
+                            Shop All Products
+                        </a>
+                        <a href="about.html">
+                            <i class="fas fa-chevron-right"></i>
+                            Our Story
+                        </a>
+                        <a href="blog.html">
+                            <i class="fas fa-chevron-right"></i>
+                            Wellness Blog
+                        </a>
+                        <a href="contact.html">
+                            <i class="fas fa-chevron-right"></i>
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="footer-column">
+                    <h4>Product Categories</h4>
+                    <div class="footer-links">
+                        <a href="#teas">
+                            <i class="fas fa-chevron-right"></i>
+                            Herbal Teas
+                        </a>
+                        <a href="#tinctures">
+                            <i class="fas fa-chevron-right"></i>
+                            Tinctures & Extracts
+                        </a>
+                        <a href="#capsules">
+                            <i class="fas fa-chevron-right"></i>
+                            Capsules & Supplements
+                        </a>
+                        <a href="#skincare">
+                            <i class="fas fa-chevron-right"></i>
+                            Natural Skincare
+                        </a>
+                        <a href="#merchandise">
+                            <i class="fas fa-chevron-right"></i>
+                            Wellness Merchandise
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact & Social -->
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <span>+27 71 533 6706</span>
+                                <span>+27 64 502 8037</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@godownherbs.co.za</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 8AM-6PM</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>South Africa</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-section">
+                        <h4>Follow Our Journey</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link youtube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="social-link pinterest">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Go Down Herbs (PTY) LTD. All rights reserved. | Nurturing wellness naturally</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Shipping Policy</a>
+                        <a href="#">Returns & Refunds</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal content will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>
+                <i class="fas fa-shopping-basket"></i>
+                Your Wellness Cart
+            </h3>
+            <button class="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be loaded here by JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">R0.00</span>
+                </div>
+                <div class="shipping-note">
+                    <i class="fas fa-truck"></i>
+                    Free shipping on orders over R500
+                </div>
+            </div>
+            <div class="cart-actions">
+                <button class="btn btn-outline view-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    View Full Cart
+                </button>
+                <button class="btn btn-primary checkout-btn">
+                    <i class="fas fa-lock"></i>
+                    Secure Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/shop.js"></script>
 </body>
 </html>
