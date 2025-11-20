@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop - The Go Down Herbs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
@@ -12,7 +13,7 @@
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
-<body>
+  <body>
   <!-- Sticky Header -->
   <header class="header">
     <div class="container">
@@ -90,27 +91,134 @@
         <p class="page-subtitle">Discover our range of herbal beverages, health products, and merchandise</p>
       </section>
 
-      <!-- Category Filter -->
-      <section class="filter-section">
-        <div class="filter-container">
-          <label for="category-filter" class="filter-label">Filter by Category</label>
-          <select id="category-filter" class="category-filter">
-            <option value="all">All Products</option>
-            <option value="Beverages">Beverages</option>
-            <option value="Merchandise">Merchandise</option>
-            <option value="Health Products">Health Products</option>
+      <!-- Shop Toolbar -->
+      <div class="shop-toolbar">
+        <div class="search-box">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="searchInput" placeholder="Search products...">
+        </div>
+        
+        <div class="sort-options">
+          <label for="sortSelect">Sort by:</label>
+          <select id="sortSelect" class="sort-select">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">Name: A to Z</option>
+            <option value="rating">Highest Rated</option>
+            <option value="newest">Newest First</option>
           </select>
         </div>
-      </section>
-
-      <!-- Products Grid -->
-      <section class="products-section">
-        <div class="products-grid" id="productsGrid">
-          <!-- Products will be populated by JavaScript -->
+        
+        <div class="view-options">
+          <button class="view-btn grid-view active" data-view="grid">
+            <i class="fas fa-th"></i>
+          </button>
+          <button class="view-btn list-view" data-view="list">
+            <i class="fas fa-list"></i>
+          </button>
         </div>
-      </section>
+      </div>
+
+      <!-- Results Count -->
+      <div class="results-count" id="resultsCount">Showing 12 of 24 products</div>
+
+      <!-- Shop Content -->
+      <div class="shop-content">
+        <!-- Filter Sidebar -->
+        <aside class="filter-sidebar">
+          <div class="filter-group">
+            <h3 class="filter-title">Categories</h3>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="checkbox" name="category" value="all" checked> All Products
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="category" value="Beverages"> Beverages
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="category" value="Merchandise"> Merchandise
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="category" value="Health Products"> Health Products
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <h3 class="filter-title">Price Range</h3>
+            <div class="price-range">
+              <div class="price-inputs">
+                <input type="number" id="minPrice" placeholder="Min" min="0">
+                <input type="number" id="maxPrice" placeholder="Max" min="0">
+              </div>
+              <button class="btn btn-outline" id="applyPriceFilter">Apply</button>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <h3 class="filter-title">Rating</h3>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="radio" name="rating" value="4"> 4 Stars & Up
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="rating" value="3"> 3 Stars & Up
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="rating" value="2"> 2 Stars & Up
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="rating" value="1"> 1 Star & Up
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="rating" value="0" checked> All Ratings
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <h3 class="filter-title">Availability</h3>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="checkbox" name="availability" value="in-stock" checked> In Stock
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="availability" value="out-of-stock"> Out of Stock
+              </label>
+            </div>
+          </div>
+          
+          <button class="btn btn-primary" id="applyFilters">Apply Filters</button>
+          <button class="btn btn-outline" id="resetFilters">Reset Filters</button>
+        </aside>
+
+        <!-- Products Container -->
+        <div class="products-container">
+          <!-- Products Grid/List -->
+          <div class="products-grid" id="productsGrid">
+            <!-- Products will be populated by JavaScript -->
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination" id="pagination">
+            <!-- Pagination will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
     </div>
   </main>
+
+  <!-- Compare Bar -->
+  <div class="compare-bar" id="compareBar">
+    <div class="compare-items" id="compareItems">
+      <!-- Compare items will be added here -->
+    </div>
+    <div class="compare-actions">
+      <button class="btn btn-outline" id="clearCompare">Clear All</button>
+      <button class="btn btn-primary" id="compareProducts">Compare Products</button>
+    </div>
+  </div>
 
   <!-- Product Preview Modal -->
   <div id="productModal" class="product-modal">
@@ -263,6 +371,7 @@
       </div>
     </div>
   </footer>
+
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>
