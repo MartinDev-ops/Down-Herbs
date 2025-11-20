@@ -713,6 +713,28 @@ function showMessage(message, type = 'info') {
 
 // Setup event listeners
 function setupEventListeners() {
+    // Filter toggle (mobile)
+    const filterToggle = document.getElementById('filterToggle');
+    const shopSidebar = document.getElementById('shopSidebar');
+
+    if (filterToggle && shopSidebar) {
+        filterToggle.addEventListener('click', function() {
+            shopSidebar.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    }
+
+    // Collapsible filter sections
+    document.querySelectorAll('.filter-title').forEach(title => {
+        title.addEventListener('click', function() {
+            this.classList.toggle('collapsed');
+            const options = this.nextElementSibling;
+            if (options) {
+                options.style.display = options.style.display === 'none' ? 'flex' : 'none';
+            }
+        });
+    });
+
     // Search
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {

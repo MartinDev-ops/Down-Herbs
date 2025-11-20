@@ -5,15 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop - The Go Down Herbs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/shop.css">
-  <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-  <body>
+<body>
   <!-- Sticky Header -->
   <header class="header">
     <div class="container">
@@ -31,7 +30,7 @@
             Home
             <span class="nav-underline"></span>
           </a>
-          <a class="nav-link" href="shop.html">
+          <a class="nav-link active" href="shop.html">
             Shop
             <span class="nav-underline"></span>
           </a>
@@ -51,14 +50,14 @@
         
         <!-- Cart and Mobile Menu Button -->
         <div class="header-buttons">
-          <a href="cart.html" class="cart-link">
-            <button class="icon-button cart-button">
+          <a href="cart.html">
+            <button class="icon-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
                 <circle cx="8" cy="21" r="1"></circle>
                 <circle cx="19" cy="21" r="1"></circle>
                 <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
               </svg>
-              <span class="cart-count" id="cartCount">0</span>
+              <span id="cartCount" class="cart-count">0</span>
             </button>
           </a>
           <button class="mobile-menu-btn icon-button">
@@ -82,56 +81,33 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- Shop Page Content -->
-  <main class="shop-page">
+  <!-- Shop Page -->
+  <div class="shop-page">
     <div class="container">
-      <!-- Page Header -->
-      <section class="shop-header">
-        <h1 class="page-title">Shop Our Products</h1>
-        <p class="page-subtitle">Discover our range of herbal beverages, health products, and merchandise</p>
-      </section>
-
-      <!-- Shop Toolbar -->
-      <div class="shop-toolbar">
-        <div class="search-box">
-          <i class="fas fa-search search-icon"></i>
-          <input type="text" id="searchInput" placeholder="Search products...">
-        </div>
-        
-        <div class="sort-options">
-          <label for="sortSelect">Sort by:</label>
-          <select id="sortSelect" class="sort-select">
-            <option value="featured">Featured</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-            <option value="name">Name: A to Z</option>
-            <option value="rating">Highest Rated</option>
-            <option value="newest">Newest First</option>
-          </select>
-        </div>
-        
-        <div class="view-options">
-          <button class="view-btn grid-view active" data-view="grid">
-            <i class="fas fa-th"></i>
-          </button>
-          <button class="view-btn list-view" data-view="list">
-            <i class="fas fa-list"></i>
-          </button>
-        </div>
+      <div class="shop-header">
+        <h1 class="shop-title">Our Products</h1>
+        <p class="shop-subtitle">Discover our range of natural herbal products for wellness and health.</p>
       </div>
 
-      <!-- Results Count -->
-      <div class="results-count" id="resultsCount">Showing 12 of 24 products</div>
-
-      <!-- Shop Content -->
       <div class="shop-content">
-        <!-- Filter Sidebar -->
-        <aside class="filter-sidebar">
-          <div class="filter-group">
-            <h3 class="filter-title">Categories</h3>
+        <!-- Filter Toggle Button (Mobile) -->
+        <button class="filter-toggle" id="filterToggle">
+          <i class="fas fa-filter"></i>
+          <span>Filters</span>
+        </button>
+
+        <!-- Sidebar Filters -->
+        <aside class="shop-sidebar" id="shopSidebar">
+          <div class="filter-section">
+            <h3 class="filter-title">Search</h3>
+            <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+          </div>
+
+          <div class="filter-section">
+            <h3 class="filter-title">Category</h3>
             <div class="filter-options">
               <label class="filter-option">
-                <input type="checkbox" name="category" value="all" checked> All Products
+                <input type="checkbox" name="category" value="all" checked> All Categories
               </label>
               <label class="filter-option">
                 <input type="checkbox" name="category" value="Beverages"> Beverages
@@ -144,40 +120,26 @@
               </label>
             </div>
           </div>
-          
-          <div class="filter-group">
-            <h3 class="filter-title">Price Range</h3>
-            <div class="price-range">
-              <div class="price-inputs">
-                <input type="number" id="minPrice" placeholder="Min" min="0">
-                <input type="number" id="maxPrice" placeholder="Max" min="0">
-              </div>
-              <button class="btn btn-outline" id="applyPriceFilter">Apply</button>
-            </div>
-          </div>
-          
-          <div class="filter-group">
+
+          <div class="filter-section">
             <h3 class="filter-title">Rating</h3>
             <div class="filter-options">
               <label class="filter-option">
-                <input type="radio" name="rating" value="4"> 4 Stars & Up
-              </label>
-              <label class="filter-option">
-                <input type="radio" name="rating" value="3"> 3 Stars & Up
-              </label>
-              <label class="filter-option">
-                <input type="radio" name="rating" value="2"> 2 Stars & Up
-              </label>
-              <label class="filter-option">
-                <input type="radio" name="rating" value="1"> 1 Star & Up
-              </label>
-              <label class="filter-option">
                 <input type="radio" name="rating" value="0" checked> All Ratings
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="rating" value="4"> 4+ Stars
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="rating" value="3"> 3+ Stars
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="rating" value="2"> 2+ Stars
               </label>
             </div>
           </div>
-          
-          <div class="filter-group">
+
+          <div class="filter-section">
             <h3 class="filter-title">Availability</h3>
             <div class="filter-options">
               <label class="filter-option">
@@ -188,114 +150,101 @@
               </label>
             </div>
           </div>
-          
-          <button class="btn btn-primary" id="applyFilters">Apply Filters</button>
-          <button class="btn btn-outline" id="resetFilters">Reset Filters</button>
+
+          <div class="filter-section">
+            <h3 class="filter-title">Price Range</h3>
+            <div class="price-filter">
+              <input type="number" id="minPrice" placeholder="Min" class="price-input">
+              <span>to</span>
+              <input type="number" id="maxPrice" placeholder="Max" class="price-input">
+              <button id="applyPriceFilter" class="btn btn-small">Apply</button>
+            </div>
+          </div>
+
+          <div class="filter-actions">
+            <button id="applyFilters" class="btn btn-primary">Apply Filters</button>
+            <button id="resetFilters" class="btn btn-secondary">Reset All</button>
+          </div>
         </aside>
 
-        <!-- Products Container -->
-        <div class="products-container">
-          <!-- Products Grid/List -->
-          <div class="products-grid" id="productsGrid">
-            <!-- Products will be populated by JavaScript -->
+        <!-- Main Content -->
+        <main class="shop-main">
+          <!-- Toolbar -->
+          <div class="shop-toolbar">
+            <div class="results-info">
+              <span id="resultsCount">Showing 1-9 of 10 products</span>
+            </div>
+            <div class="toolbar-controls">
+              <div class="sort-control">
+                <label for="sortSelect">Sort by:</label>
+                <select id="sortSelect" class="sort-select">
+                  <option value="featured">Featured</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="name">Name</option>
+                  <option value="rating">Rating</option>
+                  <option value="newest">Newest</option>
+                </select>
+              </div>
+              <div class="view-controls">
+                <button class="view-btn grid-view active" data-view="grid">
+                  <i class="fas fa-th"></i>
+                </button>
+                <button class="view-btn list-view" data-view="list">
+                  <i class="fas fa-list"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Products Grid -->
+          <div id="productsGrid" class="products-grid">
+            <!-- Products will be rendered here by JavaScript -->
           </div>
 
           <!-- Pagination -->
-          <div class="pagination" id="pagination">
-            <!-- Pagination will be populated by JavaScript -->
+          <div id="pagination" class="pagination">
+            <!-- Pagination will be rendered here by JavaScript -->
           </div>
-        </div>
+        </main>
       </div>
-    </div>
-  </main>
-
-  <!-- Compare Bar -->
-  <div class="compare-bar" id="compareBar">
-    <div class="compare-items" id="compareItems">
-      <!-- Compare items will be added here -->
-    </div>
-    <div class="compare-actions">
-      <button class="btn btn-outline" id="clearCompare">Clear All</button>
-      <button class="btn btn-primary" id="compareProducts">Compare Products</button>
     </div>
   </div>
 
-  <!-- Product Preview Modal -->
+  <!-- Compare Bar -->
+  <div id="compareBar" class="compare-bar">
+    <div class="container">
+      <div class="compare-bar-content">
+        <div id="compareItems" class="compare-items">
+          <!-- Compared products will be shown here -->
+        </div>
+        <div class="compare-actions">
+          <button id="clearCompare" class="btn btn-small">Clear All</button>
+          <button id="compareProducts" class="btn btn-primary">Compare Products</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Modal -->
   <div id="productModal" class="product-modal">
     <div class="modal-content">
-      <button class="modal-close" id="modalClose">&times;</button>
+      <button id="modalClose" class="modal-close">
+        <i class="fas fa-times"></i>
+      </button>
       <div class="modal-body">
         <div class="modal-image">
-          <img id="modalProductImage" src="" alt="" class="product-modal-image">
+          <img id="modalProductImage" src="" alt="" class="modal-product-image">
         </div>
         <div class="modal-info">
           <h2 id="modalProductName" class="modal-product-name"></h2>
           <p id="modalProductDescription" class="modal-product-description"></p>
-          <div class="modal-details">
-            <span id="modalProductCategory" class="modal-category"></span>
-            <span id="modalProductQuantity" class="modal-quantity"></span>
+          <div class="modal-product-details">
+            <span id="modalProductCategory" class="modal-product-category"></span>
+            <span id="modalProductQuantity" class="modal-product-quantity"></span>
           </div>
-          <div class="modal-price" id="modalProductPrice"></div>
-          <button class="btn btn-primary btn-large add-to-cart-btn" id="addToCartBtn">
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- WhatsApp Widget -->
-  <div id="wa" class="wa-widget">
-    <div class="wa-btn-popup">
-      <div class="wa-btn-txt">
-        <span>Need Help? <strong>Chat with us</strong></span>
-      </div>
-      <div class="wa-btn-icon"></div>
-    </div>
-
-    <div class="wa-popup-chat">
-      <div class="wa-popup-heading">
-        <div class="wa-popup-title">Start a Conversation</div>
-        <div class="wa-popup-intro">
-          Hi! Click one of our members below to chat on <strong>WhatsApp</strong>
-        </div>
-      </div>
-
-      <div class="wa-popup-content">
-        <div class="wa-popup-notice">The team typically replies in a few minutes.</div>
-
-        <div class="wa-popup-list">
-          <!-- Member 1 -->
-          <div class="wa-popup-item">
-            <a target="_blank"
-               href="https://api.whatsapp.com/send?phone=27715336706&text=Hello!!!"
-               rel="nofollow noopener noreferrer"
-               class="wa-contact">
-              <div class="wa-avatar">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Dr T/r Bubudza">
-              </div>
-              <div class="wa-contact-info">
-                <div class="wa-member-name">Dr T/r Bubudza</div>
-                <div class="wa-member-duty">Herbal Specialist</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Member 2 -->
-          <div class="wa-popup-item">
-            <a target="_blank"
-               href="https://api.whatsapp.com/send?phone=27799280149"
-               rel="nofollow noopener noreferrer"
-               class="wa-contact">
-              <div class="wa-avatar">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Assistant Phumudzo">
-              </div>
-              <div class="wa-contact-info">
-                <div class="wa-member-name">Assistant Phumudzo</div>
-                <div class="wa-member-duty">Customer Support</div>
-              </div>
-            </a>
-          </div>
+          <div id="modalProductPrice" class="modal-product-price"></div>
+          <button id="addToCartBtn" class="btn btn-primary">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -372,10 +321,7 @@
     </div>
   </footer>
 
-
-  <!-- JavaScript -->
   <script src="js/main.js"></script>
-  <script src="js/cart.js"></script>
   <script src="js/shop.js"></script>
 </body>
 </html>
