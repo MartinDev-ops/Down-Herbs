@@ -1,245 +1,229 @@
 // Enhanced Product Data with Herbal Theme
 const products = [
+    // Herbal Drinks
     {
         id: 1,
-        name: "Organic Chamomile Calming Tea",
-        category: "teas",
-        price: 89.99,
-        oldPrice: 99.99,
+        name: "PRODUCT NO. 1 GO DOWN HERB (NDAA)",
+        category: "herbal-drinks",
+        price: 150.00,
+        oldPrice: null,
         rating: 4.5,
         reviews: 128,
-        description: "Soothing organic chamomile flowers hand-picked at peak freshness for deep relaxation and restful sleep.",
-        image: "https://images.unsplash.com/photo-1597481499750-3e11b3df8ded?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        description: "Premium herbal blend for natural wellness and vitality. Made with traditional herbs and modern extraction methods.",
+        image: "images/product/Product1.jpg",
         inStock: true,
         featured: true,
         badge: "Best Seller",
-        benefits: ["sleep", "stress"],
-        ingredients: ["Organic Chamomile", "Lavender", "Lemon Balm"],
-        usage: "Steep 1-2 teaspoons in hot water for 5-7 minutes",
-        origin: "Egyptian Fields",
+        benefits: ["energy", "immunity"],
+        ingredients: ["Traditional Herbs", "Natural Extracts"],
+        usage: "Take as directed for optimal wellness",
+        origin: "South African Herbs",
         organic: true,
-        tags: ["calming", "sleep", "relaxation"]
+        tags: ["herbal", "wellness", "natural"]
     },
     {
         id: 2,
-        name: "Immune Shield Tincture",
-        category: "tinctures",
-        price: 149.99,
+        name: "PRODUCT NO. 2 UNDERGROUND HERB (NDAA)",
+        category: "herbal-drinks",
+        price: 200.00,
         oldPrice: null,
         rating: 4.8,
         reviews: 89,
-        description: "Potent herbal extract with echinacea, elderberry, and astragalus to fortify your natural defenses.",
-        image: "https://images.unsplash.com/photo-1585435557343-3b092031d5ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        description: "Potent underground herb extract with traditional healing properties and modern wellness benefits.",
+        image: "images/product/Product1.jpg",
         inStock: true,
         featured: true,
-        badge: "New",
+        badge: "Popular",
         benefits: ["immunity", "energy"],
-        ingredients: ["Echinacea", "Elderberry", "Astragalus", "Ginger Root"],
-        usage: "Take 1-2 droppers under tongue or in water daily",
-        origin: "North American Forests",
+        ingredients: ["Underground Herbs", "Natural Extracts"],
+        usage: "Consume as needed for natural support",
+        origin: "African Traditional",
         organic: true,
-        tags: ["immunity", "wellness", "prevention"]
+        tags: ["traditional", "potent", "wellness"]
     },
     {
         id: 3,
-        name: "Stress Relief Herbal Capsules",
-        category: "capsules",
-        price: 119.99,
-        oldPrice: 139.99,
-        rating: 4.3,
+        name: "PRODUCT NO. 3 SILENT HERB",
+        category: "herbal-drinks",
+        price: 250.00,
+        oldPrice: null,
+        rating: 4.7,
         reviews: 204,
-        description: "Advanced stress support formula with ashwagandha and rhodiola to help manage daily stress naturally.",
-        image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        description: "Gentle yet effective herbal formulation for quiet strength and inner balance. Perfect for daily wellness.",
+        image: "images/product/silentHerb.jpg",
         inStock: true,
         featured: false,
-        badge: "Sale",
-        benefits: ["stress", "energy"],
-        ingredients: ["Ashwagandha", "Rhodiola", "L-Theanine", "B Vitamins"],
-        usage: "Take 2 capsules daily with meals",
-        origin: "Indian & Siberian Regions",
+        badge: "Premium",
+        benefits: ["stress", "balance"],
+        ingredients: ["Silent Herbs", "Calming Extracts"],
+        usage: "Use regularly for maintained wellness",
+        origin: "Traditional Formulation",
         organic: true,
-        tags: ["stress", "adaptogen", "balance"]
+        tags: ["gentle", "balance", "wellness"]
     },
     {
         id: 4,
-        name: "Deep Cleanse Detox Tea",
-        category: "teas",
-        price: 79.99,
+        name: "PRODUCT NO. 4 RUNNING STOMACH",
+        category: "herbal-drinks",
+        price: 50.00,
         oldPrice: null,
         rating: 4.2,
         reviews: 95,
-        description: "Cleansing herbal blend with dandelion, milk thistle, and burdock root to support natural detoxification.",
-        image: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        description: "Fast-acting herbal solution for digestive comfort and stomach wellness. Quick relief when you need it.",
+        image: "images/product/cleaner.png",
         inStock: true,
         featured: false,
-        badge: "Detox",
-        benefits: ["digestion", "skin"],
-        ingredients: ["Dandelion Root", "Milk Thistle", "Burdock Root", "Nettle Leaf"],
-        usage: "Steep 1 tablespoon in hot water for 10 minutes",
-        origin: "European Meadows",
+        badge: "Fast Relief",
+        benefits: ["digestion"],
+        ingredients: ["Digestive Herbs", "Soothing Extracts"],
+        usage: "Take as needed for digestive support",
+        origin: "Traditional Remedy",
         organic: true,
-        tags: ["detox", "cleanse", "liver"]
+        tags: ["digestive", "fast", "relief"]
     },
     {
         id: 5,
-        name: "Artisan Herbal Ceramic Mug",
+        name: "PRODUCT NO. 5 GO DOWN MPESU",
+        category: "herbal-drinks",
+        price: 50.00,
+        oldPrice: null,
+        rating: 4.3,
+        reviews: 142,
+        description: "Traditional Mpesu herbal blend for overall wellness and natural vitality support.",
+        image: "images/product/mpesu.png",
+        inStock: true,
+        featured: false,
+        badge: "Traditional",
+        benefits: ["energy", "vitality"],
+        ingredients: ["Mpesu Herbs", "Natural Blends"],
+        usage: "Regular use for maintained vitality",
+        origin: "Traditional African",
+        organic: true,
+        tags: ["traditional", "vitality", "wellness"]
+    },
+    {
+        id: 6,
+        name: "PRODUCT NO. 6 ANOINTED GO DOWN OIL",
+        category: "herbal-drinks",
+        price: 200.00,
+        oldPrice: null,
+        rating: 4.6,
+        reviews: 167,
+        description: "Special anointed herbal oil blend for spiritual and physical wellness. Traditional preparation methods.",
+        image: "images/products/oil.png",
+        inStock: true,
+        featured: true,
+        badge: "Special",
+        benefits: ["spiritual", "wellness"],
+        ingredients: ["Anointed Herbs", "Sacred Oils"],
+        usage: "Use as directed for spiritual practice",
+        origin: "Traditional Sacred",
+        organic: true,
+        tags: ["anointed", "spiritual", "sacred"]
+    },
+    // Bottled Water
+    {
+        id: 7,
+        name: "Pure Spring Water 550ml",
+        category: "water",
+        price: 15.00,
+        oldPrice: null,
+        rating: 4.9,
+        reviews: 256,
+        description: "Crisp, refreshing 550ml spring water bottled at source for maximum purity and freshness.",
+        image: "images/products/blue-refreshment.png",
+        inStock: true,
+        featured: false,
+        badge: "Pure",
+        benefits: ["hydration"],
+        ingredients: ["Natural Spring Water"],
+        usage: "Drink to stay hydrated throughout the day",
+        origin: "Natural Springs",
+        organic: true,
+        tags: ["water", "hydration", "pure"]
+    },
+    {
+        id: 8,
+        name: "Pure Spring Water 1 Litre",
+        category: "water",
+        price: 25.00,
+        oldPrice: null,
+        rating: 4.9,
+        reviews: 189,
+        description: "1 litre of pure spring water, perfect for daily hydration and wellness routines.",
+        image:  "images/products/waters.png",
+        inStock: true,
+        featured: false,
+        badge: "Value",
+        benefits: ["hydration"],
+        ingredients: ["Natural Spring Water"],
+        usage: "Perfect for daily hydration needs",
+        origin: "Natural Springs",
+        organic: true,
+        tags: ["water", "hydration", "1litre"]
+    },
+    // Merchandise
+    {
+        id: 9,
+        name: "Go Down Merchandise Black T-Shirt",
         category: "merchandise",
         price: 199.99,
         oldPrice: 249.99,
         rating: 4.7,
         reviews: 56,
-        description: "Handcrafted ceramic mug with herbal motifs, perfect for enjoying your daily herbal infusions.",
-        image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        description: "Premium cotton t-shirt featuring the Go Down Herbs logo. Comfortable and stylish wellness wear.",
+        image: "images/merch/black-shirt.png" ,
         inStock: true,
         featured: false,
         badge: "Limited",
         benefits: [],
-        ingredients: ["Ceramic", "Food-safe Glaze"],
-        usage: "Microwave and dishwasher safe",
-        origin: "Local Artisan",
-        organic: false,
-        tags: ["merchandise", "tea", "wellness"]
-    },
-    {
-        id: 6,
-        name: "Radiant Skin Herbal Cream",
-        category: "skincare",
-        price: 129.99,
-        oldPrice: null,
-        rating: 4.6,
-        reviews: 167,
-        description: "Nourishing facial cream with calendula, chamomile, and rosehip oil for radiant, hydrated skin.",
-        image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        inStock: false,
-        featured: false,
-        badge: "Out of Stock",
-        benefits: ["skin"],
-        ingredients: ["Calendula", "Chamomile", "Rosehip Oil", "Shea Butter"],
-        usage: "Apply to face and neck morning and evening",
-        origin: "Mediterranean Gardens",
-        organic: true,
-        tags: ["skincare", "moisturizing", "natural"]
-    },
-    {
-        id: 7,
-        name: "Vitality Boost Energy Tea",
-        category: "teas",
-        price: 99.99,
-        oldPrice: 119.99,
-        rating: 4.4,
-        reviews: 142,
-        description: "Natural energy booster with yerba mate, green tea, and ginseng for sustained vitality without crash.",
-        image: "https://images.unsplash.com/photo-1597481499750-3e11b3df8ded?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        inStock: true,
-        featured: true,
-        badge: "Popular",
-        benefits: ["energy", "stress"],
-        ingredients: ["Yerba Mate", "Green Tea", "Ginseng", "Maca Root"],
-        usage: "Steep 1-2 teaspoons in hot water for 3-5 minutes",
-        origin: "South American Highlands",
-        organic: true,
-        tags: ["energy", "focus", "vitality"]
-    },
-    {
-        id: 8,
-        name: "Herbal Hair Growth Shampoo Bar",
-        category: "skincare",
-        price: 69.99,
-        oldPrice: null,
-        rating: 4.1,
-        reviews: 78,
-        description: "Eco-friendly shampoo bar with rosemary, lavender, and tea tree oil for healthy hair and scalp.",
-        image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        inStock: true,
-        featured: false,
-        badge: "Eco",
-        benefits: ["skin"],
-        ingredients: ["Rosemary", "Lavender", "Tea Tree Oil", "Coconut Oil"],
-        usage: "Lather in hands and massage into wet hair",
+        ingredients: ["100% Cotton"],
+        usage: "Machine wash cold, tumble dry low",
         origin: "Local Production",
-        organic: true,
-        tags: ["haircare", "eco", "natural"]
-    },
-    {
-        id: 9,
-        name: "Soothing Digestive Tincture",
-        category: "tinctures",
-        price: 89.99,
-        oldPrice: 109.99,
-        rating: 4.5,
-        reviews: 113,
-        description: "Gentle digestive support with peppermint, ginger, and fennel to soothe stomach discomfort naturally.",
-        image: "https://images.unsplash.com/photo-1585435557343-3b092031d5ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        inStock: true,
-        featured: false,
-        badge: "Digestive",
-        benefits: ["digestion"],
-        ingredients: ["Peppermint", "Ginger", "Fennel", "Chamomile"],
-        usage: "Take 1 dropper before or after meals as needed",
-        origin: "European Herb Gardens",
-        organic: true,
-        tags: ["digestion", "soothing", "comfort"]
-    },
-    {
-        id: 10,
-        name: "Deep Sleep Support Capsules",
-        category: "capsules",
-        price: 109.99,
-        oldPrice: null,
-        rating: 4.7,
-        reviews: 198,
-        description: "Natural sleep aid with valerian root, passionflower, and melatonin for restful, rejuvenating sleep.",
-        image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        inStock: true,
-        featured: true,
-        badge: "Staff Pick",
-        benefits: ["sleep"],
-        ingredients: ["Valerian Root", "Passionflower", "Melatonin", "Magnesium"],
-        usage: "Take 2 capsules 30 minutes before bedtime",
-        origin: "Global Sourcing",
-        organic: true,
-        tags: ["sleep", "relaxation", "rest"]
-    },
-    {
-        id: 11,
-        name: "Comprehensive Herbal First Aid Kit",
-        category: "merchandise",
-        price: 299.99,
-        oldPrice: 349.99,
-        rating: 4.9,
-        reviews: 45,
-        description: "Complete natural first aid kit with herbal remedies for common ailments and emergency situations.",
-        image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        inStock: true,
-        featured: true,
-        badge: "Essential",
-        benefits: ["immunity", "stress", "digestion"],
-        ingredients: ["Various Herbal Extracts", "Essential Oils", "Natural Bandages"],
-        usage: "Various applications for different situations",
-        origin: "Curated Collection",
-        organic: true,
-        tags: ["firstaid", "emergency", "wellness"]
-    },
-    {
-        id: 12,
-        name: "Insulated Herbal Tea Tumbler",
-        category: "merchandise",
-        price: 149.99,
-        oldPrice: null,
-        rating: 4.5,
-        reviews: 67,
-        description: "Premium stainless steel tumbler to keep your herbal teas and infusions at perfect temperature all day.",
-        image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        inStock: true,
-        featured: false,
-        badge: "New",
-        benefits: [],
-        ingredients: ["Stainless Steel", "BPA-Free Lid"],
-        usage: "Hand wash recommended",
-        origin: "Sustainable Manufacturing",
         organic: false,
-        tags: ["merchandise", "tea", "eco"]
+        tags: ["tshirt", "merchandise", "clothing"]
+    },
+   {
+        id: 10,
+        name: "Go Down Merchandise White T-Shirt",
+        category: "merchandise",
+        price: 199.99,
+        oldPrice: 249.99,
+        rating: 4.7,
+        reviews: 56,
+        description: "Premium cotton t-shirt featuring the Go Down Herbs logo. Comfortable and stylish wellness wear.",
+        image: "images/merch/white-shirt.png",
+        inStock: true,
+        featured: false,
+        badge: "Limited",
+        benefits: [],
+        ingredients: ["100% Cotton"],
+        usage: "Machine wash cold, tumble dry low",
+        origin: "Local Production",
+        organic: false,
+        tags: ["tshirt", "merchandise", "clothing"]
+    },
+     {
+        id: 11,
+        name: "Go Down Merchandise Green T-Shirt",
+        category: "merchandise",
+        price: 199.99,
+        oldPrice: 249.99,
+        rating: 4.7,
+        reviews: 56,
+        description: "Premium cotton t-shirt featuring the Go Down Herbs logo. Comfortable and stylish wellness wear.",
+        image: "images/merch/green-shirt.png",
+        inStock: true,
+        featured: false,
+        badge: "Limited",
+        benefits: [],
+        ingredients: ["100% Cotton"],
+        usage: "Machine wash cold, tumble dry low",
+        origin: "Local Production",
+        organic: false,
+        tags: ["tshirt", "merchandise", "clothing"]
     }
+    
 ];
 
 // DOM Elements
@@ -264,16 +248,13 @@ const cartItems = document.getElementById('cartItems');
 const cartSubtotal = document.getElementById('cartSubtotal');
 const cartCount = document.querySelector('.cart-count');
 const wishlistCount = document.querySelector('.wishlist-count');
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const mobileMenu = document.getElementById('mobileMenu');
-const closeMenu = document.querySelector('.close-menu');
 const backToTop = document.getElementById('backToTop');
 const loadingScreen = document.getElementById('loadingScreen');
 const newsletterForm = document.getElementById('newsletterForm');
 
 // State Variables
 let currentPage = 1;
-const productsPerPage = 9;
+const productsPerPage = 11;
 let filteredProducts = [...products];
 let currentView = 'grid';
 let cart = JSON.parse(localStorage.getItem('herbalCart')) || [];
@@ -291,14 +272,15 @@ let filters = {
 function initShop() {
     // Simulate loading
     setTimeout(() => {
-        loadingScreen.classList.add('loaded');
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-        }, 500);
+        if (loadingScreen) {
+            loadingScreen.classList.add('loaded');
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }
     }, 1500);
 
     renderProducts();
-    renderPagination();
     updateCartUI();
     updateWishlistUI();
     attachEventListeners();
@@ -308,24 +290,20 @@ function initShop() {
 // Attach event listeners
 function attachEventListeners() {
     // Search and filters
-    searchInput.addEventListener('input', handleSearch);
-    clearFiltersBtn.addEventListener('click', resetFilters);
-    resetSearchBtn.addEventListener('click', resetFilters);
+    if (searchInput) searchInput.addEventListener('input', handleSearch);
+    if (clearFiltersBtn) clearFiltersBtn.addEventListener('click', resetFilters);
+    if (resetSearchBtn) resetSearchBtn.addEventListener('click', resetFilters);
     
     // Sort and view
-    sortSelect.addEventListener('change', handleSortChange);
+    if (sortSelect) sortSelect.addEventListener('change', handleSortChange);
     viewButtons.forEach(btn => {
         btn.addEventListener('click', handleViewChange);
     });
     
     // Modal and cart
-    closeModal.addEventListener('click', closeQuickView);
-    cartBtn.addEventListener('click', toggleCart);
-    closeCart.addEventListener('click', toggleCart);
-    
-    // Mobile menu
-    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    closeMenu.addEventListener('click', toggleMobileMenu);
+    if (closeModal) closeModal.addEventListener('click', closeQuickView);
+    if (cartBtn) cartBtn.addEventListener('click', toggleCart);
+    if (closeCart) closeCart.addEventListener('click', toggleCart);
     
     // Filter changes
     document.querySelectorAll('input[name="category"]').forEach(input => {
@@ -334,10 +312,6 @@ function attachEventListeners() {
     
     document.querySelectorAll('input[name="rating"]').forEach(input => {
         input.addEventListener('change', handleRatingChange);
-    });
-    
-    document.querySelectorAll('input[name="benefit"]').forEach(input => {
-        input.addEventListener('change', handleBenefitChange);
     });
     
     document.querySelectorAll('input[name="availability"]').forEach(input => {
@@ -350,10 +324,10 @@ function attachEventListeners() {
     const rangeMin = document.querySelector('.range-min');
     const rangeMax = document.querySelector('.range-max');
     
-    minPriceInput.addEventListener('change', handlePriceChange);
-    maxPriceInput.addEventListener('change', handlePriceChange);
-    rangeMin.addEventListener('input', handleRangeChange);
-    rangeMax.addEventListener('input', handleRangeChange);
+    if (minPriceInput) minPriceInput.addEventListener('change', handlePriceChange);
+    if (maxPriceInput) maxPriceInput.addEventListener('change', handlePriceChange);
+    if (rangeMin) rangeMin.addEventListener('input', handleRangeChange);
+    if (rangeMax) rangeMax.addEventListener('input', handleRangeChange);
     
     // Quick categories
     document.querySelectorAll('.category-card').forEach(card => {
@@ -361,29 +335,39 @@ function attachEventListeners() {
     });
     
     // Newsletter
-    newsletterForm.addEventListener('submit', handleNewsletterSubmit);
+    if (newsletterForm) newsletterForm.addEventListener('submit', handleNewsletterSubmit);
     
     // Back to top
-    backToTop.addEventListener('click', scrollToTop);
-    window.addEventListener('scroll', handleScroll);
+    if (backToTop) {
+        backToTop.addEventListener('click', scrollToTop);
+        window.addEventListener('scroll', handleScroll);
+    }
     
     // Close modals on outside click
-    quickViewModal.addEventListener('click', (e) => {
-        if (e.target === quickViewModal) closeQuickView();
-    });
+    if (quickViewModal) {
+        quickViewModal.addEventListener('click', (e) => {
+            if (e.target === quickViewModal) closeQuickView();
+        });
+    }
     
-    cartSidebar.addEventListener('click', (e) => {
-        if (e.target === cartSidebar) toggleCart();
-    });
+    if (cartSidebar) {
+        cartSidebar.addEventListener('click', (e) => {
+            if (e.target === cartSidebar) toggleCart();
+        });
+    }
     
     // Filter toggle for mobile
-    filterToggle.addEventListener('click', () => {
-        filtersSidebar.classList.toggle('active');
-    });
+    if (filterToggle) {
+        filterToggle.addEventListener('click', () => {
+            filtersSidebar.classList.toggle('active');
+        });
+    }
 }
 
 // Render products based on current filters and page
 function renderProducts() {
+    if (!productsGrid) return;
+    
     const startIndex = (currentPage - 1) * productsPerPage;
     const endIndex = startIndex + productsPerPage;
     const productsToShow = filteredProducts.slice(startIndex, endIndex);
@@ -461,9 +445,9 @@ function createProductElement(product) {
     const addToCartBtn = productCard.querySelector('.add-to-cart');
     const wishlistBtn = productCard.querySelector('.wishlist-btn');
     
-    quickViewBtn.addEventListener('click', () => openQuickView(product.id));
-    addToCartBtn.addEventListener('click', () => addToCart(product.id));
-    wishlistBtn.addEventListener('click', () => toggleWishlist(product.id));
+    if (quickViewBtn) quickViewBtn.addEventListener('click', () => openQuickView(product.id));
+    if (addToCartBtn) addToCartBtn.addEventListener('click', () => addToCart(product.id));
+    if (wishlistBtn) wishlistBtn.addEventListener('click', () => toggleWishlist(product.id));
     
     return productCard;
 }
@@ -492,6 +476,8 @@ function generateStarRating(rating) {
 
 // Update results count
 function updateResultsCount() {
+    if (!resultsCount) return;
+    
     const total = filteredProducts.length;
     const start = (currentPage - 1) * productsPerPage + 1;
     const end = Math.min(currentPage * productsPerPage, total);
@@ -501,6 +487,8 @@ function updateResultsCount() {
 
 // Update active filters display
 function updateActiveFilters() {
+    if (!activeFilters) return;
+    
     activeFilters.innerHTML = '';
     let activeCount = 0;
 
@@ -561,20 +549,6 @@ function updateActiveFilters() {
         activeFilters.appendChild(filterElement);
     }
 
-    // Benefits
-    if (filters.benefits.length > 0) {
-        activeCount++;
-        const filterElement = document.createElement('div');
-        filterElement.className = 'active-filter';
-        filterElement.innerHTML = `
-            Benefits: ${filters.benefits.length} selected
-            <button onclick="removeBenefitFilters()">
-                <i class="fas fa-times"></i>
-            </button>
-        `;
-        activeFilters.appendChild(filterElement);
-    }
-
     // Update active filters count
     document.querySelector('.active-filters-count').textContent = activeCount;
 }
@@ -608,77 +582,6 @@ function removeRatingFilter() {
     filters.rating = 0;
     document.querySelector('input[name="rating"][value="0"]').checked = true;
     applyFilters();
-}
-
-function removeBenefitFilters() {
-    filters.benefits = [];
-    document.querySelectorAll('input[name="benefit"]').forEach(input => {
-        input.checked = false;
-    });
-    applyFilters();
-}
-
-// Render pagination
-function renderPagination() {
-    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-    
-    if (totalPages <= 1) {
-        pagination.innerHTML = '';
-        return;
-    }
-    
-    let paginationHTML = '';
-    
-    // Previous button
-    paginationHTML += `
-        <button class="pagination-btn ${currentPage === 1 ? 'disabled' : ''}" 
-                ${currentPage === 1 ? 'disabled' : ''} 
-                onclick="changePage(${currentPage - 1})">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-    `;
-    
-    // Page numbers
-    for (let i = 1; i <= totalPages; i++) {
-        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
-            paginationHTML += `
-                <button class="pagination-btn ${i === currentPage ? 'active' : ''}" 
-                        onclick="changePage(${i})">
-                    ${i}
-                </button>
-            `;
-        } else if (i === currentPage - 2 || i === currentPage + 2) {
-            paginationHTML += `<span>...</span>`;
-        }
-    }
-    
-    // Next button
-    paginationHTML += `
-        <button class="pagination-btn ${currentPage === totalPages ? 'disabled' : ''}" 
-                ${currentPage === totalPages ? 'disabled' : ''} 
-                onclick="changePage(${currentPage + 1})">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-    `;
-    
-    pagination.innerHTML = paginationHTML;
-}
-
-// Change page
-function changePage(page) {
-    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-    
-    if (page < 1 || page > totalPages) return;
-    
-    currentPage = page;
-    renderProducts();
-    renderPagination();
-    
-    // Scroll to top of products
-    window.scrollTo({
-        top: productsGrid.offsetTop - 100,
-        behavior: 'smooth'
-    });
 }
 
 // Handle search
@@ -721,19 +624,6 @@ function handleCategoryChange(e) {
 // Handle rating changes
 function handleRatingChange(e) {
     filters.rating = parseInt(e.target.value);
-    applyFilters();
-}
-
-// Handle benefit changes
-function handleBenefitChange(e) {
-    const value = e.target.value;
-    
-    if (e.target.checked) {
-        filters.benefits.push(value);
-    } else {
-        filters.benefits = filters.benefits.filter(benefit => benefit !== value);
-    }
-    
     applyFilters();
 }
 
@@ -796,8 +686,10 @@ function updateSliderTrack() {
     const min = filters.priceRange[0];
     const max = filters.priceRange[1];
     const track = document.querySelector('.slider-track');
-    track.style.left = `${(min / 1000) * 100}%`;
-    track.style.right = `${100 - (max / 1000) * 100}%`;
+    if (track) {
+        track.style.left = `${(min / 1000) * 100}%`;
+        track.style.right = `${100 - (max / 1000) * 100}%`;
+    }
 }
 
 // Handle quick category selection
@@ -839,10 +731,6 @@ function applyFilters() {
         const matchesPrice = product.price >= filters.priceRange[0] && 
             product.price <= filters.priceRange[1];
         
-        // Benefits filter
-        const matchesBenefits = filters.benefits.length === 0 ||
-            filters.benefits.some(benefit => product.benefits.includes(benefit));
-        
         // Availability filter
         const inStockSelected = filters.availability.includes('in-stock');
         const outOfStockSelected = filters.availability.includes('out-of-stock');
@@ -856,12 +744,11 @@ function applyFilters() {
             matchesAvailability = !product.inStock;
         }
         
-        return matchesSearch && matchesCategory && matchesRating && matchesPrice && matchesBenefits && matchesAvailability;
+        return matchesSearch && matchesCategory && matchesRating && matchesPrice && matchesAvailability;
     });
     
     currentPage = 1;
     renderProducts();
-    renderPagination();
     updateActiveFilters();
 }
 
@@ -878,14 +765,11 @@ function resetFilters() {
     };
     
     // Reset UI elements
-    searchInput.value = '';
+    if (searchInput) searchInput.value = '';
     document.querySelectorAll('input[name="category"]').forEach(input => {
         input.checked = input.value === 'all';
     });
     document.querySelector('input[name="rating"][value="0"]').checked = true;
-    document.querySelectorAll('input[name="benefit"]').forEach(input => {
-        input.checked = false;
-    });
     document.querySelectorAll('input[name="availability"]').forEach(input => {
         input.checked = input.value === 'in-stock';
     });
@@ -936,7 +820,6 @@ function handleSortChange() {
     
     currentPage = 1;
     renderProducts();
-    renderPagination();
 }
 
 // Handle view change
@@ -967,12 +850,6 @@ function openQuickView(productId) {
     const stars = generateStarRating(product.rating);
     const oldPrice = product.oldPrice ? 
         `<span class="product-old-price">R${product.oldPrice.toFixed(2)}</span>` : '';
-    const benefitsHTML = product.benefits.map(benefit => 
-        `<span class="benefit-tag">${getBenefitName(benefit)}</span>`
-    ).join('');
-    const tagsHTML = product.tags.map(tag => 
-        `<span class="product-tag">#${tag}</span>`
-    ).join('');
     
     modalBody.innerHTML = `
         <div class="quick-view-content">
@@ -1001,13 +878,6 @@ function openQuickView(productId) {
                 
                 <p class="product-description">${product.description}</p>
                 
-                <div class="product-benefits">
-                    <h4>Wellness Benefits</h4>
-                    <div class="benefits-list">
-                        ${benefitsHTML}
-                    </div>
-                </div>
-                
                 <div class="product-info">
                     <div class="info-section">
                         <h5><i class="fas fa-list"></i> Ingredients</h5>
@@ -1017,10 +887,6 @@ function openQuickView(productId) {
                         <h5><i class="fas fa-info-circle"></i> Usage</h5>
                         <p>${product.usage}</p>
                     </div>
-                </div>
-                
-                <div class="product-tags">
-                    ${tagsHTML}
                 </div>
                 
                 <div class="add-to-cart-section">
@@ -1078,19 +944,6 @@ function openQuickView(productId) {
     document.body.style.overflow = 'hidden';
 }
 
-// Get benefit display name
-function getBenefitName(benefit) {
-    const benefitNames = {
-        'sleep': 'Sleep Support',
-        'energy': 'Energy Boost',
-        'immunity': 'Immune Support',
-        'digestion': 'Digestive Health',
-        'stress': 'Stress Relief',
-        'skin': 'Skin Health'
-    };
-    return benefitNames[benefit] || benefit;
-}
-
 // Close quick view modal
 function closeQuickView() {
     quickViewModal.classList.remove('active');
@@ -1125,65 +978,67 @@ function addToCart(productId, quantity = 1) {
 function updateCartUI() {
     // Update cart count
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-    cartCount.textContent = totalItems;
+    if (cartCount) cartCount.textContent = totalItems;
     
-    // Update cart sidebar
-    cartItems.innerHTML = '';
-    
-    if (cart.length === 0) {
-        cartItems.innerHTML = `
-            <div class="empty-cart">
-                <i class="fas fa-shopping-basket"></i>
-                <h4>Your wellness cart is empty</h4>
-                <p>Add some natural goodness to get started</p>
-                <button class="btn btn-primary" onclick="toggleCart()">Continue Shopping</button>
-            </div>
-        `;
-        cartSubtotal.textContent = 'R0.00';
-        return;
-    }
-    
-    let subtotal = 0;
-    
-    cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        subtotal += itemTotal;
+    // Update cart sidebar if it exists
+    if (cartItems) {
+        cartItems.innerHTML = '';
         
-        const cartItem = document.createElement('div');
-        cartItem.className = 'cart-item';
-        cartItem.innerHTML = `
-            <img src="${item.image}" alt="${item.name}">
-            <div class="cart-item-details">
-                <h4>${item.name}</h4>
-                <div class="cart-item-price">R${item.price.toFixed(2)}</div>
-                <div class="cart-item-quantity">
-                    <button class="quantity-btn minus" data-id="${item.id}"><i class="fas fa-minus"></i></button>
-                    <span>${item.quantity}</span>
-                    <button class="quantity-btn plus" data-id="${item.id}"><i class="fas fa-plus"></i></button>
+        if (cart.length === 0) {
+            cartItems.innerHTML = `
+                <div class="empty-cart">
+                    <i class="fas fa-shopping-basket"></i>
+                    <h4>Your wellness cart is empty</h4>
+                    <p>Add some natural goodness to get started</p>
+                    <button class="btn btn-primary" onclick="toggleCart()">Continue Shopping</button>
                 </div>
-            </div>
-            <button class="remove-item" data-id="${item.id}">
-                <i class="fas fa-times"></i>
-            </button>
-        `;
+            `;
+            if (cartSubtotal) cartSubtotal.textContent = 'R0.00';
+            return;
+        }
         
-        cartItems.appendChild(cartItem);
-    });
-    
-    // Add event listeners for cart items
-    cartItems.querySelectorAll('.quantity-btn.minus').forEach(btn => {
-        btn.addEventListener('click', () => updateCartQuantity(btn.dataset.id, -1));
-    });
-    
-    cartItems.querySelectorAll('.quantity-btn.plus').forEach(btn => {
-        btn.addEventListener('click', () => updateCartQuantity(btn.dataset.id, 1));
-    });
-    
-    cartItems.querySelectorAll('.remove-item').forEach(btn => {
-        btn.addEventListener('click', () => removeFromCart(btn.dataset.id));
-    });
-    
-    cartSubtotal.textContent = `R${subtotal.toFixed(2)}`;
+        let subtotal = 0;
+        
+        cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
+            
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+            cartItem.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <div class="cart-item-details">
+                    <h4>${item.name}</h4>
+                    <div class="cart-item-price">R${item.price.toFixed(2)}</div>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn minus" data-id="${item.id}"><i class="fas fa-minus"></i></button>
+                        <span>${item.quantity}</span>
+                        <button class="quantity-btn plus" data-id="${item.id}"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <button class="remove-item" data-id="${item.id}">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            
+            cartItems.appendChild(cartItem);
+        });
+        
+        // Add event listeners for cart items
+        cartItems.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+            btn.addEventListener('click', () => updateCartQuantity(btn.dataset.id, -1));
+        });
+        
+        cartItems.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+            btn.addEventListener('click', () => updateCartQuantity(btn.dataset.id, 1));
+        });
+        
+        cartItems.querySelectorAll('.remove-item').forEach(btn => {
+            btn.addEventListener('click', () => removeFromCart(btn.dataset.id));
+        });
+        
+        if (cartSubtotal) cartSubtotal.textContent = `R${subtotal.toFixed(2)}`;
+    }
 }
 
 // Update cart quantity
@@ -1214,8 +1069,10 @@ function removeFromCart(productId) {
 
 // Toggle cart sidebar
 function toggleCart() {
-    cartSidebar.classList.toggle('active');
-    document.body.style.overflow = cartSidebar.classList.contains('active') ? 'hidden' : '';
+    if (cartSidebar) {
+        cartSidebar.classList.toggle('active');
+        document.body.style.overflow = cartSidebar.classList.contains('active') ? 'hidden' : '';
+    }
 }
 
 // Toggle wishlist
@@ -1235,13 +1092,9 @@ function toggleWishlist(productId) {
 
 // Update wishlist UI
 function updateWishlistUI() {
-    wishlistCount.textContent = wishlist.length;
-}
-
-// Toggle mobile menu
-function toggleMobileMenu() {
-    mobileMenu.classList.toggle('active');
-    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    if (wishlistCount) {
+        wishlistCount.textContent = wishlist.length;
+    }
 }
 
 // Handle newsletter submission
@@ -1257,18 +1110,22 @@ function handleNewsletterSubmit(e) {
 // Handle scroll
 function handleScroll() {
     // Back to top button
-    if (window.scrollY > 500) {
-        backToTop.classList.add('visible');
-    } else {
-        backToTop.classList.remove('visible');
+    if (backToTop) {
+        if (window.scrollY > 500) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
     }
     
     // Header shadow
     const header = document.querySelector('.header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+    if (header) {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     }
 }
 

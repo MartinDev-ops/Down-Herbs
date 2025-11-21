@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Herbal Haven - Premium Natural Products | The Go Down Herbs</title>
-    <meta name="description" content="Discover premium herbal products for natural wellness. Organic teas, tinctures, supplements and more from The Go Down Herbs.">
+    <title>Shop Herbal Products | The Go Down Herbs</title>
+    <meta name="description" content="Shop our premium herbal drinks, bottled water, and wellness merchandise. Natural remedies for holistic wellness.">
     <link rel="stylesheet" href="css/shop.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -23,75 +23,70 @@
     </div>
 
     <!-- Header -->
-    <!-- Header -->
-<header class="header">
-    <div class="container">
-        <!-- Logo Section - Centered at top -->
-        <div class="logo-section">
-            <a href="index.html" class="logo">
-                <img src="images/godown(logo).png" alt="The Go Down Herbs - Natural Wellness">
-                <span class="logo-text">The Go Down Herbs</span>
-            </a>
-        </div>
-        
-        <!-- Navigation Section -->
-        <div class="nav-section">
-            <nav class="desktop-nav">
-                <a href="index.html" class="nav-link">
-                    <i class="fas fa-home"></i>
-                    Home
+    <header class="header">
+        <div class="container">
+            <!-- Logo Section - Centered at top -->
+            <div class="logo-section">
+                <a href="index.html" class="logo">
+                    <img src="images/godown(logo).png" alt="The Go Down Herbs - Natural Wellness">
+                    <span class="logo-text">The Go Down Herbs</span>
                 </a>
-                <a href="shop.html" class="nav-link active">
-                    <i class="fas fa-leaf"></i>
-                    Shop
-                </a>
-                <a href="about.html" class="nav-link">
-                    <i class="fas fa-heart"></i>
-                    About
-                </a>
-                <a href="stores.html" class="nav-link">
-                    <i class="fas fa-store"></i>
-                    Stores
-                </a>
-                <a href="blog.html" class="nav-link">
-                    <i class="fas fa-book-open"></i>
-                    Blog
-                </a>
-                <a href="contact.html" class="nav-link">
-                    <i class="fas fa-envelope"></i>
-                    Contact
-                </a>
-            </nav>
+            </div>
             
-            <div class="header-actions">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search herbs, products..." id="globalSearch">
+            <!-- Navigation Section -->
+            <div class="nav-section">
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    <a href="shop.html" class="nav-link active">
+                        <i class="fas fa-leaf"></i>
+                        Shop
+                    </a>
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-heart"></i>
+                        About
+                    </a>
+                    <a href="stores.html" class="nav-link">
+                        <i class="fas fa-store"></i>
+                        Stores
+                    </a>
+                    <a href="blog.html" class="nav-link">
+                        <i class="fas fa-book-open"></i>
+                        Blog
+                    </a>
+                    <a href="contact.html" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        Contact
+                    </a>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search herbs, products..." id="globalSearch">
+                    </div>
+                    <button class="action-btn wishlist-btn" title="Wishlist">
+                        <i class="far fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                    </button>
+                    <button class="action-btn cart-btn" title="Cart">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <button class="action-btn user-btn" title="Account">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
-                <button class="action-btn wishlist-btn" title="Wishlist">
-                    <i class="far fa-heart"></i>
-                    <span class="wishlist-count">0</span>
-                </button>
-                <button class="action-btn cart-btn" title="Cart">
-                    <i class="fas fa-shopping-basket"></i>
-                    <span class="cart-count">0</span>
-                </button>
-                <button class="action-btn user-btn" title="Account">
-                    <i class="fas fa-user"></i>
-                </button>
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
         </div>
-    </div>
-</header>
-    
+    </header>
 
-    <!-- Hero Section with Background -->
-    <!-- Add your herbal background image here: -->
-    <!-- Recommended: A high-quality image of herbal plants, tea leaves, or natural ingredients -->
-    <!-- Example: images/herbal-hero-bg.jpg -->
+    <!-- Hero Section -->
     <section class="shop-hero">
         <div class="hero-background"></div>
         <div class="hero-overlay"></div>
@@ -124,9 +119,9 @@
                 </div>
 
                 <div class="hero-actions">
-                    <button class="btn btn-primary btn-large">
+                    <button class="btn btn-primary btn-large" onclick="location.href='#products'">
                         <i class="fas fa-star"></i>
-                        Featured Products
+                        Shop Products
                     </button>
                     <button class="btn btn-outline btn-large">
                         <i class="fas fa-book"></i>
@@ -141,37 +136,21 @@
     <section class="quick-categories">
         <div class="container">
             <div class="categories-grid">
-                <a href="#teas" class="category-card" data-category="teas">
+                <a href="#herbal-drinks" class="category-card" data-category="herbal-drinks">
                     <div class="category-icon">
                         <i class="fas fa-mug-hot"></i>
                     </div>
-                    <h3>Herbal Teas</h3>
+                    <h3>Herbal Drinks</h3>
                     <p>Soothing blends for wellness</p>
-                    <span class="product-count">24 Products</span>
+                    <span class="product-count">6 Products</span>
                 </a>
-                <a href="#tinctures" class="category-card" data-category="tinctures">
+                <a href="#water" class="category-card" data-category="water">
                     <div class="category-icon">
-                        <i class="fas fa-flask"></i>
+                        <i class="fas fa-tint"></i>
                     </div>
-                    <h3>Tinctures</h3>
-                    <p>Potent herbal extracts</p>
-                    <span class="product-count">18 Products</span>
-                </a>
-                <a href="#capsules" class="category-card" data-category="capsules">
-                    <div class="category-icon">
-                        <i class="fas fa-capsules"></i>
-                    </div>
-                    <h3>Capsules</h3>
-                    <p>Easy-to-take supplements</p>
-                    <span class="product-count">32 Products</span>
-                </a>
-                <a href="#skincare" class="category-card" data-category="skincare">
-                    <div class="category-icon">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <h3>Skincare</h3>
-                    <p>Natural beauty products</p>
-                    <span class="product-count">15 Products</span>
+                    <h3>Bottled Water</h3>
+                    <p>Pure hydration solutions</p>
+                    <span class="product-count">2 Products</span>
                 </a>
                 <a href="#merchandise" class="category-card" data-category="merchandise">
                     <div class="category-icon">
@@ -179,7 +158,7 @@
                     </div>
                     <h3>Merchandise</h3>
                     <p>Branded wellness items</p>
-                    <span class="product-count">8 Products</span>
+                    <span class="product-count">3 Product</span>
                 </a>
             </div>
         </div>
@@ -220,7 +199,7 @@
                                 <i class="fas fa-tags"></i>
                                 Categories
                             </h4>
-                            <span class="filter-count" id="categoryCount">5</span>
+                            <span class="filter-count" id="categoryCount">3</span>
                         </div>
                         <div class="filter-options">
                             <label class="filter-option">
@@ -228,39 +207,23 @@
                                 <span class="custom-checkbox"></span>
                                 <span class="filter-label">
                                     All Products
-                                    <span class="product-count">127</span>
+                                    <span class="product-count">9</span>
                                 </span>
                             </label>
                             <label class="filter-option">
-                                <input type="checkbox" name="category" value="teas">
+                                <input type="checkbox" name="category" value="herbal-drinks">
                                 <span class="custom-checkbox"></span>
                                 <span class="filter-label">
-                                    Herbal Teas
-                                    <span class="product-count">24</span>
+                                    Herbal Drinks
+                                    <span class="product-count">6</span>
                                 </span>
                             </label>
                             <label class="filter-option">
-                                <input type="checkbox" name="category" value="tinctures">
+                                <input type="checkbox" name="category" value="water">
                                 <span class="custom-checkbox"></span>
                                 <span class="filter-label">
-                                    Tinctures
-                                    <span class="product-count">18</span>
-                                </span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="category" value="capsules">
-                                <span class="custom-checkbox"></span>
-                                <span class="filter-label">
-                                    Capsules
-                                    <span class="product-count">32</span>
-                                </span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="category" value="skincare">
-                                <span class="custom-checkbox"></span>
-                                <span class="filter-label">
-                                    Skincare
-                                    <span class="product-count">15</span>
+                                    Bottled Water
+                                    <span class="product-count">2</span>
                                 </span>
                             </label>
                             <label class="filter-option">
@@ -268,7 +231,7 @@
                                 <span class="custom-checkbox"></span>
                                 <span class="filter-label">
                                     Merchandise
-                                    <span class="product-count">8</span>
+                                    <span class="product-count">1</span>
                                 </span>
                             </label>
                         </div>
@@ -363,60 +326,6 @@
                         </div>
                     </div>
 
-                    <!-- Benefits Filter -->
-                    <div class="filter-group">
-                        <div class="filter-header">
-                            <h4>
-                                <i class="fas fa-heart"></i>
-                                Wellness Benefits
-                            </h4>
-                        </div>
-                        <div class="benefits-grid">
-                            <label class="benefit-option">
-                                <input type="checkbox" name="benefit" value="sleep">
-                                <span class="benefit-card">
-                                    <i class="fas fa-moon"></i>
-                                    Sleep Aid
-                                </span>
-                            </label>
-                            <label class="benefit-option">
-                                <input type="checkbox" name="benefit" value="energy">
-                                <span class="benefit-card">
-                                    <i class="fas fa-bolt"></i>
-                                    Energy Boost
-                                </span>
-                            </label>
-                            <label class="benefit-option">
-                                <input type="checkbox" name="benefit" value="immunity">
-                                <span class="benefit-card">
-                                    <i class="fas fa-shield-alt"></i>
-                                    Immunity
-                                </span>
-                            </label>
-                            <label class="benefit-option">
-                                <input type="checkbox" name="benefit" value="digestion">
-                                <span class="benefit-card">
-                                    <i class="fas fa-stomach"></i>
-                                    Digestion
-                                </span>
-                            </label>
-                            <label class="benefit-option">
-                                <input type="checkbox" name="benefit" value="stress">
-                                <span class="benefit-card">
-                                    <i class="fas fa-brain"></i>
-                                    Stress Relief
-                                </span>
-                            </label>
-                            <label class="benefit-option">
-                                <input type="checkbox" name="benefit" value="skin">
-                                <span class="benefit-card">
-                                    <i class="fas fa-spa"></i>
-                                    Skin Health
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-
                     <!-- Availability Filter -->
                     <div class="filter-group">
                         <div class="filter-header">
@@ -457,7 +366,7 @@
                                 <span class="active-filters-count">0</span>
                             </button>
                             <div class="results-info">
-                                <span id="resultsCount">Showing 12 of 127 products</span>
+                                <span id="resultsCount">Showing 9 of 9 products</span>
                                 <div class="active-filters" id="activeFilters">
                                     <!-- Active filters will appear here -->
                                 </div>
@@ -516,11 +425,6 @@
                             <i class="fas fa-undo"></i>
                             Reset All Filters
                         </button>
-                    </div>
-
-                    <!-- Pagination -->
-                    <div class="pagination" id="pagination">
-                        <!-- Pagination will be loaded here by JavaScript -->
                     </div>
                 </section>
             </div>
@@ -616,21 +520,13 @@
                 <div class="footer-column">
                     <h4>Product Categories</h4>
                     <div class="footer-links">
-                        <a href="#teas">
+                        <a href="#herbal-drinks">
                             <i class="fas fa-chevron-right"></i>
-                            Herbal Teas
+                            Herbal Drinks
                         </a>
-                        <a href="#tinctures">
+                        <a href="#water">
                             <i class="fas fa-chevron-right"></i>
-                            Tinctures & Extracts
-                        </a>
-                        <a href="#capsules">
-                            <i class="fas fa-chevron-right"></i>
-                            Capsules & Supplements
-                        </a>
-                        <a href="#skincare">
-                            <i class="fas fa-chevron-right"></i>
-                            Natural Skincare
+                            Bottled Water
                         </a>
                         <a href="#merchandise">
                             <i class="fas fa-chevron-right"></i>
@@ -736,11 +632,11 @@
                 </div>
             </div>
             <div class="cart-actions">
-                <button class="btn btn-outline view-cart">
+                <button class="btn btn-outline view-cart" onclick="location.href='checkout.html'">
                     <i class="fas fa-shopping-cart"></i>
                     View Full Cart
                 </button>
-                <button class="btn btn-primary checkout-btn">
+                <button class="btn btn-primary checkout-btn" onclick="location.href='checkout.html'">
                     <i class="fas fa-lock"></i>
                     Secure Checkout
                 </button>

@@ -185,21 +185,21 @@ function renderRecommendedProducts() {
             id: 11,
             name: 'Herbal Wellness Kit',
             price: 'R450',
-            image: 'images/Product1.jpg',
+            image: 'images/product/Product1.jpg',
             description: 'Complete herbal wellness package'
         },
         {
             id: 12,
             name: 'Energy Boost Pack',
             price: 'R320',
-            image: 'images/silentHerb.jpg',
+            image: 'images/product/silentHerb.jpg',
             description: 'Natural energy and vitality'
         },
         {
             id: 13,
             name: 'Immunity Support',
             price: 'R280',
-            image: 'images/mpesu.jpg',
+            image: 'images/product/mpesu.jpg',
             description: 'Boost your immune system naturally'
         }
     ];
