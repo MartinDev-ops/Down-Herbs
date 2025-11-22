@@ -285,6 +285,35 @@ function initShop() {
     updateWishlistUI();
     attachEventListeners();
     updateActiveFilters();
+    initMobileMenu();
+
+    // Ensure loading screen is hidden after all initialization
+    setTimeout(() => {
+        if (loadingScreen) {
+            loadingScreen.style.display = 'none';
+        }
+    }, 2000);
+}
+
+// Mobile menu functionality
+function initMobileMenu() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+        });
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (mobileMenu && mobileMenuBtn) {
+            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        }
+    });
 }
 
 // Attach event listeners
@@ -713,29 +742,30 @@ function handleQuickCategory(e) {
 
 // Apply all filters
 function applyFilters() {
+    const inStockSelected = filters.availability.includes('in-stock');
+    const outOfStockSelected = filters.availability.includes('out-of-stock');
+
     filteredProducts = products.filter(product => {
         // Search filter
-        const matchesSearch = !filters.search || 
+        const matchesSearch = !filters.search ||
             product.name.toLowerCase().includes(filters.search) ||
             product.description.toLowerCase().includes(filters.search) ||
             product.tags.some(tag => tag.includes(filters.search));
-        
+
         // Category filter
-        const matchesCategory = filters.categories.includes('all') || 
+        const matchesCategory = filters.categories.includes('all') ||
             filters.categories.includes(product.category);
-        
+
         // Rating filter
         const matchesRating = product.rating >= filters.rating;
-        
+
         // Price filter
-        const matchesPrice = product.price >= filters.priceRange[0] && 
+        const matchesPrice = product.price >= filters.priceRange[0] &&
             product.price <= filters.priceRange[1];
-        
+
         // Availability filter
-        const inStockSelected = filters.availability.includes('in-stock');
-        const outOfStockSelected = filters.availability.includes('out-of-stock');
         let matchesAvailability = false;
-        
+
         if (inStockSelected && outOfStockSelected) {
             matchesAvailability = true;
         } else if (inStockSelected) {
@@ -743,7 +773,7 @@ function applyFilters() {
         } else if (outOfStockSelected) {
             matchesAvailability = !product.inStock;
         }
-        
+
         return matchesSearch && matchesCategory && matchesRating && matchesPrice && matchesAvailability;
     });
     
