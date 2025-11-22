@@ -1,430 +1,848 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Go Down Herbs - Natural Herbal Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/hero.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/animations.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Go Down Herbs - Premium Natural Herbal Solutions</title>
+    <meta name="description" content="Discover premium herbal health solutions from South Africa's trusted herbal specialists. Natural remedies for wellness and vitality.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <!-- Sticky Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <!-- Logo -->
-        <a class="logo-link" href="index.html">
-          <div class="logo-container">
-            <img src="images/godown(logo).png" alt="The Go Down Herbs Logo" class="logo-image">
-          </div>
-        </a>
-        
-        <!-- Desktop Navigation -->
-        <nav class="desktop-nav">
-          <a class="nav-link" href="index.html">
-            Home
-            <span class="nav-underline"></span>
-          </a>
-          <a class="nav-link" href="shop.html">
-            Shop
-            <span class="nav-underline"></span>
-          </a>
-          <a class="nav-link" href="about.html">
-            About
-            <span class="nav-underline"></span>
-          </a>
-          <a class="nav-link" href="stores.html">
-            Our Stores
-            <span class="nav-underline"></span>
-          </a>
-          <a class="nav-link" href=".contact.html">
-            Contact
-            <span class="nav-underline"></span>
-          </a>
-        </nav>
-        
-        <!-- Cart and Mobile Menu Button -->
-        <div class="header-buttons">
-          <a href="/cart">
-            <button class="icon-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
-                <circle cx="8" cy="21" r="1"></circle>
-                <circle cx="19" cy="21" r="1"></circle>
-                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
-              </svg>
-            </button>
-          </a>
-          <button class="mobile-menu-btn icon-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
-              <line x1="4" x2="20" y1="12" y2="12"></line>
-              <line x1="4" x2="20" y1="6" y2="6"></line>
-              <line x1="4" x2="20" y1="18" y2="18"></line>
-            </svg>
-          </button>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="herb-spinner">
+                <div class="leaf leaf-1"></div>
+                <div class="leaf leaf-2"></div>
+                <div class="leaf leaf-3"></div>
+            </div>
+            <p>Loading Natural Wellness...</p>
         </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="about.html">About</a>
-    <a href="stores.html">Our Stores</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-bg"></div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
-            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
-            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
-          </svg>
-          <span class="badge-text">Natural Herbal Solutions</span>
-        </div>
-        <h1 class="hero-title">Welcome to Go Down Herbs</h1>
-        <p class="hero-tagline">"Kill Your Pride & Save Your Life"</p>
-        <p class="hero-description">South African herbal health solutions promoting wellness through traditional knowledge and modern techniques.</p>
-        <a href="shop.html">
-          <button class="btn btn-primary btn-large">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.2 6h12.4M7 13L5.4 5M7 19a1 1 0 11-2 0 1 1 0 012 0zm12 0a1 1 0 11-2 0 1 1 0 012 0z" />
-            </svg>
-            Shop Now
-          </button>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="about-section">
-    <div class="container">
-      <div class="about-container">
-        <!-- Left Text Section -->
-        <div class="about-text-content">
-          <h2 class="section-title">Who We Are</h2>
-          <p class="about-text">Go-Down Herbs is a South African-based company specializing in the production, distribution, and sales of unique herbal mixture drinks and beverages designed to promote health and wellness.</p>
-          <p class="about-text">By leveraging traditional knowledge and modern production techniques, we deliver high-quality, effective, and affordable herbal health products.</p>
-          <a href="#about">
-            <button class="btn btn-primary">Learn More About Us</button>
-          </a>
-        </div>
-          
-        <!-- Right Image -->
-        <div class="about-image-container">
-          <img id="aboutImage" src="images/herb2/health.jpg" alt="Herbal products" class="about-image">
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- Featured Products Section -->
-<section class="featured-products-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Featured Products</h2>
     </div>
 
-    <!-- Horizontal Scroll Slider -->
-    <div class="products-slider">
-      <div class="products-slider-track">
-        <!-- Product 1 -->
-        <div class="product-slide">
-          <div class="product-image-card">
-            <img src="images/product/godown.jpg" alt="Go Down Herb" class="product-slide-image">
-          </div>
-          <div class="product-info-card">
-            <h3 class="product-slide-name">Go Down Herb</h3>
-            <p class="product-slide-description">By leveraging traditional knowledge and modern production techniques, we deliver high-quality, effective, and affordable herbal health products.</p>
-            <p class="product-slide-price">R150</p>
-            <a href="shop.html" class="btn btn-primary">Buy Now</a>
-          </div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-slide">
-          <div class="product-image-card">
-            <img src="images/product/silentHerb.jpg" alt="Silent Herb" class="product-slide-image">
-          </div>
-          <div class="product-info-card">
-            <h3 class="product-slide-name">Silent Herb</h3>
-            <p class="product-slide-description">Special herbal formula with powerful natural properties for health benefits. Traditional cleansing herb mixture for natural body purification.</p>
-            <p class="product-slide-price">R250</p>
-            <a href="shop.html" class="btn btn-primary">Buy Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Why Choose Section -->
- <!-- Why Choose Us Section -->
-<section class="why-choose-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Why Choose Go Down Herbs?</h2>
-      <p class="section-subtitle">Experience the difference with our commitment to natural wellness and exceptional service.</p>
-    </div>
-
-    <div class="features-list">
-      <!-- Feature 1 -->
-      <div class="feature-item">
-        <div class="feature-image">
-          <img src="images/herb2/natural.jpg" alt="Natural Ingredients" class="feature-img">
-        </div>
-        <div class="feature-content">
-          <h3 class="feature-title">Natural Ingredients</h3>
-          <p class="feature-description">All our products are made from 100% natural herbs and ingredients, ensuring purity and effectiveness.</p>
-        </div>
-      </div>
-
-      <!-- Feature 2 -->
-      <div class="feature-item">
-        <div class="feature-image">
-          <img src="images/herb2/quality.jpg" alt="Quality Assurance" class="feature-img">
-        </div>
-        <div class="feature-content">
-          <h3 class="feature-title">Quality Assurance</h3>
-          <p class="feature-description">Rigorous testing and quality control processes to guarantee the highest standards in every product.</p>
-        </div>
-      </div>
-
-      <!-- Feature 3 -->
-      <div class="feature-item">
-        <div class="feature-image">
-          <img src="images/herb2/delivery.jpg" alt="Fast Delivery" class="feature-img">
-        </div>
-        <div class="feature-content">
-          <h3 class="feature-title">Fast Delivery</h3>
-          <p class="feature-description">Quick and reliable shipping across South Africa, with secure packaging to maintain product integrity.</p>
-        </div>
-      </div>
-
-      <!-- Feature 4 -->
-      <div class="feature-item">
-        <div class="feature-image">
-          <img src="images/herb2/health.jpg" alt="Health Focused" class="feature-img">
-        </div>
-        <div class="feature-content">
-          <h3 class="feature-title">Health Focused</h3>
-          <p class="feature-description">Dedicated to promoting wellness through traditional herbal knowledge combined with modern science.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Our Stores Preview Section -->
-<section class="stores-preview-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Our Stores</h2>
-      <p class="section-subtitle">Find our herbal health solutions at various locations across South Africa.</p>
-    </div>
-
-    <div class="stores-grid">
-      <!-- Store 1 -->
-      <div class="store-card">
-        <div class="store-map">
-          <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=28.1781,-25.7561,28.1981,-25.7361&layer=mapnik&marker=-25.7461,28.1881"
-            class="store-iframe"
-            title="Map of Barclays Square Shopping Centre"
-            loading="lazy"
-          ></iframe>
-          <div class="map-marker">📍</div>
-        </div>
-        <div class="store-info">
-          <h3 class="store-name">Barclays Square Shopping Centre</h3>
-          <p class="store-address">Shop F37, 296 Justice Mahomed Street, Sunnyside, Pretoria 0012</p>
-          <p class="store-phone">+27 71 533 6706 / +27 64 502 8037</p>
-        </div>
-      </div>
-
-      <!-- Store 2 -->
-      <div class="store-card">
-        <div class="store-map">
-          <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=28.0205,-26.2029,28.0405,-26.1829&layer=mapnik&marker=-26.1929,28.0305"
-            class="store-iframe"
-            title="Map of Braamfontein Store"
-            loading="lazy"
-          ></iframe>
-          <div class="map-marker">📍</div>
-        </div>
-        <div class="store-info">
-          <h3 class="store-name">Braamfontein Store</h3>
-          <p class="store-address">16 Station Street & De Korte Street, Shop 3 Braamfontein (Behind Wits Art Museum) Johannesburg 2001</p>
-          <p class="store-phone">+27 71 533 6706 / +27 64 502 8037</p>
-        </div>
-      </div>
-
-      <!-- Store 3 -->
-      <div class="store-card">
-        <div class="store-map">
-          <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=30.4748,-22.9556,30.4948,-22.9356&layer=mapnik&marker=-22.9456,30.4848"
-            class="store-iframe"
-            title="Map of Jerice Palace Complex"
-            loading="lazy"
-          ></iframe>
-          <div class="map-marker">📍</div>
-        </div>
-        <div class="store-info">
-          <h3 class="store-name">Jerice Palace Complex</h3>
-          <p class="store-address">Post Office Street (Opposite Old Hardware City) Behind StarGlass & Coja, Thohoyandou</p>
-          <p class="store-phone">+27 77 447 5959 / +27 71 533 6706</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="stores-cta">
-      <a href="stores.html" class="btn btn-primary">View All Stores & Interactive Map</a>
-    </div>
-  </div>
-</section>
-
-  <!-- WhatsApp Widget -->
-  <div id="wa" class="wa-widget">
-    <div class="wa-btn-popup">
-      <div class="wa-btn-txt">
-        <span>Need Help? <strong>Chat with us</strong></span>
-      </div>
-      <div class="wa-btn-icon"></div>
-    </div>
-
-    <div class="wa-popup-chat">
-      <div class="wa-popup-heading">
-        <div class="wa-popup-title">Start a Conversation</div>
-        <div class="wa-popup-intro">
-          Hi! Click one of our members below to chat on <strong>WhatsApp</strong>
-        </div>
-      </div>
-
-      <div class="wa-popup-content">
-        <div class="wa-popup-notice">The team typically replies in a few minutes.</div>
-
-        <div class="wa-popup-list">
-          <!-- Member 1 -->
-          <div class="wa-popup-item">
-            <a target="_blank"
-               href="https://api.whatsapp.com/send?phone=27715336706&text=Hello!!!"
-               rel="nofollow noopener noreferrer"
-               class="wa-contact">
-              <div class="wa-avatar">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Dr T/r Bubudza">
-              </div>
-              <div class="wa-contact-info">
-                <div class="wa-member-name">Dr T/r Bubudza</div>
-                <div class="wa-member-duty">Herbal Specialist</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Member 2 -->
-          <div class="wa-popup-item">
-            <a target="_blank"
-               href="https://api.whatsapp.com/send?phone=27799280149"
-               rel="nofollow noopener noreferrer"
-               class="wa-contact">
-              <div class="wa-avatar">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Assistant Phumudzo">
-              </div>
-              <div class="wa-contact-info">
-                <div class="wa-member-name">Assistant Phumudzo</div>
-                <div class="wa-member-duty">Customer Support</div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        
-        <!-- Logo & Description -->
-        <div class="footer-column">
-          <img src="images/logo.png" alt="The Go Down Herbs Logo" class="footer-logo">
-          <p class="footer-description">
-            South African-based company specializing in herbal health solutions promoting natural wellness.
-          </p>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="footer-column">
-          <h3 class="footer-title">Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="index.html" class="footer-link">Home</a></li>
-            <li><a href="shop.html" class="footer-link">Shop</a></li>
-            <li><a href="/about" class="footer-link">About</a></li>
-            <li><a href="/Our Stores" class="footer-link">Our Stores</a></li>
-            <li><a href="/contact" class="footer-link">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="footer-column">
-          <h3 class="footer-title">Contact Us</h3>
-          <ul class="footer-contact">
-            <li class="contact-item">
-              <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-              </svg>
-              <span>+27 71 533 6706 / +27 64 502 8037</span>
-            </li>
-            <li class="contact-item">
-              <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-              </svg>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@godownherbs.co.za" target="_blank">
-                   info@godownherbs.co.za
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="images/godown(logo).png" alt="The Go Down Herbs - Natural Wellness">
+                    <span class="logo-text">The Go Down Herbs</span>
                 </a>
-            </li>
-          </ul>
+                
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-link active">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    <a href="shop.html" class="nav-link">
+                        <i class="fas fa-leaf"></i>
+                        Shop
+                    </a>
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-heart"></i>
+                        About
+                    </a>
+                    <a href="stores.html" class="nav-link">
+                        <i class="fas fa-store"></i>
+                        Stores
+                    </a>
+                    <a href="blog.html" class="nav-link">
+                        <i class="fas fa-book-open"></i>
+                        Blog
+                    </a>
+                    <a href="contact.html" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        Contact
+                    </a>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search herbs, products..." id="globalSearch">
+                    </div>
+                    <button class="action-btn wishlist-btn" title="Wishlist">
+                        <i class="far fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                    </button>
+                    <button class="action-btn cart-btn" title="Cart">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <button class="action-btn user-btn" title="Account">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
         </div>
+    </header>
 
-        <!-- Social Media -->
-        <div class="footer-column">
-          <h3 class="footer-title">Follow Us</h3>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/Godownherb" target="_blank" rel="noopener noreferrer" class="social-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-            </a>
-            <a href="https://www.instagram.com/go_down_herbs/" target="_blank" rel="noopener noreferrer" class="social-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-            </a>
-            <a href="http://www.youtube.com/@Go-Down-Herbs" target="_blank" rel="noopener noreferrer" class="social-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
-            </a>
-          </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <img src="images/godown(logo).png" alt="The Go Down Herbs" class="mobile-logo">
+                <button class="close-menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav">
+                <a href="index.html" class="mobile-nav-link active">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="shop.html" class="mobile-nav-link">
+                    <i class="fas fa-leaf"></i>
+                    Shop
+                </a>
+                <a href="about.html" class="mobile-nav-link">
+                    <i class="fas fa-heart"></i>
+                    About
+                </a>
+                <a href="stores.html" class="mobile-nav-link">
+                    <i class="fas fa-store"></i>
+                    Our Stores
+                </a>
+                <a href="blog.html" class="mobile-nav-link">
+                    <i class="fas fa-book-open"></i>
+                    Blog
+                </a>
+                <a href="contact.html" class="mobile-nav-link">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </a>
+            </nav>
+            <div class="mobile-actions">
+                <button class="btn btn-outline">
+                    <i class="fas fa-user"></i>
+                    My Account
+                </button>
+                <button class="btn btn-primary">
+                    <i class="fas fa-shopping-basket"></i>
+                    View Cart
+                </button>
+            </div>
         </div>
-      </div>
-
-      <!-- Copyright -->
-      <div class="footer-bottom">
-        <p>© 2025 Go Down Herbs (PTY) LTD. All rights reserved.</p>
-      </div>
     </div>
-  </footer>
 
-  <script src="js/main.js"></script>
+    <!-- Enhanced Hero Section with Multiple Images -->
+    <section class="hero-section">
+        <div class="hero-slideshow">
+            <!-- Slide 1 -->
+            <div class="hero-slide active" style="background-image: url('images/products/drinks.jpeg');">
+                <div class="slide-overlay"></div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero-slide" style="background-image: url('images/products/full-products.png');">
+                <div class="slide-overlay"></div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="hero-slide" style="background-image: url('images/products/bottels-placed.png');">
+                <div class="slide-overlay"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-seedling"></i>
+                        Naturally Crafted Since 2010
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-line">Embrace Natural</span>
+                        <span class="title-line highlight">Wellness & Vitality</span>
+                    </h1>
+                    <p class="hero-tagline">"Kill Your Pride & Save Your Life"</p>
+                    <p class="hero-description">Premium South African herbal health solutions blending traditional wisdom with modern science for complete wellness transformation.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">15K+</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Natural Products</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="shop.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-shopping-basket"></i>
+                            Explore Products
+                        </a>
+                        <a href="#about" class="btn btn-outline btn-large">
+                            <i class="fas fa-play-circle"></i>
+                            Watch Our Story
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Slider Controls -->
+        <div class="hero-controls">
+            <button class="slide-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="slide-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+            <button class="slide-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll to Explore</span>
+        </div>
+    </section>
+
+    <!-- Trust Badges Section -->
+    <section class="trust-badges">
+        <div class="container">
+            <div class="badges-grid">
+                <div class="badge-item">
+                    <i class="fas fa-award"></i>
+                    <span>Premium Quality</span>
+                </div>
+                <div class="badge-item">
+                    <i class="fas fa-leaf"></i>
+                    <span>100% Natural</span>
+                </div>
+                <div class="badge-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Lab Tested</span>
+                </div>
+                <div class="badge-item">
+                    <i class="fas fa-truck"></i>
+                    <span>Free Shipping</span>
+                </div>
+                <div class="badge-item">
+                    <i class="fas fa-heart"></i>
+                    <span>Wellness Focused</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore Our Herbal Collections</h2>
+                <p class="section-subtitle">Discover our carefully curated categories of natural wellness solutions</p>
+            </div>
+
+            <div class="categories-grid">
+                <a href="shop.html#teas" class="category-card">
+                    <div class="category-image">
+                        <img src="images/categories/herbal-teas.jpg" alt="Herbal Teas">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <i class="fas fa-mug-hot"></i>
+                        <h3>Herbal Teas</h3>
+                        <p>Soothing blends for relaxation & wellness</p>
+                        <span class="product-count">24 Products</span>
+                    </div>
+                </a>
+
+                <a href="shop.html#tinctures" class="category-card">
+                    <div class="category-image">
+                        <img src="images/categories/tinctures.jpg" alt="Herbal Tinctures">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <i class="fas fa-flask"></i>
+                        <h3>Tinctures & Extracts</h3>
+                        <p>Potent herbal concentrates</p>
+                        <span class="product-count">18 Products</span>
+                    </div>
+                </a>
+
+                <a href="shop.html#capsules" class="category-card">
+                    <div class="category-image">
+                        <img src="images/categories/capsules.jpg" alt="Herbal Capsules">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <i class="fas fa-capsules"></i>
+                        <h3>Capsules & Supplements</h3>
+                        <p>Easy-to-take daily wellness</p>
+                        <span class="product-count">32 Products</span>
+                    </div>
+                </a>
+
+                <a href="shop.html#skincare" class="category-card">
+                    <div class="category-image">
+                        <img src="images/categories/skincare.jpg" alt="Natural Skincare">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <i class="fas fa-spa"></i>
+                        <h3>Natural Skincare</h3>
+                        <p>Herbal beauty solutions</p>
+                        <span class="product-count">15 Products</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="section-header">
+                        <h2 class="section-title">The Art of Natural Healing</h2>
+                        <p class="section-subtitle">Blending centuries of traditional wisdom with modern scientific research</p>
+                    </div>
+
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-history"></i>
+                            <div>
+                                <h4>Traditional Wisdom</h4>
+                                <p>Ancient herbal knowledge passed through generations</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-microscope"></i>
+                            <div>
+                                <h4>Modern Science</h4>
+                                <p>Research-backed formulations for maximum efficacy</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <div>
+                                <h4>Holistic Approach</h4>
+                                <p>Treating mind, body, and spirit as one</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="number">12+</span>
+                            <span class="label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">50+</span>
+                            <span class="label">Herbal Products</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">15K+</span>
+                            <span class="label">Lives Transformed</span>
+                        </div>
+                    </div>
+
+                    <div class="about-actions">
+                        <a href="about.html" class="btn btn-primary">
+                            <i class="fas fa-book-open"></i>
+                            Our Story
+                        </a>
+                        <a href="contact.html" class="btn btn-outline">
+                            <i class="fas fa-users"></i>
+                            Meet Our Team
+                        </a>
+                    </div>
+                </div>
+
+                <div class="about-visual">
+                    <div class="image-collage">
+                        <div class="main-image">
+                            <img src="images/about/main-herbs.jpg" alt="Premium Herbs Collection">
+                        </div>
+                        <div class="side-image top">
+                            <img src="images/about/herbal-preparation.jpg" alt="Herbal Preparation">
+                        </div>
+                        <div class="side-image bottom">
+                            <img src="images/about/nature-ingredients.jpg" alt="Natural Ingredients">
+                        </div>
+                        <div class="floating-badge">
+                            <i class="fas fa-award"></i>
+                            <span>Trusted Since 2010</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Slider -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Customer Favorites</h2>
+                <p class="section-subtitle">Most loved herbal solutions from our community</p>
+            </div>
+
+            <div class="products-slider">
+                <div class="slider-container">
+                    <div class="slider-track" id="sliderTrack">
+                        <!-- Products will be loaded by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="products-cta">
+                <a href="shop.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-store"></i>
+                    View All Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wellness Journey Section -->
+    <section class="wellness-journey">
+        <div class="container">
+            <div class="journey-content">
+                <div class="journey-text">
+                    <h2>Start Your Wellness Journey Today</h2>
+                    <p>Experience the transformative power of nature with our carefully crafted herbal solutions. Join thousands who have rediscovered vitality and balance.</p>
+                    
+                    <div class="journey-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Consult & Choose</h4>
+                                <p>Select products tailored to your wellness goals</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Natural Transformation</h4>
+                                <p>Experience gentle, effective results</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Sustainable Wellness</h4>
+                                <p>Maintain balance with ongoing support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="journey-visual">
+                    <div class="floating-elements">
+                        <div class="floating-element element-1">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="floating-element element-2">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="floating-element element-3">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                    </div>
+                    <img src="images/wellness-journey.jpg" alt="Wellness Journey" class="journey-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Stories of Transformation</h2>
+                <p class="section-subtitle">Hear from our community about their wellness journeys</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"After using Go Down Herbs for 3 months, my energy levels have completely transformed. I feel revitalized and balanced like never before!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonials/user-1.jpg" alt="Sarah M.">
+                        <div class="author-info">
+                            <h4>Sarah M.</h4>
+                            <span>Customer for 2 years</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"The herbal teas have become an essential part of my daily routine. Natural, effective, and truly transformative for my overall wellness."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonials/user-2.jpg" alt="James K.">
+                        <div class="author-info">
+                            <h4>James K.</h4>
+                            <span>Wellness Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"As someone who values natural solutions, I'm impressed by the quality and effectiveness of Go Down Herbs. Truly life-changing products!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonials/user-3.jpg" alt="Dr. Lisa T.">
+                        <div class="author-info">
+                            <h4>Dr. Lisa T.</h4>
+                            <span>Natural Health Advocate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stores Preview Section -->
+    <section class="stores-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Visit Our Wellness Centers</h2>
+                <p class="section-subtitle">Experience our products and get personalized consultations</p>
+            </div>
+
+            <div class="stores-grid">
+                <div class="store-card">
+                    <div class="store-image">
+                        <img src="images/stores/pretoria-store.jpg" alt="Pretoria Store">
+                        <div class="store-badge">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Pretoria
+                        </div>
+                    </div>
+                    <div class="store-info">
+                        <h3>Barclays Square Shopping Centre</h3>
+                        <p class="store-address">Shop F37, 296 Justice Mahomed Street, Sunnyside, Pretoria 0012</p>
+                        <div class="store-contacts">
+                            <span><i class="fas fa-phone"></i> +27 71 533 6706</span>
+                            <span><i class="fas fa-clock"></i> Mon-Sat: 8AM-6PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="store-card">
+                    <div class="store-image">
+                        <img src="images/stores/johannesburg-store.jpg" alt="Johannesburg Store">
+                        <div class="store-badge">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Johannesburg
+                        </div>
+                    </div>
+                    <div class="store-info">
+                        <h3>Braamfontein Store</h3>
+                        <p class="store-address">16 Station Street & De Korte Street, Shop 3 Braamfontein, Johannesburg 2001</p>
+                        <div class="store-contacts">
+                            <span><i class="fas fa-phone"></i> +27 71 533 6706</span>
+                            <span><i class="fas fa-clock"></i> Mon-Sat: 8AM-6PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="store-card">
+                    <div class="store-image">
+                        <img src="images/stores/thohoyandou-store.jpg" alt="Thohoyandou Store">
+                        <div class="store-badge">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Thohoyandou
+                        </div>
+                    </div>
+                    <div class="store-info">
+                        <h3>Jerice Palace Complex</h3>
+                        <p class="store-address">Post Office Street, Opposite Old Hardware City, Thohoyandou</p>
+                        <div class="store-contacts">
+                            <span><i class="fas fa-phone"></i> +27 77 447 5959</span>
+                            <span><i class="fas fa-clock"></i> Mon-Sat: 8AM-6PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stores-cta">
+                <a href="stores.html" class="btn btn-primary">
+                    <i class="fas fa-map"></i>
+                    View All Locations & Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>
+                        <i class="fas fa-seedling"></i>
+                        Join Our Wellness Community
+                    </h3>
+                    <p>Get exclusive herbal wisdom, special offers, and wellness tips delivered to your inbox</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="input-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span class="custom-checkbox small"></span>
+                        I agree to receive wellness updates and special offers
+                    </label>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Widget -->
+    <div class="whatsapp-widget">
+        <div class="wa-btn-popup">
+            <div class="wa-btn-content">
+                <i class="fab fa-whatsapp"></i>
+                <span>Need Help? <strong>Chat with us</strong></span>
+            </div>
+        </div>
+
+        <div class="wa-popup-chat">
+            <div class="wa-popup-header">
+                <div class="wa-popup-title">Start a Conversation</div>
+                <div class="wa-popup-intro">
+                    Hi! Click one of our members below to chat on <strong>WhatsApp</strong>
+                </div>
+                <button class="wa-close-popup">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="wa-popup-content">
+                <div class="wa-popup-notice">
+                    <i class="fas fa-clock"></i>
+                    The team typically replies in a few minutes.
+                </div>
+
+                <div class="wa-contact-list">
+                    <div class="wa-contact-item">
+                        <a target="_blank"
+                           href="https://api.whatsapp.com/send?phone=27715336706&text=Hello!!!"
+                           rel="nofollow noopener noreferrer"
+                           class="wa-contact-link">
+                            <div class="wa-avatar">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Dr T/r Bubudza">
+                            </div>
+                            <div class="wa-contact-info">
+                                <div class="wa-member-name">Dr T/r Bubudza</div>
+                                <div class="wa-member-duty">Herbal Specialist</div>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="wa-contact-item">
+                        <a target="_blank"
+                           href="https://api.whatsapp.com/send?phone=27799280149"
+                           rel="nofollow noopener noreferrer"
+                           class="wa-contact-link">
+                            <div class="wa-avatar">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Assistant Phumudzo">
+                            </div>
+                            <div class="wa-contact-info">
+                                <div class="wa-member-name">Assistant Phumudzo</div>
+                                <div class="wa-member-duty">Customer Support</div>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Column -->
+                <div class="footer-column">
+                    <div class="footer-brand">
+                        <img src="images/godown(logo).png" alt="The Go Down Herbs" class="footer-logo">
+                        <div class="brand-text">
+                            <h3>The Go Down Herbs</h3>
+                            <p>Nurturing wellness through nature's finest herbs since 2010</p>
+                        </div>
+                    </div>
+                    <div class="footer-features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>100% Natural Ingredients</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <span>Premium Quality</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-truck"></i>
+                            <span>Free Shipping Over R500</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html">
+                            <i class="fas fa-chevron-right"></i>
+                            Home
+                        </a>
+                        <a href="shop.html">
+                            <i class="fas fa-chevron-right"></i>
+                            Shop All Products
+                        </a>
+                        <a href="about.html">
+                            <i class="fas fa-chevron-right"></i>
+                            Our Story
+                        </a>
+                        <a href="blog.html">
+                            <i class="fas fa-chevron-right"></i>
+                            Wellness Blog
+                        </a>
+                        <a href="contact.html">
+                            <i class="fas fa-chevron-right"></i>
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="footer-column">
+                    <h4>Product Categories</h4>
+                    <div class="footer-links">
+                        <a href="#teas">
+                            <i class="fas fa-chevron-right"></i>
+                            Herbal Teas
+                        </a>
+                        <a href="#tinctures">
+                            <i class="fas fa-chevron-right"></i>
+                            Tinctures & Extracts
+                        </a>
+                        <a href="#capsules">
+                            <i class="fas fa-chevron-right"></i>
+                            Capsules & Supplements
+                        </a>
+                        <a href="#skincare">
+                            <i class="fas fa-chevron-right"></i>
+                            Natural Skincare
+                        </a>
+                        <a href="#merchandise">
+                            <i class="fas fa-chevron-right"></i>
+                            Wellness Merchandise
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact & Social -->
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <span>+27 71 533 6706</span>
+                                <span>+27 64 502 8037</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@godownherbs.co.za</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 8AM-6PM</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>South Africa</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-section">
+                        <h4>Follow Our Journey</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link youtube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="social-link pinterest">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Go Down Herbs (PTY) LTD. All rights reserved. | Nurturing wellness naturally</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Shipping Policy</a>
+                        <a href="#">Returns & Refunds</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
