@@ -37,17 +37,21 @@ function initHeroSlider() {
     let slideInterval;
 
     // Function to show a specific slide
-    function showSlide(index) {
-        // Remove active class from all slides and dots
-        slides.forEach(slide => slide.classList.remove('active'));
+function showSlide(index) {
+    // Remove active class from all slides and dots
+    slides.forEach(slide => slide.classList.remove('active'));
+    if (dots.length > 0) {
         dots.forEach(dot => dot.classList.remove('active'));
-        
-        // Add active class to current slide and dot
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
-        
-        currentSlide = index;
     }
+    
+    // Add active class to current slide and dot
+    slides[index].classList.add('active');
+    if (dots[index]) {
+        dots[index].classList.add('active');
+    }
+    
+    currentSlide = index;
+}
 
     // Function to go to next slide
     function nextSlide() {
@@ -70,16 +74,18 @@ function initHeroSlider() {
     }
 
     // Event listeners for dots
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
-            resetInterval();
+    if (dots.length > 0) {
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                resetInterval();
+            });
         });
-    });
+    }
 
     // Auto slide every 5 seconds
     function startInterval() {
-        slideInterval = setInterval(nextSlide, 5000);
+        slideInterval = setInterval(nextSlide, 3000);
     }
 
     function resetInterval() {
@@ -88,7 +94,7 @@ function initHeroSlider() {
     }
 
     // Start the slider
-    if (slides.length > 0) {
+    if (slides.length > 0 && dots.length > 0) {
         startInterval();
         
         // Pause on hover
@@ -177,32 +183,61 @@ function initMobileMenu() {
     });
 }
 
-// WhatsApp Widget
 function initWhatsAppWidget() {
     const waBtn = document.querySelector('.wa-btn-popup');
     const waPopup = document.querySelector('.wa-popup-chat');
     const waClose = document.querySelector('.wa-close-popup');
-    
+    const whatsappWidget = document.querySelector('.whatsapp-widget');
+
+    let scrollTimeout;
+
+    function showWidget() {
+        if (whatsappWidget) {
+            whatsappWidget.style.opacity = '1';
+            whatsappWidget.style.pointerEvents = 'auto';
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                hideWidget();
+            }, 2000);
+        }
+    }
+    function hideWidget() {
+        if (whatsappWidget) {
+            whatsappWidget.style.opacity = '0';
+            whatsappWidget.style.pointerEvents = 'none';
+            if (waPopup) {
+                waPopup.classList.remove('active');
+            }
+        }
+    }
+
+    // Hide initially
+    hideWidget();
+
+    window.addEventListener('scroll', () => {
+        showWidget();
+    });
+
     if (waBtn && waPopup) {
         waBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             waPopup.classList.toggle('active');
         });
-        
+
         // Close popup when clicking close button
         if (waClose) {
             waClose.addEventListener('click', () => {
                 waPopup.classList.remove('active');
             });
         }
-        
+
         // Close popup when clicking outside
         document.addEventListener('click', (e) => {
             if (waPopup && !waBtn.contains(e.target) && !waPopup.contains(e.target)) {
                 waPopup.classList.remove('active');
             }
         });
-        
+
         // Prevent closing when clicking inside popup
         waPopup.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -342,22 +377,22 @@ function initFeaturedProducts() {
             image: "images/product/silentHerb.jpg"
         },
         {
-            name: "Energy Boost Tea",
+            name: "Natural Cleaner",
             description: "Natural energy enhancer with revitalizing herbal ingredients.",
             price: "R120",
-            image: "images/product/energy-tea.jpg"
+            image: "images/product/cleaner.png"
         },
         {
-            name: "Relaxation Blend",
+            name: "Shirts",
             description: "Soothing herbal tea for stress relief and mental clarity.",
             price: "R180",
-            image: "images/product/relaxation-tea.jpg"
+            image: "images/merch/green-shirt.png"
         },
         {
-            name: "Immunity Support",
+            name: "Mpesu",
             description: "Powerful herbal blend to strengthen your immune system.",
             price: "R200",
-            image: "images/product/immunity-support.jpg"
+            image: "images/product/mpesu.jpg"
         }
     ];
     

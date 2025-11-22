@@ -150,6 +150,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 0;
+
     position: relative;
 }
 
@@ -226,7 +227,7 @@ body {
     display: flex;
     gap: 0.5rem;
     background: rgba(248, 249, 250, 0.8);
-    padding: 0.5rem;
+    padding: 2px;
     border-radius: 16px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(45, 90, 61, 0.1);
@@ -240,7 +241,7 @@ body {
     text-decoration: none;
     color: var(--text-medium);
     font-weight: 500;
-    padding: 0.75rem 1.25rem;
+    padding: 10px 5px;
     border-radius: 12px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -2151,7 +2152,10 @@ body {
 
 @media (max-width: 640px) {
     .container {
-        padding: 0 15px;
+        padding: 0 10px;
+    }
+    .header-content{
+        height: 15vh;
     }
     
     .hero-title {
@@ -2222,5 +2226,26 @@ body {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
+    }
+}
+
+/* Responsive styles for store image iframe */
+.store-image iframe {
+    width: 100%;
+    height: 250px;
+    border: none;
+    border-radius: var(--radius-md);
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .store-image iframe {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .store-image iframe {
+        height: 180px;
     }
 }
