@@ -622,3 +622,367 @@ function initLazyLoading() {
 
 // Initialize lazy loading
 initLazyLoading();
+
+
+
+/* ===== MOBILE JAVASCRIPT FIXES ===== */
+/* Add this JavaScript for better mobile experience */
+
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeMenu = document.getElementById('closeMenu');
+const backToTop = document.getElementById('backToTop');
+
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scroll
+    });
+    
+    closeMenu.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Close menu when clicking outside
+    mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Close menu when clicking links
+    const mobileLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+}
+
+// Back to top button
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+});
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Hero slider for mobile touch
+const heroSlider = document.querySelector('.hero-slider');
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.dot');
+const prevBtn = document.querySelector('.slider-prev');
+const nextBtn = document.querySelector('.slider-next');
+
+let currentSlide = 0;
+
+function showSlide(n) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    currentSlide = (n + slides.length) % slides.length;
+    
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+}
+
+if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+    nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+}
+
+// Touch swipe for mobile slider
+if (heroSlider) {
+    let startX = 0;
+    let endX = 0;
+    
+    heroSlider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+    
+    heroSlider.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = startX - endX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swipe left - next slide
+                showSlide(currentSlide + 1);
+            } else {
+                // Swipe right - previous slide
+                showSlide(currentSlide - 1);
+            }
+        }
+    }
+}
+
+// Dot navigation
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => showSlide(index));
+});
+
+// Auto-advance slides (pause on mobile touch)
+let slideInterval;
+
+function startSlider() {
+    slideInterval = setInterval(() => {
+        showSlide(currentSlide + 1);
+    }, 5000);
+}
+
+function stopSlider() {
+    clearInterval(slideInterval);
+}
+
+// Pause slider on hover/touch
+heroSlider.addEventListener('mouseenter', stopSlider);
+heroSlider.addEventListener('mouseleave', startSlider);
+heroSlider.addEventListener('touchstart', stopSlider);
+heroSlider.addEventListener('touchend', () => {
+    setTimeout(startSlider, 3000); // Resume after 3 seconds
+});
+
+// Start slider
+startSlider();
+
+// Loading screen
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        setTimeout(() => {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }, 1000);
+    }
+});
+
+// Prevent pinch zoom on mobile (optional)
+document.addEventListener('gesturestart', function (e) {
+    e.preventDefault();
+});
+
+// Add viewport meta tag for proper mobile rendering
+// Make sure this is in your HTML head:
+// <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+// Simple Image Popup Manager
+// Dual Popup Functionality
+// Discount Popups Manager
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if popup elements exist
+    const popup1 = document.getElementById('discountPopup1');
+    const popup2 = document.getElementById('discountPopup2');
+    
+    if (!popup1 || !popup2) {
+        console.error('Popup elements not found!');
+        return;
+    }
+    
+    // Get all elements
+    const smallIcon1 = document.getElementById('smallIcon1');
+    const smallIcon2 = document.getElementById('smallIcon2');
+    const closePopup1 = document.getElementById('closePopup1');
+    const closePopup2 = document.getElementById('closePopup2');
+    const laterBtn1 = document.getElementById('laterBtn1');
+    const laterBtn2 = document.getElementById('laterBtn2');
+    const claimBtns = document.querySelectorAll('.popup-buttons-container .btn-primary');
+    
+    let iconTimer1, iconTimer2;
+    let hasShownPopup1 = false;
+    let hasShownPopup2 = false;
+    
+    // Initialize popups
+    function initPopups() {
+        // Hide all popups initially
+        hideAllPopups();
+        
+        // Hide small icons initially
+        if (smallIcon1) smallIcon1.classList.remove('active');
+        if (smallIcon2) smallIcon2.classList.remove('active');
+        
+        // Show first popup after 1.5 seconds
+        setTimeout(() => {
+            showPopup1();
+        }, 1500);
+    }
+    
+    // Show first popup
+    function showPopup1() {
+        if (hasShownPopup1) return; // Don't show if already shown
+        
+        hideAllPopups();
+        popup1.classList.add('active');
+        document.body.classList.add('popup-open');
+        hasShownPopup1 = true;
+        
+        // Hide icons while popup is open
+        if (smallIcon1) smallIcon1.classList.remove('active');
+        if (smallIcon2) smallIcon2.classList.remove('active');
+    }
+    
+    // Show second popup
+    function showPopup2() {
+        if (hasShownPopup2) return; // Don't show if already shown
+        
+        hideAllPopups();
+        popup2.classList.add('active');
+        document.body.classList.add('popup-open');
+        hasShownPopup2 = true;
+        
+        // Hide icons while popup is open
+        if (smallIcon1) smallIcon1.classList.remove('active');
+        if (smallIcon2) smallIcon2.classList.remove('active');
+    }
+    
+    // Hide all popups
+    function hideAllPopups() {
+        popup1.classList.remove('active');
+        popup2.classList.remove('active');
+        document.body.classList.remove('popup-open');
+    }
+    
+    // Show small icon for popup 1
+    function showSmallIcon1() {
+        hideAllPopups();
+        
+        clearTimeout(iconTimer1);
+        
+        // Show icon after delay
+        iconTimer1 = setTimeout(() => {
+            if (smallIcon1 && !popup1.classList.contains('active') && !popup2.classList.contains('active')) {
+                smallIcon1.classList.add('active');
+            }
+        }, 1000);
+    }
+    
+    // Show small icon for popup 2
+    function showSmallIcon2() {
+        hideAllPopups();
+        
+        clearTimeout(iconTimer2);
+        
+        // Show icon after delay
+        iconTimer2 = setTimeout(() => {
+            if (smallIcon2 && !popup1.classList.contains('active') && !popup2.classList.contains('active')) {
+                smallIcon2.classList.add('active');
+            }
+        }, 1000);
+    }
+    
+    // Show both small icons
+    function showBothIcons() {
+        hideAllPopups();
+        
+        setTimeout(() => {
+            if (smallIcon1) smallIcon1.classList.add('active');
+            if (smallIcon2) smallIcon2.classList.add('active');
+        }, 1000);
+    }
+    
+    // Event Listeners for Popup 1
+    if (closePopup1) {
+        closePopup1.addEventListener('click', showSmallIcon1);
+    }
+    
+    if (laterBtn1) {
+        laterBtn1.addEventListener('click', showSmallIcon1);
+    }
+    
+    // Event Listeners for Popup 2
+    if (closePopup2) {
+        closePopup2.addEventListener('click', showSmallIcon2);
+    }
+    
+    if (laterBtn2) {
+        laterBtn2.addEventListener('click', showSmallIcon2);
+    }
+    
+    // Claim buttons for both popups
+    if (claimBtns.length > 0) {
+        claimBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                hideAllPopups();
+                
+                // Show both icons after 2 seconds
+                setTimeout(showBothIcons, 2000);
+                
+                // Navigate to shop page
+                window.location.href = btn.href || 'shop.html';
+            });
+        });
+    }
+    
+    // Close when clicking outside popup content
+    [popup1, popup2].forEach(popup => {
+        if (popup) {
+            popup.addEventListener('click', function(e) {
+                if (e.target === popup) {
+                    if (popup === popup1) {
+                        showSmallIcon1();
+                    } else {
+                        showSmallIcon2();
+                    }
+                }
+            });
+        }
+    });
+    
+    // Small icon clicks
+    if (smallIcon1) {
+        smallIcon1.addEventListener('click', showPopup1);
+    }
+    
+    if (smallIcon2) {
+        smallIcon2.addEventListener('click', showPopup2);
+    }
+    
+    // Close with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (popup1.classList.contains('active')) {
+                showSmallIcon1();
+            } else if (popup2.classList.contains('active')) {
+                showSmallIcon2();
+            }
+        }
+    });
+    
+    // Hide small icons when scrolling (optional)
+    let scrollTimer;
+    window.addEventListener('scroll', function() {
+        if (smallIcon1) smallIcon1.classList.remove('active');
+        if (smallIcon2) smallIcon2.classList.remove('active');
+        
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+            if (!popup1.classList.contains('active') && !popup2.classList.contains('active')) {
+                if (smallIcon1) smallIcon1.classList.add('active');
+                if (smallIcon2) smallIcon2.classList.add('active');
+            }
+        }, 2000);
+    }, { passive: true });
+    
+    // Initialize popups
+    initPopups();
+    
+    // Debug info
+    console.log('Popups initialized successfully');
+    console.log('Popup 1:', popup1 ? 'Found' : 'Not found');
+    console.log('Popup 2:', popup2 ? 'Found' : 'Not found');
+});
