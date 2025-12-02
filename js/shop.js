@@ -1,6 +1,8 @@
-// Enhanced Product Data with Herbal Theme
+// Shop Page JavaScript
+
+// Product Data
 const products = [
-    // Herbal Drinks
+    // Herbal Drinks (6 products)
     {
         id: 1,
         name: "PRODUCT NO. 1 GO DOWN HERB (NDAA)",
@@ -9,17 +11,11 @@ const products = [
         oldPrice: null,
         rating: 4.5,
         reviews: 128,
-        description: "Premium herbal blend for natural wellness and vitality. Made with traditional herbs and modern extraction methods.",
+        description: "Premium herbal blend for natural wellness and vitality.",
         image: "images/product/Product1.jpg",
         inStock: true,
         featured: true,
-        badge: "Best Seller",
-        benefits: ["energy", "immunity"],
-        ingredients: ["Traditional Herbs", "Natural Extracts"],
-        usage: "Take as directed for optimal wellness",
-        origin: "South African Herbs",
-        organic: true,
-        tags: ["herbal", "wellness", "natural"]
+        badge: "Best Seller"
     },
     {
         id: 2,
@@ -29,17 +25,11 @@ const products = [
         oldPrice: null,
         rating: 4.8,
         reviews: 89,
-        description: "Potent underground herb extract with traditional healing properties and modern wellness benefits.",
+        description: "Potent underground herb extract with traditional healing properties.",
         image: "images/product/Product1.jpg",
         inStock: true,
         featured: true,
-        badge: "Popular",
-        benefits: ["immunity", "energy"],
-        ingredients: ["Underground Herbs", "Natural Extracts"],
-        usage: "Consume as needed for natural support",
-        origin: "African Traditional",
-        organic: true,
-        tags: ["traditional", "potent", "wellness"]
+        badge: "Popular"
     },
     {
         id: 3,
@@ -49,17 +39,11 @@ const products = [
         oldPrice: null,
         rating: 4.7,
         reviews: 204,
-        description: "Gentle yet effective herbal formulation for quiet strength and inner balance. Perfect for daily wellness.",
+        description: "Gentle yet effective herbal formulation for inner balance.",
         image: "images/product/silentHerb.jpg",
         inStock: true,
         featured: false,
-        badge: "Premium",
-        benefits: ["stress", "balance"],
-        ingredients: ["Silent Herbs", "Calming Extracts"],
-        usage: "Use regularly for maintained wellness",
-        origin: "Traditional Formulation",
-        organic: true,
-        tags: ["gentle", "balance", "wellness"]
+        badge: "Premium"
     },
     {
         id: 4,
@@ -69,17 +53,11 @@ const products = [
         oldPrice: null,
         rating: 4.2,
         reviews: 95,
-        description: "Fast-acting herbal solution for digestive comfort and stomach wellness. Quick relief when you need it.",
+        description: "Fast-acting herbal solution for digestive comfort.",
         image: "images/product/cleaner.png",
         inStock: true,
         featured: false,
-        badge: "Fast Relief",
-        benefits: ["digestion"],
-        ingredients: ["Digestive Herbs", "Soothing Extracts"],
-        usage: "Take as needed for digestive support",
-        origin: "Traditional Remedy",
-        organic: true,
-        tags: ["digestive", "fast", "relief"]
+        badge: "Fast Relief"
     },
     {
         id: 5,
@@ -89,17 +67,11 @@ const products = [
         oldPrice: null,
         rating: 4.3,
         reviews: 142,
-        description: "Traditional Mpesu herbal blend for overall wellness and natural vitality support.",
+        description: "Traditional Mpesu herbal blend for vitality support.",
         image: "images/product/mpesu.png",
         inStock: true,
         featured: false,
-        badge: "Traditional",
-        benefits: ["energy", "vitality"],
-        ingredients: ["Mpesu Herbs", "Natural Blends"],
-        usage: "Regular use for maintained vitality",
-        origin: "Traditional African",
-        organic: true,
-        tags: ["traditional", "vitality", "wellness"]
+        badge: "Traditional"
     },
     {
         id: 6,
@@ -109,19 +81,13 @@ const products = [
         oldPrice: null,
         rating: 4.6,
         reviews: 167,
-        description: "Special anointed herbal oil blend for spiritual and physical wellness. Traditional preparation methods.",
+        description: "Special anointed herbal oil blend for spiritual wellness.",
         image: "images/products/oil.png",
         inStock: true,
         featured: true,
-        badge: "Special",
-        benefits: ["spiritual", "wellness"],
-        ingredients: ["Anointed Herbs", "Sacred Oils"],
-        usage: "Use as directed for spiritual practice",
-        origin: "Traditional Sacred",
-        organic: true,
-        tags: ["anointed", "spiritual", "sacred"]
+        badge: "Special"
     },
-    // Bottled Water
+    // Bottled Water (2 products)
     {
         id: 7,
         name: "Pure Spring Water 550ml",
@@ -130,17 +96,11 @@ const products = [
         oldPrice: null,
         rating: 4.9,
         reviews: 256,
-        description: "Crisp, refreshing 550ml spring water bottled at source for maximum purity and freshness.",
+        description: "Crisp, refreshing 550ml spring water.",
         image: "images/products/blue-refreshment.png",
         inStock: true,
         featured: false,
-        badge: "Pure",
-        benefits: ["hydration"],
-        ingredients: ["Natural Spring Water"],
-        usage: "Drink to stay hydrated throughout the day",
-        origin: "Natural Springs",
-        organic: true,
-        tags: ["water", "hydration", "pure"]
+        badge: "Pure"
     },
     {
         id: 8,
@@ -150,19 +110,13 @@ const products = [
         oldPrice: null,
         rating: 4.9,
         reviews: 189,
-        description: "1 litre of pure spring water, perfect for daily hydration and wellness routines.",
-        image:  "images/products/waters.png",
+        description: "1 litre of pure spring water for daily hydration.",
+        image: "images/products/waters.png",
         inStock: true,
         featured: false,
-        badge: "Value",
-        benefits: ["hydration"],
-        ingredients: ["Natural Spring Water"],
-        usage: "Perfect for daily hydration needs",
-        origin: "Natural Springs",
-        organic: true,
-        tags: ["water", "hydration", "1litre"]
+        badge: "Value"
     },
-    // Merchandise
+    // Merchandise (3 products)
     {
         id: 9,
         name: "Go Down Merchandise Black T-Shirt",
@@ -171,19 +125,13 @@ const products = [
         oldPrice: 249.99,
         rating: 4.7,
         reviews: 56,
-        description: "Premium cotton t-shirt featuring the Go Down Herbs logo. Comfortable and stylish wellness wear.",
-        image: "images/merch/black-shirt.png" ,
+        description: "Premium cotton t-shirt with Go Down Herbs logo.",
+        image: "images/merch/black-shirt.png",
         inStock: true,
         featured: false,
-        badge: "Limited",
-        benefits: [],
-        ingredients: ["100% Cotton"],
-        usage: "Machine wash cold, tumble dry low",
-        origin: "Local Production",
-        organic: false,
-        tags: ["tshirt", "merchandise", "clothing"]
+        badge: "Limited"
     },
-   {
+    {
         id: 10,
         name: "Go Down Merchandise White T-Shirt",
         category: "merchandise",
@@ -191,19 +139,13 @@ const products = [
         oldPrice: 249.99,
         rating: 4.7,
         reviews: 56,
-        description: "Premium cotton t-shirt featuring the Go Down Herbs logo. Comfortable and stylish wellness wear.",
+        description: "Premium cotton t-shirt with Go Down Herbs logo.",
         image: "images/merch/white-shirt.png",
         inStock: true,
         featured: false,
-        badge: "Limited",
-        benefits: [],
-        ingredients: ["100% Cotton"],
-        usage: "Machine wash cold, tumble dry low",
-        origin: "Local Production",
-        organic: false,
-        tags: ["tshirt", "merchandise", "clothing"]
+        badge: "Limited"
     },
-     {
+    {
         id: 11,
         name: "Go Down Merchandise Green T-Shirt",
         category: "merchandise",
@@ -211,179 +153,109 @@ const products = [
         oldPrice: 249.99,
         rating: 4.7,
         reviews: 56,
-        description: "Premium cotton t-shirt featuring the Go Down Herbs logo. Comfortable and stylish wellness wear.",
+        description: "Premium cotton t-shirt with Go Down Herbs logo.",
         image: "images/merch/green-shirt.png",
         inStock: true,
         featured: false,
-        badge: "Limited",
-        benefits: [],
-        ingredients: ["100% Cotton"],
-        usage: "Machine wash cold, tumble dry low",
-        origin: "Local Production",
-        organic: false,
-        tags: ["tshirt", "merchandise", "clothing"]
+        badge: "Limited"
     }
-    
 ];
 
-// DOM Elements
-const productsGrid = document.getElementById('productsGrid');
-const pagination = document.getElementById('pagination');
-const resultsCount = document.getElementById('resultsCount');
-const sortSelect = document.getElementById('sortSelect');
-const viewButtons = document.querySelectorAll('.view-btn');
-const filterToggle = document.getElementById('filterToggle');
-const filtersSidebar = document.querySelector('.filters-sidebar');
-const searchInput = document.getElementById('productSearch');
-const clearFiltersBtn = document.getElementById('clearFilters');
-const resetSearchBtn = document.getElementById('resetSearch');
-const activeFilters = document.getElementById('activeFilters');
-const quickViewModal = document.getElementById('quickViewModal');
-const closeModal = document.getElementById('closeModal');
-const modalBody = document.getElementById('modalBody');
-const cartBtn = document.querySelector('.cart-btn');
-const cartSidebar = document.getElementById('cartSidebar');
-const closeCart = document.querySelector('.close-cart');
-const cartItems = document.getElementById('cartItems');
-const cartSubtotal = document.getElementById('cartSubtotal');
-const cartCount = document.querySelector('.cart-count');
-const wishlistCount = document.querySelector('.wishlist-count');
-const backToTop = document.getElementById('backToTop');
-const loadingScreen = document.getElementById('loadingScreen');
-const newsletterForm = document.getElementById('newsletterForm');
-
 // State Variables
-let currentPage = 1;
-const productsPerPage = 11;
 let filteredProducts = [...products];
 let currentView = 'grid';
 let cart = JSON.parse(localStorage.getItem('herbalCart')) || [];
 let wishlist = JSON.parse(localStorage.getItem('herbalWishlist')) || [];
 let filters = {
     search: '',
-    categories: ['all'],
-    priceRange: [0, 1000],
-    rating: 0,
-    benefits: [],
-    availability: ['in-stock']
+    category: 'all',
+    minPrice: 0,
+    maxPrice: 1000,
+    sort: 'featured',
+    inStock: true
 };
 
-// Initialize the shop
+// DOM Elements
+const productsGrid = document.getElementById('productsGrid');
+const loadingState = document.getElementById('loadingState');
+const noResults = document.getElementById('noResults');
+const resultsCount = document.getElementById('resultsCount');
+const activeFilters = document.getElementById('activeFilters');
+const productSearch = document.getElementById('productSearch');
+const clearFiltersBtn = document.getElementById('clearFilters');
+const resetSearchBtn = document.getElementById('resetSearch');
+const filterToggle = document.getElementById('filterToggle');
+const filtersSidebar = document.getElementById('filtersSidebar');
+const viewButtons = document.querySelectorAll('.view-btn');
+const quickViewModal = document.getElementById('quickViewModal');
+const closeModal = document.getElementById('closeModal');
+const modalBody = document.getElementById('modalBody');
+const backToTop = document.getElementById('backToTop');
+const cartCount = document.querySelector('.cart-count');
+const wishlistCount = document.querySelector('.wishlist-count');
+
+// Initialize Shop
 function initShop() {
-    // Simulate loading
+    renderProducts();
+    updateCartUI();
+    updateWishlistUI();
+    attachEventListeners();
+    updateActiveFilters();
+    
+    // Hide loading screen
     setTimeout(() => {
+        const loadingScreen = document.getElementById('loadingScreen');
         if (loadingScreen) {
             loadingScreen.classList.add('loaded');
             setTimeout(() => {
                 loadingScreen.style.display = 'none';
             }, 500);
         }
+        loadingState.style.display = 'none';
     }, 1500);
-
-    renderProducts();
-    updateCartUI();
-    updateWishlistUI();
-    attachEventListeners();
-    updateActiveFilters();
-    initMobileMenu();
-
-    // Ensure loading screen is hidden after all initialization
-    setTimeout(() => {
-        if (loadingScreen) {
-            loadingScreen.style.display = 'none';
-        }
-    }, 2000);
 }
 
-// Mobile menu functionality
-function initMobileMenu() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('active');
-        });
-    }
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (mobileMenu && mobileMenuBtn) {
-            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
-                mobileMenu.classList.remove('active');
-            }
-        }
-    });
-}
-
-// Attach event listeners
+// Attach Event Listeners
 function attachEventListeners() {
-    // Search and filters
-    if (searchInput) searchInput.addEventListener('input', handleSearch);
-    if (clearFiltersBtn) clearFiltersBtn.addEventListener('click', resetFilters);
-    if (resetSearchBtn) resetSearchBtn.addEventListener('click', resetFilters);
+    // Filter events
+    if (productSearch) {
+        productSearch.addEventListener('input', handleSearch);
+    }
     
-    // Sort and view
-    if (sortSelect) sortSelect.addEventListener('change', handleSortChange);
-    viewButtons.forEach(btn => {
-        btn.addEventListener('click', handleViewChange);
-    });
+    if (clearFiltersBtn) {
+        clearFiltersBtn.addEventListener('click', resetFilters);
+    }
     
-    // Modal and cart
-    if (closeModal) closeModal.addEventListener('click', closeQuickView);
-    if (cartBtn) cartBtn.addEventListener('click', toggleCart);
-    if (closeCart) closeCart.addEventListener('click', toggleCart);
+    if (resetSearchBtn) {
+        resetSearchBtn.addEventListener('click', resetFilters);
+    }
     
-    // Filter changes
+    // Category filter
     document.querySelectorAll('input[name="category"]').forEach(input => {
         input.addEventListener('change', handleCategoryChange);
     });
     
-    document.querySelectorAll('input[name="rating"]').forEach(input => {
-        input.addEventListener('change', handleRatingChange);
-    });
-    
-    document.querySelectorAll('input[name="availability"]').forEach(input => {
-        input.addEventListener('change', handleAvailabilityChange);
-    });
-    
-    // Price range
+    // Price filter
     const minPriceInput = document.getElementById('minPrice');
     const maxPriceInput = document.getElementById('maxPrice');
-    const rangeMin = document.querySelector('.range-min');
-    const rangeMax = document.querySelector('.range-max');
-    
     if (minPriceInput) minPriceInput.addEventListener('change', handlePriceChange);
     if (maxPriceInput) maxPriceInput.addEventListener('change', handlePriceChange);
-    if (rangeMin) rangeMin.addEventListener('input', handleRangeChange);
-    if (rangeMax) rangeMax.addEventListener('input', handleRangeChange);
     
-    // Quick categories
-    document.querySelectorAll('.category-card').forEach(card => {
-        card.addEventListener('click', handleQuickCategory);
+    // Sort filter
+    document.querySelectorAll('input[name="sort"]').forEach(input => {
+        input.addEventListener('change', handleSortChange);
     });
     
-    // Newsletter
-    if (newsletterForm) newsletterForm.addEventListener('submit', handleNewsletterSubmit);
-    
-    // Back to top
-    if (backToTop) {
-        backToTop.addEventListener('click', scrollToTop);
-        window.addEventListener('scroll', handleScroll);
+    // Stock filter
+    const inStockFilter = document.getElementById('inStockFilter');
+    if (inStockFilter) {
+        inStockFilter.addEventListener('change', handleStockChange);
     }
     
-    // Close modals on outside click
-    if (quickViewModal) {
-        quickViewModal.addEventListener('click', (e) => {
-            if (e.target === quickViewModal) closeQuickView();
-        });
-    }
-    
-    if (cartSidebar) {
-        cartSidebar.addEventListener('click', (e) => {
-            if (e.target === cartSidebar) toggleCart();
-        });
-    }
+    // View toggle
+    viewButtons.forEach(btn => {
+        btn.addEventListener('click', handleViewChange);
+    });
     
     // Filter toggle for mobile
     if (filterToggle) {
@@ -391,73 +263,94 @@ function attachEventListeners() {
             filtersSidebar.classList.toggle('active');
         });
     }
+    
+    // Quick categories
+    document.querySelectorAll('.category-card[data-category]').forEach(card => {
+        card.addEventListener('click', handleQuickCategory);
+    });
+    
+    // Modal close
+    if (closeModal) {
+        closeModal.addEventListener('click', closeQuickView);
+    }
+    
+    // Close modal on outside click
+    if (quickViewModal) {
+        quickViewModal.addEventListener('click', (e) => {
+            if (e.target === quickViewModal) closeQuickView();
+        });
+    }
+    
+    // Back to top
+    if (backToTop) {
+        backToTop.addEventListener('click', scrollToTop);
+        window.addEventListener('scroll', handleScroll);
+    }
+    
+    // Newsletter form
+    const newsletterForm = document.getElementById('newsletterForm');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', handleNewsletter);
+    }
 }
 
-// Render products based on current filters and page
+// Render Products
 function renderProducts() {
     if (!productsGrid) return;
     
-    const startIndex = (currentPage - 1) * productsPerPage;
-    const endIndex = startIndex + productsPerPage;
-    const productsToShow = filteredProducts.slice(startIndex, endIndex);
+    // Apply filters and sort
+    filterAndSortProducts();
     
+    // Clear grid
     productsGrid.innerHTML = '';
     
-    if (productsToShow.length === 0) {
-        document.getElementById('noResults').style.display = 'block';
-        document.getElementById('loadingState').style.display = 'none';
+    // Show/hide states
+    if (filteredProducts.length === 0) {
+        noResults.style.display = 'block';
+        loadingState.style.display = 'none';
         return;
     }
     
-    document.getElementById('noResults').style.display = 'none';
-    document.getElementById('loadingState').style.display = 'none';
+    noResults.style.display = 'none';
+    loadingState.style.display = 'none';
     
-    productsToShow.forEach((product, index) => {
-        setTimeout(() => {
-            const productElement = createProductElement(product);
-            productsGrid.appendChild(productElement);
-        }, index * 100);
+    // Render products
+    filteredProducts.forEach(product => {
+        const productElement = createProductElement(product);
+        productsGrid.appendChild(productElement);
     });
     
+    // Update view class
+    productsGrid.className = `products-grid ${currentView === 'list' ? 'list-view' : ''}`;
+    
+    // Update results count
     updateResultsCount();
 }
 
-// Create product card element
+// Create Product Element
 function createProductElement(product) {
-    const productCard = document.createElement('div');
-    productCard.className = `product-card ${currentView === 'list' ? 'list-view' : ''}`;
+    const div = document.createElement('div');
+    div.className = 'product-card';
     
-    const stars = generateStarRating(product.rating);
+    const stars = generateStars(product.rating);
     const oldPrice = product.oldPrice ? 
         `<span class="product-old-price">R${product.oldPrice.toFixed(2)}</span>` : '';
-    const badge = product.badge ? `<div class="product-badge ${product.badge.toLowerCase().replace(' ', '-')}">${product.badge}</div>` : '';
-    const isInWishlist = wishlist.includes(product.id);
+    const badge = product.badge ? 
+        `<div class="product-badge">${product.badge}</div>` : '';
     
-    productCard.innerHTML = `
+    div.innerHTML = `
         <div class="product-image">
             <img src="${product.image}" alt="${product.name}" loading="lazy">
             ${badge}
-            <div class="product-actions">
-                <button class="action-btn quick-view" data-id="${product.id}" title="Quick View">
-                    <i class="fas fa-eye"></i>
-                </button>
-                <button class="action-btn wishlist-btn ${isInWishlist ? 'active' : ''}" data-id="${product.id}" title="${isInWishlist ? 'Remove from Wishlist' : 'Add to Wishlist'}">
-                    <i class="${isInWishlist ? 'fas' : 'far'} fa-heart"></i>
-                </button>
-            </div>
         </div>
-        <div class="product-info">
-            <div class="product-category">${product.category}</div>
+        <div class="product-content">
+            <div class="product-category">${product.category.replace('-', ' ')}</div>
             <h3 class="product-name">${product.name}</h3>
             <p class="product-description">${product.description}</p>
-            <div class="product-rating">
-                <div class="rating-stars">${stars}</div>
-                <span class="rating-value">${product.rating} (${product.reviews})</span>
-            </div>
-            <div class="product-footer">
+            <div class="product-meta">
                 <div class="product-price">
                     ${oldPrice}
-                    R${product.price.toFixed(2)}
+                    <span class="current-price">R${product.price.toFixed(2)}</span>
                 </div>
                 <button class="add-to-cart ${!product.inStock ? 'disabled' : ''}" 
                         data-id="${product.id}"
@@ -470,19 +363,23 @@ function createProductElement(product) {
     `;
     
     // Add event listeners
-    const quickViewBtn = productCard.querySelector('.quick-view');
-    const addToCartBtn = productCard.querySelector('.add-to-cart');
-    const wishlistBtn = productCard.querySelector('.wishlist-btn');
+    const addToCartBtn = div.querySelector('.add-to-cart');
+    if (addToCartBtn && product.inStock) {
+        addToCartBtn.addEventListener('click', () => addToCart(product.id));
+    }
     
-    if (quickViewBtn) quickViewBtn.addEventListener('click', () => openQuickView(product.id));
-    if (addToCartBtn) addToCartBtn.addEventListener('click', () => addToCart(product.id));
-    if (wishlistBtn) wishlistBtn.addEventListener('click', () => toggleWishlist(product.id));
+    // Add click event for quick view
+    div.addEventListener('click', (e) => {
+        if (!e.target.closest('.add-to-cart')) {
+            openQuickView(product.id);
+        }
+    });
     
-    return productCard;
+    return div;
 }
 
-// Generate star rating HTML
-function generateStarRating(rating) {
+// Generate Star Rating HTML
+function generateStars(rating) {
     let stars = '';
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 >= 0.5;
@@ -500,323 +397,34 @@ function generateStarRating(rating) {
         stars += '<i class="far fa-star"></i>';
     }
     
-    return stars;
+    return `<div class="product-rating">${stars}</div>`;
 }
 
-// Update results count
-function updateResultsCount() {
-    if (!resultsCount) return;
-    
-    const total = filteredProducts.length;
-    const start = (currentPage - 1) * productsPerPage + 1;
-    const end = Math.min(currentPage * productsPerPage, total);
-    
-    resultsCount.textContent = `Showing ${start}-${end} of ${total} products`;
-}
-
-// Update active filters display
-function updateActiveFilters() {
-    if (!activeFilters) return;
-    
-    activeFilters.innerHTML = '';
-    let activeCount = 0;
-
-    // Search filter
-    if (filters.search) {
-        activeCount++;
-        const filterElement = document.createElement('div');
-        filterElement.className = 'active-filter';
-        filterElement.innerHTML = `
-            Search: "${filters.search}"
-            <button onclick="removeSearchFilter()">
-                <i class="fas fa-times"></i>
-            </button>
-        `;
-        activeFilters.appendChild(filterElement);
-    }
-
-    // Category filters (excluding 'all')
-    const categoryFilters = filters.categories.filter(cat => cat !== 'all');
-    if (categoryFilters.length > 0) {
-        activeCount++;
-        const filterElement = document.createElement('div');
-        filterElement.className = 'active-filter';
-        filterElement.innerHTML = `
-            Categories: ${categoryFilters.join(', ')}
-            <button onclick="removeCategoryFilters()">
-                <i class="fas fa-times"></i>
-            </button>
-        `;
-        activeFilters.appendChild(filterElement);
-    }
-
-    // Price range
-    if (filters.priceRange[0] > 0 || filters.priceRange[1] < 1000) {
-        activeCount++;
-        const filterElement = document.createElement('div');
-        filterElement.className = 'active-filter';
-        filterElement.innerHTML = `
-            Price: R${filters.priceRange[0]} - R${filters.priceRange[1]}
-            <button onclick="removePriceFilter()">
-                <i class="fas fa-times"></i>
-            </button>
-        `;
-        activeFilters.appendChild(filterElement);
-    }
-
-    // Rating
-    if (filters.rating > 0) {
-        activeCount++;
-        const filterElement = document.createElement('div');
-        filterElement.className = 'active-filter';
-        filterElement.innerHTML = `
-            Rating: ${filters.rating}+ Stars
-            <button onclick="removeRatingFilter()">
-                <i class="fas fa-times"></i>
-            </button>
-        `;
-        activeFilters.appendChild(filterElement);
-    }
-
-    // Update active filters count
-    document.querySelector('.active-filters-count').textContent = activeCount;
-}
-
-// Filter removal functions
-function removeSearchFilter() {
-    filters.search = '';
-    searchInput.value = '';
-    applyFilters();
-}
-
-function removeCategoryFilters() {
-    filters.categories = ['all'];
-    document.querySelectorAll('input[name="category"]').forEach(input => {
-        input.checked = input.value === 'all';
-    });
-    applyFilters();
-}
-
-function removePriceFilter() {
-    filters.priceRange = [0, 1000];
-    document.getElementById('minPrice').value = '';
-    document.getElementById('maxPrice').value = '';
-    document.querySelector('.range-min').value = 0;
-    document.querySelector('.range-max').value = 1000;
-    updatePriceDisplay();
-    applyFilters();
-}
-
-function removeRatingFilter() {
-    filters.rating = 0;
-    document.querySelector('input[name="rating"][value="0"]').checked = true;
-    applyFilters();
-}
-
-// Handle search
-function handleSearch(e) {
-    filters.search = e.target.value.toLowerCase();
-    applyFilters();
-}
-
-// Handle category changes
-function handleCategoryChange(e) {
-    const value = e.target.value;
-    
-    if (value === 'all') {
-        // If "all" is checked, uncheck others and set categories to ['all']
-        document.querySelectorAll('input[name="category"]').forEach(input => {
-            if (input.value !== 'all') input.checked = false;
-        });
-        filters.categories = ['all'];
-    } else {
-        // If a specific category is checked, uncheck "all"
-        const allCheckbox = document.querySelector('input[name="category"][value="all"]');
-        allCheckbox.checked = false;
-        
-        if (e.target.checked) {
-            filters.categories.push(value);
-        } else {
-            filters.categories = filters.categories.filter(cat => cat !== value);
-        }
-        
-        // If no categories selected, check "all"
-        if (filters.categories.length === 0) {
-            allCheckbox.checked = true;
-            filters.categories = ['all'];
-        }
-    }
-    
-    applyFilters();
-}
-
-// Handle rating changes
-function handleRatingChange(e) {
-    filters.rating = parseInt(e.target.value);
-    applyFilters();
-}
-
-// Handle availability changes
-function handleAvailabilityChange(e) {
-    const value = e.target.value;
-    
-    if (e.target.checked) {
-        filters.availability.push(value);
-    } else {
-        filters.availability = filters.availability.filter(avail => avail !== value);
-    }
-    
-    applyFilters();
-}
-
-// Handle price changes
-function handlePriceChange() {
-    const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
-    const maxPrice = parseFloat(document.getElementById('maxPrice').value) || 1000;
-    
-    filters.priceRange = [minPrice, maxPrice];
-    updateRangeInputs();
-    applyFilters();
-}
-
-// Handle range changes
-function handleRangeChange() {
-    const minRange = parseInt(document.querySelector('.range-min').value);
-    const maxRange = parseInt(document.querySelector('.range-max').value);
-    
-    filters.priceRange = [minRange, maxRange];
-    updatePriceInputs();
-    updatePriceDisplay();
-    applyFilters();
-}
-
-// Update range inputs based on price inputs
-function updateRangeInputs() {
-    document.querySelector('.range-min').value = filters.priceRange[0];
-    document.querySelector('.range-max').value = filters.priceRange[1];
-    updateSliderTrack();
-}
-
-// Update price inputs based on range inputs
-function updatePriceInputs() {
-    document.getElementById('minPrice').value = filters.priceRange[0];
-    document.getElementById('maxPrice').value = filters.priceRange[1];
-}
-
-// Update price display
-function updatePriceDisplay() {
-    document.getElementById('minPriceDisplay').textContent = filters.priceRange[0];
-    document.getElementById('maxPriceDisplay').textContent = filters.priceRange[1];
-    updateSliderTrack();
-}
-
-// Update slider track
-function updateSliderTrack() {
-    const min = filters.priceRange[0];
-    const max = filters.priceRange[1];
-    const track = document.querySelector('.slider-track');
-    if (track) {
-        track.style.left = `${(min / 1000) * 100}%`;
-        track.style.right = `${100 - (max / 1000) * 100}%`;
-    }
-}
-
-// Handle quick category selection
-function handleQuickCategory(e) {
-    e.preventDefault();
-    const category = e.currentTarget.dataset.category;
-    
-    // Set category filter
-    filters.categories = [category];
-    document.querySelectorAll('input[name="category"]').forEach(input => {
-        input.checked = input.value === category;
-    });
-    
-    applyFilters();
-    
-    // Scroll to products section
-    document.querySelector('.products-section').scrollIntoView({
-        behavior: 'smooth'
-    });
-}
-
-// Apply all filters
-function applyFilters() {
-    const inStockSelected = filters.availability.includes('in-stock');
-    const outOfStockSelected = filters.availability.includes('out-of-stock');
-
+// Filter and Sort Products
+function filterAndSortProducts() {
+    // Filter
     filteredProducts = products.filter(product => {
         // Search filter
-        const matchesSearch = !filters.search ||
-            product.name.toLowerCase().includes(filters.search) ||
-            product.description.toLowerCase().includes(filters.search) ||
-            product.tags.some(tag => tag.includes(filters.search));
-
+        const matchesSearch = !filters.search || 
+            product.name.toLowerCase().includes(filters.search.toLowerCase()) ||
+            product.description.toLowerCase().includes(filters.search.toLowerCase());
+        
         // Category filter
-        const matchesCategory = filters.categories.includes('all') ||
-            filters.categories.includes(product.category);
-
-        // Rating filter
-        const matchesRating = product.rating >= filters.rating;
-
+        const matchesCategory = filters.category === 'all' || 
+            product.category === filters.category;
+        
         // Price filter
-        const matchesPrice = product.price >= filters.priceRange[0] &&
-            product.price <= filters.priceRange[1];
-
-        // Availability filter
-        let matchesAvailability = false;
-
-        if (inStockSelected && outOfStockSelected) {
-            matchesAvailability = true;
-        } else if (inStockSelected) {
-            matchesAvailability = product.inStock;
-        } else if (outOfStockSelected) {
-            matchesAvailability = !product.inStock;
-        }
-
-        return matchesSearch && matchesCategory && matchesRating && matchesPrice && matchesAvailability;
+        const matchesPrice = product.price >= filters.minPrice && 
+            product.price <= filters.maxPrice;
+        
+        // Stock filter
+        const matchesStock = !filters.inStock || product.inStock;
+        
+        return matchesSearch && matchesCategory && matchesPrice && matchesStock;
     });
     
-    currentPage = 1;
-    renderProducts();
-    updateActiveFilters();
-}
-
-// Reset all filters
-function resetFilters() {
-    // Reset filter state
-    filters = {
-        search: '',
-        categories: ['all'],
-        priceRange: [0, 1000],
-        rating: 0,
-        benefits: [],
-        availability: ['in-stock']
-    };
-    
-    // Reset UI elements
-    if (searchInput) searchInput.value = '';
-    document.querySelectorAll('input[name="category"]').forEach(input => {
-        input.checked = input.value === 'all';
-    });
-    document.querySelector('input[name="rating"][value="0"]').checked = true;
-    document.querySelectorAll('input[name="availability"]').forEach(input => {
-        input.checked = input.value === 'in-stock';
-    });
-    document.getElementById('minPrice').value = '';
-    document.getElementById('maxPrice').value = '';
-    document.querySelector('.range-min').value = 0;
-    document.querySelector('.range-max').value = 1000;
-    
-    updatePriceDisplay();
-    applyFilters();
-}
-
-// Handle sort change
-function handleSortChange() {
-    const sortValue = sortSelect.value;
-    
-    switch (sortValue) {
+    // Sort
+    switch (filters.sort) {
         case 'price-low':
             filteredProducts.sort((a, b) => a.price - b.price);
             break;
@@ -826,33 +434,98 @@ function handleSortChange() {
         case 'name':
             filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
             break;
-        case 'rating':
-            filteredProducts.sort((a, b) => b.rating - a.rating);
-            break;
-        case 'newest':
-            // Assuming newer products have higher IDs
-            filteredProducts.sort((a, b) => b.id - a.id);
-            break;
-        case 'popular':
-            // Sort by reviews (popularity)
-            filteredProducts.sort((a, b) => b.reviews - a.reviews);
-            break;
         case 'featured':
         default:
-            // Featured products first, then by name
+            // Featured products first
             filteredProducts.sort((a, b) => {
                 if (a.featured && !b.featured) return -1;
                 if (!a.featured && b.featured) return 1;
-                return a.name.localeCompare(b.name);
+                return 0;
             });
             break;
     }
+}
+
+// Update Results Count
+function updateResultsCount() {
+    if (!resultsCount) return;
     
-    currentPage = 1;
+    const total = filteredProducts.length;
+    resultsCount.textContent = `Showing ${total} product${total !== 1 ? 's' : ''}`;
+}
+
+// Update Active Filters Display
+function updateActiveFilters() {
+    if (!activeFilters) return;
+    
+    activeFilters.innerHTML = '';
+    
+    // Category filter
+    if (filters.category !== 'all') {
+        const filterElement = document.createElement('div');
+        filterElement.className = 'active-filter';
+        filterElement.innerHTML = `
+            ${filters.category.replace('-', ' ')}
+            <button onclick="removeCategoryFilter()">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        activeFilters.appendChild(filterElement);
+    }
+    
+    // Price filter
+    if (filters.minPrice > 0 || filters.maxPrice < 1000) {
+        const filterElement = document.createElement('div');
+        filterElement.className = 'active-filter';
+        filterElement.innerHTML = `
+            R${filters.minPrice} - R${filters.maxPrice}
+            <button onclick="removePriceFilter()">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        activeFilters.appendChild(filterElement);
+    }
+}
+
+// Filter Handlers
+function handleSearch(e) {
+    filters.search = e.target.value;
+    renderProducts();
+    updateActiveFilters();
+}
+
+function handleCategoryChange(e) {
+    filters.category = e.target.value;
+    renderProducts();
+    updateActiveFilters();
+}
+
+function handlePriceChange() {
+    const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+    const maxPrice = parseFloat(document.getElementById('maxPrice').value) || 1000;
+    
+    filters.minPrice = minPrice;
+    filters.maxPrice = maxPrice;
+    
+    // Update display
+    document.getElementById('minPriceDisplay').textContent = minPrice;
+    document.getElementById('maxPriceDisplay').textContent = maxPrice;
+    
+    renderProducts();
+    updateActiveFilters();
+}
+
+function handleSortChange(e) {
+    filters.sort = e.target.value;
     renderProducts();
 }
 
-// Handle view change
+function handleStockChange(e) {
+    filters.inStock = e.target.checked;
+    renderProducts();
+    updateActiveFilters();
+}
+
 function handleViewChange(e) {
     const view = e.currentTarget.dataset.view;
     
@@ -865,61 +538,101 @@ function handleViewChange(e) {
         btn.classList.toggle('active', btn.dataset.view === view);
     });
     
-    // Update products grid class
-    productsGrid.classList.toggle('list-view', view === 'list');
-    
-    // Re-render products
+    // Re-render products with new view
     renderProducts();
 }
 
-// Open quick view modal
+function handleQuickCategory(e) {
+    e.preventDefault();
+    const category = e.currentTarget.dataset.category;
+    
+    // Set category filter
+    filters.category = category;
+    document.querySelector(`input[name="category"][value="${category}"]`).checked = true;
+    
+    renderProducts();
+    updateActiveFilters();
+    
+    // Scroll to products
+    productsGrid.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Remove Filter Functions
+function removeCategoryFilter() {
+    filters.category = 'all';
+    document.querySelector('input[name="category"][value="all"]').checked = true;
+    renderProducts();
+    updateActiveFilters();
+}
+
+function removePriceFilter() {
+    filters.minPrice = 0;
+    filters.maxPrice = 1000;
+    
+    document.getElementById('minPrice').value = '';
+    document.getElementById('maxPrice').value = '';
+    document.getElementById('minPriceDisplay').textContent = '0';
+    document.getElementById('maxPriceDisplay').textContent = '1000';
+    
+    renderProducts();
+    updateActiveFilters();
+}
+
+// Reset All Filters
+function resetFilters() {
+    // Reset filter state
+    filters = {
+        search: '',
+        category: 'all',
+        minPrice: 0,
+        maxPrice: 1000,
+        sort: 'featured',
+        inStock: true
+    };
+    
+    // Reset UI elements
+    if (productSearch) productSearch.value = '';
+    document.querySelector('input[name="category"][value="all"]').checked = true;
+    document.querySelector('input[name="sort"][value="featured"]').checked = true;
+    document.getElementById('inStockFilter').checked = true;
+    document.getElementById('minPrice').value = '';
+    document.getElementById('maxPrice').value = '';
+    document.getElementById('minPriceDisplay').textContent = '0';
+    document.getElementById('maxPriceDisplay').textContent = '1000';
+    
+    renderProducts();
+    updateActiveFilters();
+}
+
+// Quick View Modal
 function openQuickView(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
     
-    const stars = generateStarRating(product.rating);
+    const stars = generateStars(product.rating);
     const oldPrice = product.oldPrice ? 
         `<span class="product-old-price">R${product.oldPrice.toFixed(2)}</span>` : '';
     
     modalBody.innerHTML = `
         <div class="quick-view-content">
-            <div class="product-gallery">
-                <img src="${product.image}" alt="${product.name}" class="main-image">
-                <div class="product-badge">${product.badge || 'Premium'}</div>
+            <div class="product-image-large">
+                <img src="${product.image}" alt="${product.name}">
+                ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
             </div>
-            <div class="product-details">
+            <div class="product-details-large">
                 <h2>${product.name}</h2>
-                <div class="product-meta">
-                    <div class="product-rating">
-                        <div class="rating-stars">${stars}</div>
-                        <span class="rating-value">${product.rating} (${product.reviews} reviews)</span>
-                    </div>
-                    <div class="product-origin">
-                        <i class="fas fa-globe-africa"></i>
-                        Sourced from ${product.origin}
-                    </div>
-                    ${product.organic ? '<div class="organic-badge"><i class="fas fa-leaf"></i> Certified Organic</div>' : ''}
-                </div>
+                <div class="product-category-large">${product.category.replace('-', ' ')}</div>
                 
-                <div class="product-price">
+                ${stars}
+                
+                <p class="product-description-large">${product.description}</p>
+                
+                <div class="product-price-large">
                     ${oldPrice}
                     <span class="current-price">R${product.price.toFixed(2)}</span>
                 </div>
                 
-                <p class="product-description">${product.description}</p>
-                
-                <div class="product-info">
-                    <div class="info-section">
-                        <h5><i class="fas fa-list"></i> Ingredients</h5>
-                        <p>${product.ingredients.join(', ')}</p>
-                    </div>
-                    <div class="info-section">
-                        <h5><i class="fas fa-info-circle"></i> Usage</h5>
-                        <p>${product.usage}</p>
-                    </div>
-                </div>
-                
-                <div class="add-to-cart-section">
+                <div class="product-actions-large">
                     <div class="quantity-selector">
                         <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
                         <input type="number" class="quantity-input" value="1" min="1" max="10">
@@ -928,23 +641,18 @@ function openQuickView(productId) {
                     <button class="btn btn-primary add-to-cart-large" 
                             ${!product.inStock ? 'disabled' : ''}>
                         <i class="fas fa-shopping-basket"></i>
-                        ${!product.inStock ? 'Out of Stock' : 'Add to Cart - R' + product.price.toFixed(2)}
-                    </button>
-                    <button class="btn btn-outline wishlist-large" data-id="${product.id}">
-                        <i class="${wishlist.includes(product.id) ? 'fas' : 'far'} fa-heart"></i>
-                        ${wishlist.includes(product.id) ? 'In Wishlist' : 'Add to Wishlist'}
+                        ${!product.inStock ? 'Out of Stock' : 'Add to Cart'}
                     </button>
                 </div>
             </div>
         </div>
     `;
     
-    // Add event listeners
+    // Add event listeners for quantity selector
     const quantityInput = modalBody.querySelector('.quantity-input');
     const minusBtn = modalBody.querySelector('.quantity-btn.minus');
     const plusBtn = modalBody.querySelector('.quantity-btn.plus');
-    const addToCartLarge = modalBody.querySelector('.add-to-cart-large');
-    const wishlistLarge = modalBody.querySelector('.wishlist-large');
+    const addToCartBtn = modalBody.querySelector('.add-to-cart-large');
     
     minusBtn.addEventListener('click', () => {
         const value = parseInt(quantityInput.value);
@@ -956,31 +664,24 @@ function openQuickView(productId) {
         if (value < 10) quantityInput.value = value + 1;
     });
     
-    addToCartLarge.addEventListener('click', () => {
-        const quantity = parseInt(quantityInput.value);
-        addToCart(product.id, quantity);
-        closeQuickView();
-    });
-    
-    wishlistLarge.addEventListener('click', () => {
-        toggleWishlist(product.id);
-        wishlistLarge.innerHTML = `
-            <i class="${wishlist.includes(product.id) ? 'fas' : 'far'} fa-heart"></i>
-            ${wishlist.includes(product.id) ? 'In Wishlist' : 'Add to Wishlist'}
-        `;
-    });
+    if (addToCartBtn && product.inStock) {
+        addToCartBtn.addEventListener('click', () => {
+            const quantity = parseInt(quantityInput.value);
+            addToCart(product.id, quantity);
+            closeQuickView();
+        });
+    }
     
     quickViewModal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
-// Close quick view modal
 function closeQuickView() {
     quickViewModal.classList.remove('active');
     document.body.style.overflow = '';
 }
 
-// Add product to cart
+// Cart Functions
 function addToCart(productId, quantity = 1) {
     const product = products.find(p => p.id === productId);
     if (!product || !product.inStock) return;
@@ -1004,144 +705,29 @@ function addToCart(productId, quantity = 1) {
     showNotification(`${product.name} added to cart`, 'success');
 }
 
-// Update cart UI
 function updateCartUI() {
-    // Update cart count
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     if (cartCount) cartCount.textContent = totalItems;
-    
-    // Update cart sidebar if it exists
-    if (cartItems) {
-        cartItems.innerHTML = '';
-        
-        if (cart.length === 0) {
-            cartItems.innerHTML = `
-                <div class="empty-cart">
-                    <i class="fas fa-shopping-basket"></i>
-                    <h4>Your wellness cart is empty</h4>
-                    <p>Add some natural goodness to get started</p>
-                    <button class="btn btn-primary" onclick="toggleCart()">Continue Shopping</button>
-                </div>
-            `;
-            if (cartSubtotal) cartSubtotal.textContent = 'R0.00';
-            return;
-        }
-        
-        let subtotal = 0;
-        
-        cart.forEach(item => {
-            const itemTotal = item.price * item.quantity;
-            subtotal += itemTotal;
-            
-            const cartItem = document.createElement('div');
-            cartItem.className = 'cart-item';
-            cartItem.innerHTML = `
-                <img src="${item.image}" alt="${item.name}">
-                <div class="cart-item-details">
-                    <h4>${item.name}</h4>
-                    <div class="cart-item-price">R${item.price.toFixed(2)}</div>
-                    <div class="cart-item-quantity">
-                        <button class="quantity-btn minus" data-id="${item.id}"><i class="fas fa-minus"></i></button>
-                        <span>${item.quantity}</span>
-                        <button class="quantity-btn plus" data-id="${item.id}"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <button class="remove-item" data-id="${item.id}">
-                    <i class="fas fa-times"></i>
-                </button>
-            `;
-            
-            cartItems.appendChild(cartItem);
-        });
-        
-        // Add event listeners for cart items
-        cartItems.querySelectorAll('.quantity-btn.minus').forEach(btn => {
-            btn.addEventListener('click', () => updateCartQuantity(btn.dataset.id, -1));
-        });
-        
-        cartItems.querySelectorAll('.quantity-btn.plus').forEach(btn => {
-            btn.addEventListener('click', () => updateCartQuantity(btn.dataset.id, 1));
-        });
-        
-        cartItems.querySelectorAll('.remove-item').forEach(btn => {
-            btn.addEventListener('click', () => removeFromCart(btn.dataset.id));
-        });
-        
-        if (cartSubtotal) cartSubtotal.textContent = `R${subtotal.toFixed(2)}`;
-    }
 }
 
-// Update cart quantity
-function updateCartQuantity(productId, change) {
-    const item = cart.find(item => item.id === parseInt(productId));
-    if (!item) return;
-    
-    item.quantity += change;
-    
-    if (item.quantity <= 0) {
-        cart = cart.filter(item => item.id !== parseInt(productId));
-    }
-    
-    localStorage.setItem('herbalCart', JSON.stringify(cart));
-    updateCartUI();
-}
-
-// Remove from cart
-function removeFromCart(productId) {
-    const item = cart.find(item => item.id === parseInt(productId));
-    if (item) {
-        cart = cart.filter(item => item.id !== parseInt(productId));
-        localStorage.setItem('herbalCart', JSON.stringify(cart));
-        updateCartUI();
-        showNotification(`${item.name} removed from cart`, 'info');
-    }
-}
-
-// Toggle cart sidebar
-function toggleCart() {
-    if (cartSidebar) {
-        cartSidebar.classList.toggle('active');
-        document.body.style.overflow = cartSidebar.classList.contains('active') ? 'hidden' : '';
-    }
-}
-
-// Toggle wishlist
-function toggleWishlist(productId) {
-    if (wishlist.includes(productId)) {
-        wishlist = wishlist.filter(id => id !== productId);
-        showNotification('Product removed from wishlist', 'info');
-    } else {
-        wishlist.push(productId);
-        showNotification('Product added to wishlist', 'success');
-    }
-    
-    localStorage.setItem('herbalWishlist', JSON.stringify(wishlist));
-    updateWishlistUI();
-    renderProducts(); // Re-render to update wishlist buttons
-}
-
-// Update wishlist UI
 function updateWishlistUI() {
-    if (wishlistCount) {
-        wishlistCount.textContent = wishlist.length;
-    }
+    if (wishlistCount) wishlistCount.textContent = wishlist.length;
 }
 
-// Handle newsletter submission
-function handleNewsletterSubmit(e) {
+// Newsletter
+function handleNewsletter(e) {
     e.preventDefault();
     const email = e.target.querySelector('input[type="email"]').value;
     
-    // Simulate API call
-    showNotification('Thank you for joining our herbal community!', 'success');
+    showNotification('Thank you for subscribing!', 'success');
     e.target.reset();
 }
 
-// Handle scroll
+// Scroll Handlers
 function handleScroll() {
     // Back to top button
     if (backToTop) {
-        if (window.scrollY > 500) {
+        if (window.scrollY > 300) {
             backToTop.classList.add('visible');
         } else {
             backToTop.classList.remove('visible');
@@ -1159,7 +745,6 @@ function handleScroll() {
     }
 }
 
-// Scroll to top
 function scrollToTop() {
     window.scrollTo({
         top: 0,
@@ -1167,85 +752,75 @@ function scrollToTop() {
     });
 }
 
-// Show notification
-function showNotification(message, type = 'info') {
+// Show Notification
+function showNotification(message, type = 'success') {
+    // Create notification element
     const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
+    notification.className = 'notification';
     notification.innerHTML = `
         <div class="notification-content">
-            <i class="fas fa-${getNotificationIcon(type)}"></i>
+            <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
             <span>${message}</span>
         </div>
-        <button class="notification-close">
-            <i class="fas fa-times"></i>
-        </button>
     `;
     
+    // Style notification
     notification.style.cssText = `
         position: fixed;
-        top: 100px;
+        top: 20px;
         right: 20px;
-        background: ${getNotificationColor(type)};
+        background: ${type === 'success' ? '#2E7D32' : '#2196F3'};
         color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 12px;
-        box-shadow: var(--shadow-lg);
-        z-index: 4000;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 10000;
         display: flex;
         align-items: center;
-        gap: 1rem;
-        max-width: 400px;
+        gap: 10px;
+        animation: slideIn 0.3s ease;
     `;
     
+    // Add to document
     document.body.appendChild(notification);
     
-    // Close button
-    notification.querySelector('.notification-close').addEventListener('click', () => {
-        notification.style.transform = 'translateX(100%)';
-        setTimeout(() => {
-            document.body.removeChild(notification);
-        }, 300);
-    });
-    
-    // Animate in
+    // Remove after 3 seconds
     setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 10);
-    
-    // Auto remove after 5 seconds
-    setTimeout(() => {
-        notification.style.transform = 'translateX(100%)';
+        notification.style.animation = 'slideOut 0.3s ease';
         setTimeout(() => {
             if (document.body.contains(notification)) {
                 document.body.removeChild(notification);
             }
         }, 300);
-    }, 5000);
+    }, 3000);
 }
 
-// Get notification icon
-function getNotificationIcon(type) {
-    const icons = {
-        'success': 'check-circle',
-        'error': 'exclamation-circle',
-        'warning': 'exclamation-triangle',
-        'info': 'info-circle'
-    };
-    return icons[type] || 'info-circle';
-}
+// Add CSS for notification animations
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
 
-// Get notification color
-function getNotificationColor(type) {
-    const colors = {
-        'success': '#10b981',
-        'error': '#ef4444',
-        'warning': '#f59e0b',
-        'info': '#3b82f6'
-    };
-    return colors[type] || '#3b82f6';
-}
-
-// Initialize the shop when DOM is loaded
+// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initShop);
