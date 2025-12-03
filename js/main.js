@@ -867,7 +867,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (smallIcon1 && !popup1.classList.contains('active') && !popup2.classList.contains('active')) {
                 smallIcon1.classList.add('active');
             }
-        }, 1000);
+        }, 6000);
     }
     
     // Show small icon for popup 2
@@ -881,7 +881,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (smallIcon2 && !popup1.classList.contains('active') && !popup2.classList.contains('active')) {
                 smallIcon2.classList.add('active');
             }
-        }, 1000);
+        }, 6000);
     }
     
     // Show both small icons
