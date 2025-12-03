@@ -883,6 +883,11 @@
     .products-grid.list-view .product-image {
         width: 100%;
     }
+
+
+  .newsletter-content {
+        display: block;
+    }
 }
 
 @media (max-width: 576px) {

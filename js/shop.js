@@ -221,77 +221,120 @@ function attachEventListeners() {
     if (productSearch) {
         productSearch.addEventListener('input', handleSearch);
     }
-    
+
     if (clearFiltersBtn) {
         clearFiltersBtn.addEventListener('click', resetFilters);
     }
-    
+
     if (resetSearchBtn) {
         resetSearchBtn.addEventListener('click', resetFilters);
     }
-    
+
     // Category filter
     document.querySelectorAll('input[name="category"]').forEach(input => {
         input.addEventListener('change', handleCategoryChange);
     });
-    
+
     // Price filter
     const minPriceInput = document.getElementById('minPrice');
     const maxPriceInput = document.getElementById('maxPrice');
     if (minPriceInput) minPriceInput.addEventListener('change', handlePriceChange);
     if (maxPriceInput) maxPriceInput.addEventListener('change', handlePriceChange);
-    
+
     // Sort filter
     document.querySelectorAll('input[name="sort"]').forEach(input => {
         input.addEventListener('change', handleSortChange);
     });
-    
+
     // Stock filter
     const inStockFilter = document.getElementById('inStockFilter');
     if (inStockFilter) {
         inStockFilter.addEventListener('change', handleStockChange);
     }
-    
+
     // View toggle
     viewButtons.forEach(btn => {
         btn.addEventListener('click', handleViewChange);
     });
-    
+
     // Filter toggle for mobile
     if (filterToggle) {
         filterToggle.addEventListener('click', () => {
             filtersSidebar.classList.toggle('active');
         });
     }
-    
+
     // Quick categories
     document.querySelectorAll('.category-card[data-category]').forEach(card => {
         card.addEventListener('click', handleQuickCategory);
     });
-    
+
     // Modal close
     if (closeModal) {
         closeModal.addEventListener('click', closeQuickView);
     }
-    
+
     // Close modal on outside click
     if (quickViewModal) {
         quickViewModal.addEventListener('click', (e) => {
             if (e.target === quickViewModal) closeQuickView();
         });
     }
-    
+
     // Back to top
     if (backToTop) {
         backToTop.addEventListener('click', scrollToTop);
         window.addEventListener('scroll', handleScroll);
     }
-    
+
     // Newsletter form
     const newsletterForm = document.getElementById('newsletterForm');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', handleNewsletter);
     }
+
+    // Mobile menu
+    initMobileMenu();
+}
+
+// Mobile Menu Functionality
+function initMobileMenu() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    if (closeMenu && mobileMenu) {
+        closeMenu.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    // Close mobile menu when clicking on a link
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (mobileMenu && mobileMenuBtn) {
+            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+    });
 }
 
 // Render Products
