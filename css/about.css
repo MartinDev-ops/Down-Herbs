@@ -221,3 +221,19 @@
     font-size: 1.75rem;
   }
 }
+
+@media (max-width: 768px) {
+  .about-page {
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page {
+    padding-top: 110px;
+  }
+
+  .about-hero {
+    padding: 0.8rem 0 2rem;
+  }
+}
