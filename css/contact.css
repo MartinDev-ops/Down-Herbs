@@ -266,11 +266,234 @@
   line-height: 1.6;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  /* Ensure content clears the fixed header */
+/* ===== ENHANCED MOBILE-FIRST RESPONSIVE DESIGN ===== */
+
+/* Mobile phones (320px - 480px) */
+@media (max-width: 480px) {
+  /* Root adjustments for small phones */
+  html {
+    font-size: 14px; /* Slightly smaller base for readability on small screens */
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
   .contact-page {
-    padding-top: 100px; /* header (80px) + small gap */
+    padding-top: 100px; /* Header clearance */
+    padding: 1rem;
+    padding-top: 100px;
+    padding-bottom: 2rem;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  /* Header adjustments */
+  .header {
+    height: 70px; /* Slightly shorter on mobile */
+  }
+
+  .header-content {
+    padding: 10px 0;
+    height: 70px;
+  }
+
+  .logo {
+    gap: 8px;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .brand-name {
+    font-size: 1.1rem;
+  }
+
+  .desktop-nav {
+    display: none; /* Hide on very small screens */
+  }
+
+  .mobile-menu-btn {
+    display: block !important;
+  }
+
+  /* Contact header */
+  .contact-header {
+    padding: 1rem 0 1.5rem;
+    margin-top: 0;
+  }
+
+  .page-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    padding: 0 8px;
+  }
+
+  /* Contact content */
+  .contact-content {
+    margin-bottom: 2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contact-info-section,
+  .contact-form-section {
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Contact methods */
+  .contact-methods {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-method {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .contact-icon {
+    align-self: center;
+    width: 45px;
+    height: 45px;
+  }
+
+  .contact-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .contact-details h3 {
+    font-size: 1rem;
+  }
+
+  .contact-details p {
+    font-size: 0.9rem;
+  }
+
+  /* Business hours */
+  .business-hours {
+    padding: 1rem;
+  }
+
+  .business-hours h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .hours-grid {
+    gap: 0.75rem;
+  }
+
+  .hour-item {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.6rem 0.75rem;
+    text-align: center;
+  }
+
+  /* Form adjustments */
+  .contact-form {
+    gap: 1rem;
+  }
+
+  .form-group {
+    gap: 0.4rem;
+  }
+
+  .form-label {
+    font-size: 0.95rem;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    padding: 0.75rem 0.875rem;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .form-textarea {
+    min-height: 100px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    align-self: stretch;
+    margin-top: 0.5rem;
+  }
+
+  /* FAQ */
+  .faq-section {
+    margin-bottom: 2rem;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    padding: 1rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-item p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .contact-page {
+    padding-top: 100px;
+    padding: 1.5rem;
+    padding-top: 100px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .contact-header {
+    padding: 1.5rem 0 2rem;
+  }
+
+  .page-title {
+    font-size: 2.2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.05rem;
+    padding: 0 12px;
   }
 
   .contact-grid {
@@ -278,74 +501,65 @@
     gap: 1.5rem;
   }
 
-  .page-title {
-    font-size: 2.4rem;
-  }
-
-  .page-subtitle {
-    font-size: 1.05rem;
-    padding: 0 10px;
-  }
-
   .contact-info-section,
   .contact-form-section {
-    padding: 1.6rem;
-  }
-
-  .contact-method {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.75rem;
-  }
-
-  .contact-icon {
-    align-self: center;
-    width: 48px;
-    height: 48px;
-  }
-
-  .hour-item {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-  }
-
-  .faq-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Slightly larger top padding for very small phones */
-  .contact-page {
-    padding-top: 110px;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-bottom: 3rem;
-  }
-
-  /* Reduce header section padding so the H1 stays visible */
-  .contact-header {
-    margin-bottom: 1.5rem;
-    padding: 0.8rem 0;
-  }
-
-  .page-title {
-    font-size: 1.9rem;
-    line-height: 1.15;
-    margin-bottom: 0.5rem;
-  }
-
-  .page-subtitle {
-    font-size: 1rem;
-  }
-
-  .contact-info-section,
-  .contact-form-section {
-    padding: 1.2rem;
+    padding: 1.5rem;
   }
 
   .section-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
+
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Small desktops (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-info-section,
+  .contact-form-section {
+    padding: 2rem;
+  }
+
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Large desktops (1025px+) */
+@media (min-width: 1025px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .page-title {
+    font-size: 3rem;
+  }
+
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-light);
 }

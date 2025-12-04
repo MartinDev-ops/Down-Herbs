@@ -237,3 +237,13 @@
     padding: 0.8rem 0 2rem;
   }
 }
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-light);
+  
+}
