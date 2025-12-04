@@ -872,3 +872,26 @@ document.head.appendChild(style);
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initShop);
+
+
+const box = document.getElementById("shopBox");
+const wrapper = document.querySelector(".shop-wrapper");
+
+function moveBox() {
+    const maxX = wrapper.clientWidth - box.clientWidth;
+    const maxY = wrapper.clientHeight - box.clientHeight;
+
+    // Create a RIGHT-SIDE bias
+    const minRightSide = maxX * 0.45;  // start movement from the middle area
+    const newX = minRightSide + Math.random() * (maxX - minRightSide);
+
+    const newY = Math.random() * maxY;
+
+    box.style.left = newX + "px";
+    box.style.top = newY + "px";
+}
+
+setInterval(moveBox, 1500);
+
+// First movement on load
+moveBox();

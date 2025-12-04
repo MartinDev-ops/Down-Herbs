@@ -1685,3 +1685,51 @@
 
 /* ===== MOBILE COMPATIBILITY ===== */
 /* Adjustments for smaller screens */
+/* SMALLER SECTION */
+.shop-section {
+    background-color: #f8f8f8;
+    padding: 20px 0; /* reduced */
+    border-top: 3px solid #4a6b3a;
+    border-bottom: 3px solid #4a6b3a;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Reduce height so box moves inside smaller space */
+.shop-wrapper {
+    position: relative;
+    height: 80px; /* was 200px */
+}
+
+/* SMALLER SHOP BOX */
+.shop-box {
+    background-color: rgba(255, 255, 255, 0.92);
+    padding: 9px 20px;  /* reduced */
+    border-radius: 10px;
+    border: 2px solid #4a6b3a;
+
+    width: 70%;           /* smaller width */
+    max-width: 450px;     /* smaller max */
+    text-align: center;
+
+    position: absolute;
+    top: 10px; 
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 1.2s ease-in-out;
+}
+
+/* SMALLER ICON */
+.shop-icon {
+    width: 25px;   /* reduced */
+    height: 25px;  /* reduced */
+    margin-bottom: 5px;
+}
+
+/* SMALLER TITLE */
+.shop-box h2 {
+    color: #3a5a2d;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 3vw, 1.5rem); /* smaller */
+    margin: 0;
+}
