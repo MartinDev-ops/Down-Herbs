@@ -157,17 +157,64 @@
   display: block;
 }
 
+/* WhatsApp widget — improved mobile behavior */
+.wa-widget {
+  z-index: 99999;
+}
+
+/* Desktop / tablet tweaks already exist above; enhance small-screen rules */
 @media (max-width: 768px) {
   .wa-widget {
-    right: 15px;
-    bottom: 15px;
+    right: 16px;
+    bottom: 16px;
   }
+
   .wa-btn-icon {
-    width: 55px;
-    height: 55px;
+    width: 52px;
+    height: 52px;
+    background-size: 60%;
   }
+
   .wa-popup-chat {
-    width: 260px;
+    width: 280px;
     bottom: 70px;
+    right: 0;
+    left: auto;
+    max-width: calc(100vw - 32px);
+  }
+}
+
+/* Mobile phones: hide text bubble, keep icon and popup inside viewport */
+@media (max-width: 480px) {
+  .wa-widget {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  /* Remove the text bubble so the widget never extends off-screen */
+  .wa-btn-txt {
+    display: none;
+  }
+
+  .wa-btn-icon {
+    width: 48px;
+    height: 48px;
+    background-size: 60%;
+  }
+
+  /* Make popup narrower and align it to the widget on the right */
+  .wa-popup-chat {
+    width: min(320px, calc(100vw - 24px));
+    right: 0;
+    left: auto;
+    bottom: 62px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  /* Prevent the widget from contributing to horizontal scroll */
+  html, body {
+    overflow-x: hidden;
   }
 }
