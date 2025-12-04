@@ -4,81 +4,123 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - The Go Down Herbs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/about.css">
-  <link rel="stylesheet" href="css/animations.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
-  <!-- Sticky Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <!-- Logo -->
-        <a class="logo-link" href="index.html">
-          <div class="logo-container">
-            <img src="images/godown(logo).png" alt="The Go Down Herbs Logo" class="logo-image">
-          </div>
-        </a>
-        
-        <!-- Desktop Navigation -->
-        <nav class="desktop-nav">
-          <a class="nav-link" href="index.html">
-            Home
-            <span class="nav-underline"></span>
-          </a>
-          <a class="nav-link" href="shop.html">
-            Shop
-            <span class="nav-underline"></span>
-          </a>
-          <a class="nav-link" href="about.html">
-            About
-            <span class="nav-underline"></span>
-          </a>
-          <a class="nav-link" href="stores.html">
-            Our Stores
-            <span class="nav-underline"></span>
-          </a>
-          <a class="nav-link" href="contact.html">
-            Contact
-            <span class="nav-underline"></span>
-          </a>
-        </nav>
-        
-        <!-- Cart and Mobile Menu Button -->
-        <div class="header-buttons">
-          <a href="/cart">
-            <button class="icon-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
-                <circle cx="8" cy="21" r="1"></circle>
-                <circle cx="19" cy="21" r="1"></circle>
-                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
-              </svg>
-            </button>
-          </a>
-          <button class="mobile-menu-btn icon-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
-              <line x1="4" x2="20" y1="12" y2="12"></line>
-              <line x1="4" x2="20" y1="6" y2="6"></line>
-              <line x1="4" x2="20" y1="18" y2="18"></line>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-name">GO DOWN HERBS</span>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="about.html">About</a>
-    <a href="stores.html">Our Stores</a>
-    <a href="contact.html">Contact</a>
-  </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    <a href="shop.html" class="nav-link">
+                        <i class="fas fa-shopping-bag"></i>
+                        Shop
+                    </a>
+                    <a href="about.html" class="nav-link active">
+                        <i class="fas fa-info-circle"></i>
+                        About
+                    </a>
+                    <a href="stores.html" class="nav-link">
+                        <i class="fas fa-store"></i>
+                        Stores
+                    </a>
+                    <a href="blog.html" class="nav-link">
+                        <i class="fas fa-blog"></i>
+                        Blog
+                    </a>
+                    <a href="contact.html" class="nav-link">
+                        <i class="fas fa-phone-alt"></i>
+                        Contact
+                    </a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <div class="action-icons">
+                        <a href="account.html" class="action-icon" title="My Account">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <a href="cart.html" class="action-icon cart-icon" title="Shopping Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="icon-badge">2</span>
+                        </a>
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="mobile-logo">
+                <i class="fas fa-leaf"></i>
+                <span>GO DOWN HERBS</span>
+            </div>
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html" class="mobile-nav-link">
+                <i class="fas fa-home"></i>
+                Home
+            </a>
+            <a href="shop.html" class="mobile-nav-link">
+                <i class="fas fa-shopping-bag"></i>
+                Shop Products
+            </a>
+            <a href="about.html" class="mobile-nav-link active">
+                <i class="fas fa-info-circle"></i>
+                About Us
+            </a>
+            <a href="stores.html" class="mobile-nav-link">
+                <i class="fas fa-store"></i>
+                Our Stores
+            </a>
+            <a href="blog.html" class="mobile-nav-link">
+                <i class="fas fa-blog"></i>
+                Wellness Blog
+            </a>
+            <a href="contact.html" class="mobile-nav-link">
+                <i class="fas fa-phone-alt"></i>
+                Contact Us
+            </a>
+        </nav>
+        <div class="mobile-menu-footer">
+            <div class="mobile-contact-info">
+                <p><i class="fas fa-phone"></i> +27 71 533 6706</p>
+                <p><i class="fas fa-envelope"></i> info@godownherbs.co.za</p>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-block">
+                <i class="fas fa-comments"></i>
+                Get Consultation
+            </a>
+        </div>
+    </div>
 
   <!-- About Page Content -->
   <main class="about-page">
@@ -229,77 +271,89 @@
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        
-        <!-- Logo & Description -->
-        <div class="footer-column">
-          <img src="images/logo.png" alt="The Go Down Herbs Logo" class="footer-logo">
-          <p class="footer-description">
-            South African-based company specializing in herbal health solutions promoting natural wellness.
-          </p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <div>
+                            <h3>GO DOWN HERBS</h3>
+                            <p>Premium Natural Wellness</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">Providing premium herbal solutions since 2010. "Kill Your Pride & Save Your Life"</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +27 71 533 6706</p>
+                        <p><i class="fas fa-envelope"></i> info@godownherbs.co.za</p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="stores.html">Store Locations</a></li>
+                        <li><a href="blog.html">Wellness Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="footer-column">
+                    <h4>Product Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html?category=teas">Herbal Teas</a></li>
+                        <li><a href="shop.html?category=tinctures">Tinctures & Extracts</a></li>
+                        <li><a href="shop.html?category=capsules">Capsules & Supplements</a></li>
+                        <li><a href="shop.html?category=skincare">Natural Skincare</a></li>
+                        <li><a href="shop.html?category=powders">Herbal Powders</a></li>
+                        <li><a href="shop.html?category=oils">Essential Oils</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-column">
+                    <h4>Stay Connected</h4>
+                    <p>Subscribe for wellness tips & special offers</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Go Down Herbs (PTY) LTD. All rights reserved.</p>
+                    <div class="footer-links-bottom">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="shipping.html">Shipping Policy</a>
+                        <a href="returns.html">Returns & Refunds</a>
+                    </div>
+                </div>
+            </div>
         </div>
+    </footer>
 
-        <!-- Quick Links -->
-        <div class="footer-column">
-          <h3 class="footer-title">Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="index.html" class="footer-link">Home</a></li>
-            <li><a href="shop.html" class="footer-link">Shop</a></li>
-            <li><a href="about.html" class="footer-link">About</a></li>
-            <li><a href="stores.html" class="footer-link">Our Stores</a></li>
-            <li><a href="contact.html" class="footer-link">Contact</a></li>
-          </ul>
-        </div>
 
-        <!-- Contact Info -->
-        <div class="footer-column">
-          <h3 class="footer-title">Contact Us</h3>
-          <ul class="footer-contact">
-            <li class="contact-item">
-              <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-              </svg>
-              <span>+27 71 533 6706 / +27 64 502 8037</span>
-            </li>
-            <li class="contact-item">
-              <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-              </svg>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@godownherbs.co.za" target="_blank">
-                   info@godownherbs.co.za
-                </a>
-            </li>
-          </ul>
-        </div>
 
-        <!-- Social Media -->
-        <div class="footer-column">
-          <h3 class="footer-title">Follow Us</h3>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/Godownherb" target="_blank" rel="noopener noreferrer" class="social-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-            </a>
-            <a href="https://www.instagram.com/go_down_herbs/" target="_blank" rel="noopener noreferrer" class="social-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-            </a>
-            <a href="http://www.youtube.com/@Go-Down-Herbs" target="_blank" rel="noopener noreferrer" class="social-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Copyright -->
-      <div class="footer-bottom">
-        <p>© 2025 Go Down Herbs (PTY) LTD. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
