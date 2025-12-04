@@ -7,8 +7,11 @@
 
 /* About Hero Section */
 .about-hero {
-  padding: 3rem 0;
-  text-align: center;
+   text-align: center;
+    margin-bottom: 3rem;
+     margin-top: 5rem;
+   padding: 8rem 0 3rem 0;
+ 
 }
 
 .about-main-title {
