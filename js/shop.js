@@ -666,27 +666,31 @@ function openQuickView(productId) {
             <div class="product-details-large">
                 <h2>${product.name}</h2>
                 <div class="product-category-large">${product.category.replace('-', ' ')}</div>
-                
+
                 ${stars}
-                
+
                 <p class="product-description-large">${product.description}</p>
-                
+
                 <div class="product-price-large">
                     ${oldPrice}
                     <span class="current-price">R${product.price.toFixed(2)}</span>
                 </div>
-                
+
                 <div class="product-actions-large">
                     <div class="quantity-selector">
                         <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
                         <input type="number" class="quantity-input" value="1" min="1" max="10">
                         <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
                     </div>
-                    <button class="btn btn-primary add-to-cart-large" 
+                    <button class="btn btn-primary add-to-cart-large"
                             ${!product.inStock ? 'disabled' : ''}>
                         <i class="fas fa-shopping-basket"></i>
                         ${!product.inStock ? 'Out of Stock' : 'Add to Cart'}
                     </button>
+                    <a href="product-details.html?id=${product.id}" class="btn btn-outline more-details-btn">
+                        <i class="fas fa-info-circle"></i>
+                        More Details
+                    </a>
                 </div>
             </div>
         </div>

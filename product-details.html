@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Go Down Herbs</title>
+    <meta name="description" content="Detailed information about our premium herbal products, including usage instructions, benefits, customer reviews, and related products.">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/product-details.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/godown(logo).png" type="image/png">
+</head>
+<body>
+    <!-- Header (Same as Home Page) -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="images/godown(logo).png" alt="Go Down Herbs - Natural Wellness">
+                </a>
+
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    <a href="shop.html" class="nav-link active">
+                        <i class="fas fa-leaf"></i>
+                        Shop
+                    </a>
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-heart"></i>
+                        About
+                    </a>
+                    <a href="stores.html" class="nav-link">
+                        <i class="fas fa-store"></i>
+                        Stores
+                    </a>
+                    <a href="blog.html" class="nav-link">
+                        <i class="fas fa-book-open"></i>
+                        Blog
+                    </a>
+                    <a href="contact.html" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        Contact
+                    </a>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search herbs..." id="headerSearch">
+                    </div>
+                    <a href="wishlist.html" class="action-btn" title="Wishlist">
+                        <i class="far fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                    </a>
+                    <a href="cart.html" class="action-btn cart-btn" title="Cart">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <a href="account.html" class="action-btn" title="Account">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <img src="images/godown(logo).png" alt="Go Down Herbs" class="mobile-logo">
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="shop.html" class="mobile-nav-link active">
+                    <i class="fas fa-leaf"></i>
+                    Shop
+                </a>
+                <a href="about.html" class="mobile-nav-link">
+                    <i class="fas fa-heart"></i>
+                    About
+                </a>
+                <a href="stores.html" class="mobile-nav-link">
+                    <i class="fas fa-store"></i>
+                    Our Stores
+                </a>
+                <a href="blog.html" class="mobile-nav-link">
+                    <i class="fas fa-book-open"></i>
+                    Blog
+                </a>
+                <a href="contact.html" class="mobile-nav-link">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </a>
+            </nav>
+            <div class="mobile-actions">
+                <a href="account.html" class="btn btn-outline">
+                    <i class="fas fa-user"></i>
+                    My Account
+                </a>
+                <a href="cart.html" class="btn btn-primary">
+                    <i class="fas fa-shopping-basket"></i>
+                    View Cart
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Details Main -->
+    <main class="product-details-main">
+        <div class="container">
+            <!-- Product Details Layout -->
+            <div class="product-details-layout" id="productDetails">
+                <!-- Content loaded by JavaScript -->
+            </div>
+
+            <!-- Product Details Tabs -->
+            <div class="product-details-tabs">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="usage">How to Use</button>
+                    <button class="tab-btn" data-tab="benefits">Benefits</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews</button>
+                </div>
+
+                <div class="tabs-content">
+                    <div class="tab-panel active" id="description">
+                        <h3>Product Description</h3>
+                        <p id="productDescription">Loading product description...</p>
+                    </div>
+
+                    <div class="tab-panel" id="usage">
+                        <h3>How to Use</h3>
+                        <p id="productUsage">Loading usage instructions...</p>
+                    </div>
+
+                    <div class="tab-panel" id="benefits">
+                        <h3>Benefits & Features</h3>
+                        <ul id="productBenefits">
+                            <li>Loading benefits...</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-panel" id="reviews">
+                        <h3>Customer Reviews</h3>
+                        <div class="reviews-section">
+                            <div class="reviews-summary">
+                                <div class="rating-overview">
+                                    <div class="average-rating" id="averageRating">4.5</div>
+                                    <div class="rating-stars" id="ratingStars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <div class="total-reviews" id="totalReviews">128 reviews</div>
+                                </div>
+                            </div>
+                            <div class="reviews-list" id="reviewsList">
+                                <!-- Reviews loaded by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <section class="related-products">
+                <h2 class="section-title">Related Products</h2>
+                <div class="related-products-grid" id="relatedProducts">
+                    <!-- Related products loaded by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer (Same as Home) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Column -->
+                <div class="footer-column">
+                    <div class="footer-brand">
+                        <img src="images/godown(logo).png" alt="Go Down Herbs" class="footer-logo">
+                        <div class="brand-text">
+                            <h3>Go Down Herbs</h3>
+                            <p>Nurturing wellness through nature's finest herbs</p>
+                        </div>
+                    </div>
+                    <div class="footer-features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>100% Natural</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <span>Premium Quality</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-truck"></i>
+                            <span>Free Shipping</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="shop.html"><i class="fas fa-chevron-right"></i> Shop</a>
+                        <a href="about.html"><i class="fas fa-chevron-right"></i> About</a>
+                        <a href="stores.html"><i class="fas fa-chevron-right"></i> Stores</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="footer-column">
+                    <h4>Categories</h4>
+                    <div class="footer-links">
+                        <a href="#herbal-drinks"><i class="fas fa-chevron-right"></i> Herbal Drinks</a>
+                        <a href="#water"><i class="fas fa-chevron-right"></i> Bottled Water</a>
+                        <a href="#merchandise"><i class="fas fa-chevron-right"></i> Merchandise</a>
+                    </div>
+                </div>
+
+                <!-- Contact & Social -->
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+27 71 533 6706</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@godownherbs.co.za</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 8AM-6PM</span>
+                        </div>
+                    </div>
+
+                    <div class="social-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Go Down Herbs (PTY) LTD. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Shipping</a>
+                    <a href="#">Returns</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Widget -->
+    <div class="whatsapp-widget">
+        <a href="https://wa.me/27715336706" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="js/product-details.js"></script>
+</body>
+</html>
