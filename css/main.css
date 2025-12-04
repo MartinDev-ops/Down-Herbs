@@ -3130,3 +3130,534 @@ body.popup-open {
     background: var(--secondary-gold);
     border-color: var(--secondary-gold);
 }
+
+/* about section */
+/* About Section */
+/* About Section Styling */
+.about-section {
+    background: linear-gradient(
+        to bottom,
+        rgba(74, 107, 58, 0.15),
+        rgba(74, 107, 58, 0.30)
+    ),
+    url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    padding: 50px 20px;
+    border-top: 3px solid #4a6b3a;
+    border-bottom: 3px solid #4a6b3a;
+}
+
+/* Container */
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    border-left: 4px solid #4a6b3a;
+    border-right: 4px solid #4a6b3a;
+}
+
+/* Flex layout for image + text */
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap; /* responsive */
+}
+
+/* Image */
+.about-image {
+    flex: 1 1 300px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Text */
+.about-text {
+    flex: 2 1 400px;
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: #3a5a2d;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.about-text p {
+    font-size: 1rem;
+    color: #3d3d3d;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Responsive for small screens */
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text h2, .about-text p {
+        text-align: center;
+    }
+}
+
+/* DELIVERY INFO BANNER */
+/* Delivery Info Banner */
+.delivery-ad-section {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, #f9fff9, #ffffff);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(46, 125, 50, 0.1);
+  padding: 30px;
+  border: 2px solid #e0f2e0;
+}
+
+.ad-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 25px;
+  border-bottom: 2px solid #e0f2e0;
+}
+
+.tagline {
+  margin-bottom: 20px;
+}
+
+.tag-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.ad-header h1 {
+  color: #1b5e20;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.ad-subtitle {
+  color: #388e3c;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.ad-highlights {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #e8f5e9;
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+.highlight-item i {
+  color: #43a047;
+}
+
+.delivery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.delivery-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 2px solid #e0f2e0;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.delivery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(67, 160, 71, 0.15);
+  border-color: #43a047;
+}
+
+.delivery-card.featured {
+  border: 2px solid #ff6b35;
+  background: linear-gradient(to bottom, #ffffff, #fff5f0);
+}
+
+.delivery-card.featured .card-badge {
+  background: linear-gradient(135deg, #ff6b35, #ff8a50);
+}
+
+.card-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+  color: white;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.card-header {
+  margin-bottom: 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.logo-placeholder {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid #e0f2e0;
+}
+
+.courier-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bolt-logo {
+  background: #fff8f5;
+  border-color: #ff6b35;
+}
+
+.postnet-logo {
+  background: #f0f9f0;
+  border-color: #2e7d32;
+}
+
+.fastway-logo {
+  background: #f0f7ff;
+  border-color: #1565c0;
+}
+
+.guy-logo {
+  background: #f9f0ff;
+  border-color: #6a1b9a;
+}
+
+.card-header h3 {
+  color: #1b5e20;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.service-tag {
+  display: inline-block;
+  background: #f0f9f0;
+  color: #2e7d32;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.benefits-list {
+  list-style: none;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.benefits-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f9f0;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #424242;
+  line-height: 1.4;
+}
+
+.benefits-list li i {
+  color: #43a047;
+  width: 18px;
+  margin-top: 3px;
+}
+
+.benefits-list li strong {
+  color: #1b5e20;
+}
+
+.coverage-info {
+  background: #f8fff8;
+  border-left: 3px solid #43a047;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 15px;
+  color: #2e7d32;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.coverage-info i {
+  color: #43a047;
+}
+
+.select-btn {
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.delivery-card.featured .select-btn {
+  background: linear-gradient(135deg, #ff6b35, #e65100);
+}
+
+.select-btn:hover {
+  background: linear-gradient(135deg, #388e3c, #1b5e20);
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(67, 160, 71, 0.3);
+}
+
+.delivery-card.featured .select-btn:hover {
+  background: linear-gradient(135deg, #e65100, #bf360c);
+}
+
+.selection-summary {
+  background: linear-gradient(135deg, #f0f9f0, #ffffff);
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 30px;
+  border: 2px solid #c8e6c9;
+}
+
+.summary-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  color: #1b5e20;
+}
+
+.summary-header i {
+  font-size: 1.8rem;
+  color: #43a047;
+}
+
+.summary-content {
+  padding-left: 40px;
+}
+
+.summary-content p {
+  margin-bottom: 10px;
+  color: #2e7d32;
+}
+
+#selected-service {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1b5e20;
+}
+
+#selected-features {
+  color: #388e3c;
+  font-size: 0.95rem;
+}
+
+.delivery-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  border: 1px solid #e0f2e0;
+}
+
+.delivery-note i {
+  color: #43a047;
+  font-size: 1.2rem;
+}
+
+.delivery-footer {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #e0f2e0;
+  color: #2e7d32;
+}
+
+.delivery-footer i {
+  color: #43a047;
+  margin-right: 8px;
+}
+
+.small-text {
+  font-size: 0.85rem;
+  color: #66bb6a;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .delivery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .delivery-ad-section {
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .ad-header h1 {
+    font-size: 1.7rem;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .ad-subtitle {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+  
+  .ad-highlights {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .highlight-item {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  
+  .delivery-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .logo-container {
+    flex-direction: row;
+    text-align: left;
+    gap: 15px;
+  }
+  
+  .benefits-list li {
+    font-size: 0.9rem;
+  }
+  
+  .summary-content {
+    padding-left: 0;
+  }
+  
+  .selection-summary {
+    padding: 20px;
+  }
+  
+  .card-badge {
+    font-size: 0.7rem;
+    padding: 4px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .delivery-ad-section {
+    padding: 15px;
+  }
+  
+  .ad-header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .delivery-card {
+    padding: 20px;
+  }
+  
+  .logo-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .logo-placeholder {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .select-btn {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  
+  .tag-badge {
+    font-size: 0.8rem;
+    padding: 6px 15px;
+  }
+}
