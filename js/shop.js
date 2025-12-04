@@ -12,6 +12,7 @@ const products = [
         rating: 4.5,
         reviews: 128,
         description: "Premium herbal blend for natural wellness and vitality.",
+         instruction: "Take one cup daily after meals.",
         image: "images/product/Product1.jpg",
         inStock: true,
         featured: true,

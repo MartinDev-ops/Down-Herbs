@@ -2,15 +2,15 @@
 
 /* Shop Hero */
 .shop-hero {
-    background: linear-gradient(rgba(0, 100, 0, 0.85), rgba(0, 77, 0, 0.9)), 
-                url('../images/bg/shop-hero-bg.jpg');
+    background: linear-gradient(rgba(165, 212, 165, 0.6), rgba(0, 100, 0, 0.6)),
+                url('../images/products/drinks.jpeg');
     background-size: cover;
     background-position: center;
     padding: 120px 0 80px;
     color: white;
     text-align: center;
     margin-top: 70px;
-}
+}                                            /* (rgba(0, 100, 0, 0.85)*/
 
 .shop-hero .hero-content {
     max-width: 800px;
