@@ -1,5 +1,13 @@
 // Enhanced cart functionality (compatibility with shop.js)
 
+// Shipping rates by courier
+const SHIPPING_RATES = {
+    bolt: { name: 'Bolt Courier', price: 75, description: 'Express: 1-2 Business Days' },
+    postnet: { name: 'Postnet', price: 60, description: 'Standard: 3-5 Business Days' },
+    fastway: { name: 'Fastway Couriers', price: 55, description: 'Economy: 2-4 Business Days' },
+    'courier-guy': { name: 'The Courier Guy', price: 85, description: 'Premium: 1-3 Business Days' }
+};
+
 // Read cart from localStorage: prefer 'herbalCart' (shop.js) but fallback to 'goDownHerbsCart'
 function getCart() {
     const raw = localStorage.getItem('herbalCart') || localStorage.getItem('goDownHerbsCart');
@@ -10,8 +18,12 @@ function saveCart(cart) {
     // Write both keys for compatibility
     localStorage.setItem('herbalCart', JSON.stringify(cart));
     localStorage.setItem('goDownHerbsCart', JSON.stringify(cart));
+
+    // Update header/cart counters
     updateCartCount();
-    if (window.updateCartDisplay) {
+
+    // If the cart page rendering function exists, call it to refresh UI immediately.
+    if (typeof updateCartDisplay === 'function') {
         updateCartDisplay();
     }
 }
@@ -23,6 +35,7 @@ function updateCartCount() {
     // update elements by id or by class (support both patterns in the codebase)
     const cartCountId = document.getElementById('cartCount');
     const cartCountClass = document.querySelector('.cart-count');
+    const iconBadge = document.querySelector('.icon-badge');
 
     if (cartCountId) {
         cartCountId.textContent = totalItems;
@@ -32,6 +45,11 @@ function updateCartCount() {
     if (cartCountClass) {
         cartCountClass.textContent = totalItems;
         cartCountClass.style.display = totalItems > 0 ? 'flex' : 'none';
+    }
+
+    if (iconBadge) {
+        iconBadge.textContent = totalItems;
+        iconBadge.style.display = totalItems > 0 ? 'flex' : 'none';
     }
 }
 
@@ -52,10 +70,33 @@ function addToCart(product, quantity = 1) {
     return true;
 }
 
+function removeFromCartByIndex(index) {
+    const cart = getCart();
+    if (index >= 0 && index < cart.length) {
+        cart.splice(index, 1);
+        saveCart(cart);
+    }
+}
+
+function updateCartQuantityByIndex(index, quantity) {
+    if (quantity < 1) {
+        removeFromCartByIndex(index);
+        return;
+    }
+
+    const cart = getCart();
+    if (index >= 0 && index < cart.length) {
+        cart[index].quantity = quantity;
+        saveCart(cart);
+    }
+}
+
 function removeFromCart(productId) {
     const cart = getCart();
-    const updatedCart = cart.filter(item => item.id !== productId);
-    saveCart(updatedCart);
+    const index = cart.findIndex(item => item.id === productId);
+    if (index >= 0) {
+        removeFromCartByIndex(index);
+    }
 }
 
 function updateCartQuantity(productId, quantity) {
@@ -94,6 +135,27 @@ function getCartTotal() {
     }, 0);
 }
 
+function getSelectedShipping() {
+    const select = document.getElementById('shippingSelect');
+    if (!select || !select.value) {
+        return null;
+    }
+    
+    const shippingType = select.value;
+    const rate = SHIPPING_RATES[shippingType];
+    
+    if (rate) {
+        return {
+            type: shippingType,
+            name: rate.name,
+            price: rate.price,
+            description: rate.description
+        };
+    }
+    
+    return null;
+}
+
 // Export functions for use in other files
 window.cartFunctions = {
     getCart,
@@ -103,7 +165,11 @@ window.cartFunctions = {
     removeFromCart,
     updateCartQuantity,
     clearCart,
-    getCartTotal
+    getCartTotal,
+    removeFromCartByIndex,
+    updateCartQuantityByIndex,
+    getSelectedShipping,
+    SHIPPING_RATES
 };
 
 // Initialize cart count on page load
@@ -139,10 +205,10 @@ function updateCartDisplay() {
     if (emptyCart) emptyCart.classList.remove('active');
     if (recommendedSection) recommendedSection.classList.add('active');
     
-    // Render cart items
+    // Render cart items with data-index for event delegation
     if (cartItems) {
-        cartItems.innerHTML = cart.map(item => `
-            <div class="cart-item" data-product-id="${item.id}">
+        cartItems.innerHTML = cart.map((item, index) => `
+            <div class="cart-item" data-product-id="${item.id}" data-item-index="${index}">
                 <img src="${item.image}" alt="${item.name}" class="cart-item-image">
                 <div class="cart-item-details">
                     <h3 class="cart-item-name">${item.name}</h3>
@@ -151,11 +217,11 @@ function updateCartDisplay() {
                 </div>
                 <div class="cart-item-controls">
                     <div class="quantity-controls">
-                        <button class="quantity-btn decrease-btn" onclick="cartFunctions.updateCartQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                        <button class="quantity-btn decrease-btn" data-action="decrease" data-index="${index}">-</button>
                         <span class="quantity-display">${item.quantity}</span>
-                        <button class="quantity-btn increase-btn" onclick="cartFunctions.updateCartQuantity(${item.id}, ${item.quantity + 1})">+</button>
+                        <button class="quantity-btn increase-btn" data-action="increase" data-index="${index}">+</button>
                     </div>
-                    <button class="remove-btn" onclick="cartFunctions.removeFromCart(${item.id})">
+                    <button class="remove-btn" data-action="remove" data-index="${index}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M3 6h18"></path>
                             <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
@@ -166,6 +232,9 @@ function updateCartDisplay() {
                 </div>
             </div>
         `).join('');
+        
+        // Attach event delegation to cart items container
+        attachCartItemListeners();
     }
     
     // Update order summary
@@ -176,20 +245,73 @@ function updateCartDisplay() {
     renderRecommendedProducts();
 }
 
+function attachCartItemListeners() {
+    const cartItems = document.getElementById('cartItems');
+    if (!cartItems) return;
+
+    // Remove any existing listeners (re-attach when cart updates)
+    cartItems.removeEventListener('click', handleCartItemClick);
+    cartItems.addEventListener('click', handleCartItemClick);
+}
+
+function handleCartItemClick(e) {
+    const button = e.target.closest('button[data-action]');
+    if (!button) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    const action = button.dataset.action;
+    const index = parseInt(button.dataset.index, 10);
+    const cart = getCart();
+
+    if (isNaN(index) || index < 0 || index >= cart.length) return;
+
+    const item = cart[index];
+    const currentQty = item.quantity || 1;
+
+    if (action === 'decrease') {
+        updateCartQuantityByIndex(index, currentQty - 1);
+    } else if (action === 'increase') {
+        updateCartQuantityByIndex(index, currentQty + 1);
+    } else if (action === 'remove') {
+        removeFromCartByIndex(index);
+    }
+}
+
 function updateOrderSummary(subtotal) {
-    const shipping = 50; // R50 flat rate
-    const tax = subtotal * 0.15; // 15% VAT
-    const total = subtotal + shipping + tax;
-    
     const subtotalEl = document.getElementById('subtotal');
     const shippingEl = document.getElementById('shipping');
-    const taxEl = document.getElementById('tax');
     const totalEl = document.getElementById('total');
     
-    if (subtotalEl) subtotalEl.textContent = `R${subtotal.toFixed(2)}`;
-    if (shippingEl) shippingEl.textContent = `R${shipping.toFixed(2)}`;
-    if (taxEl) taxEl.textContent = `R${tax.toFixed(2)}`;
-    if (totalEl) totalEl.textContent = `R${total.toFixed(2)}`;
+    // Update subtotal
+    if (subtotalEl) {
+        subtotalEl.textContent = `R${subtotal.toFixed(2)}`;
+    }
+    
+    // Get selected shipping
+    const shipping = getSelectedShipping();
+    
+    if (shipping) {
+        if (shippingEl) {
+            shippingEl.textContent = `R${shipping.price.toFixed(2)}`;
+        }
+        
+        // Calculate total (subtotal + shipping, NO tax)
+        const total = subtotal + shipping.price;
+        
+        if (totalEl) {
+            totalEl.textContent = `R${total.toFixed(2)}`;
+        }
+    } else {
+        if (shippingEl) {
+            shippingEl.textContent = 'Select Option';
+        }
+        
+        if (totalEl) {
+            totalEl.textContent = `R${subtotal.toFixed(2)}`;
+        }
+    }
 }
 
 function renderRecommendedProducts() {
@@ -240,19 +362,64 @@ function setupCartEventListeners() {
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', handleCheckout);
     }
+    
+    // Attach listeners to cart items
+    attachCartItemListeners();
+    
+    // Setup shipping selector
+    const shippingSelect = document.getElementById('shippingSelect');
+    if (shippingSelect) {
+        shippingSelect.addEventListener('change', handleShippingChange);
+    }
+}
+
+function handleShippingChange(e) {
+    const select = e.target;
+    const shippingType = select.value;
+    const shippingInfo = document.getElementById('shippingInfo');
+    
+    if (shippingType && SHIPPING_RATES[shippingType]) {
+        const rate = SHIPPING_RATES[shippingType];
+        
+        // Show shipping info
+        if (shippingInfo) {
+            shippingInfo.innerHTML = `
+                <div class="shipping-details">
+                    <i class="fas fa-info-circle"></i>
+                    <span>${rate.description}</span>
+                </div>
+            `;
+            shippingInfo.classList.add('active');
+        }
+    } else {
+        if (shippingInfo) {
+            shippingInfo.innerHTML = '';
+            shippingInfo.classList.remove('active');
+        }
+    }
+    
+    // Update totals
+    const subtotal = getCartTotal();
+    updateOrderSummary(subtotal);
 }
 
 function handleCheckout() {
     const cart = getCart();
+    const shipping = getSelectedShipping();
+    
     if (cart.length === 0) {
         alert('Your cart is empty!');
         return;
     }
     
-    // In a real application, this would redirect to a checkout page
-    // For now, we'll simulate a checkout process
-    alert('Proceeding to checkout... This would redirect to a secure payment gateway in a real application.');
+    if (!shipping) {
+        alert('Please select a delivery network!');
+        return;
+    }
     
-    // Clear cart after successful checkout
+    // In a real application, this would redirect to a checkout page
+    alert(`Proceeding to checkout...\nDelivery: ${shipping.name}\nShipping Cost: R${shipping.price.toFixed(2)}`);
+    
+    // Clear cart after successful checkout (optional)
     // clearCart();
 }

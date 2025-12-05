@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initAnimations();
     initNewsletterForm();
     initFeaturedProducts();
+    initHomeAddToCart(); // Initialize Add-to-Cart functionality
 });
 
 // Loading Screen
@@ -985,4 +986,109 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Popups initialized successfully');
     console.log('Popup 1:', popup1 ? 'Found' : 'Not found');
     console.log('Popup 2:', popup2 ? 'Found' : 'Not found');
+});
+
+/* ===== HOME PAGE: Add-to-Cart Handler ===== */
+function initHomeAddToCart() {
+  // buttons inside product cards (.product-actions .btn-primary) and product slides (#sliderTrack .btn-primary)
+  const selectors = [
+    '.product-card .product-actions .btn-primary',
+    '.product-slide .btn-primary',
+    '.product-info .btn-primary'
+  ];
+  const buttons = document.querySelectorAll(selectors.join(','));
+  if (!buttons || buttons.length === 0) return;
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      // find containing product element
+      const card = btn.closest('.product-card') || btn.closest('.product-slide') || btn.closest('.product-info');
+      if (!card) return;
+
+      // extract product info from DOM
+      const nameEl = card.querySelector('.product-name') || card.querySelector('h3') || card.querySelector('h2');
+      const priceEl = card.querySelector('.current-price') || card.querySelector('.product-price') || card.querySelector('.product-price .current-price') || card.querySelector('.product-price');
+      const imageEl = card.querySelector('img');
+
+      const name = nameEl ? nameEl.textContent.trim() : 'Product';
+      let priceText = priceEl ? priceEl.textContent.trim() : '';
+      // normalize price to number or keep string
+      const numeric = parseFloat(priceText.replace(/[^\d.,]/g, '').replace(',', '.'));
+      const price = isNaN(numeric) ? priceText : numeric;
+
+      const image = imageEl ? (imageEl.dataset && imageEl.dataset.src ? imageEl.dataset.src : imageEl.src) : '';
+
+      // Create an id from name (best-effort) + random suffix to reduce collisions
+      const safeIdBase = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '');
+      const id = `${safeIdBase}-${Date.now().toString().slice(-5)}${Math.floor(Math.random() * 90 + 10)}`;
+
+      // Read existing cart (prefer 'herbalCart', fallback to older key)
+      const raw = localStorage.getItem('herbalCart') || localStorage.getItem('goDownHerbsCart');
+      const cart = raw ? JSON.parse(raw) : [];
+
+      // Try to find same product by name first (if product from shop has exact name it will merge)
+      let existing = cart.find(item => {
+        if (!item) return false;
+        return (item.id === id) || (item.name && item.name.trim().toLowerCase() === name.trim().toLowerCase());
+      });
+
+      if (existing) {
+        existing.quantity = (existing.quantity || 1) + 1;
+      } else {
+        cart.push({
+          id,
+          name,
+          price,
+          image,
+          quantity: 1
+        });
+      }
+
+      // Save under both keys for compatibility
+      localStorage.setItem('herbalCart', JSON.stringify(cart));
+      localStorage.setItem('goDownHerbsCart', JSON.stringify(cart));
+
+      // Update header cart badges (various selectors used across pages)
+      updateHeaderCartCount();
+
+      // Show feedback using existing site notification if available
+      if (typeof showNotification === 'function') {
+        showNotification(`${name} added to cart`, 'success');
+      } else {
+        alert(`${name} added to cart`);
+      }
+    });
+  });
+}
+
+function updateHeaderCartCount() {
+  const raw = localStorage.getItem('herbalCart') || localStorage.getItem('goDownHerbsCart');
+  const cart = raw ? JSON.parse(raw) : [];
+  const total = cart.reduce((s, it) => s + (it.quantity || 0), 0);
+
+  // common header badge patterns in this project
+  const iconBadge = document.querySelector('.icon-badge');
+  const cartCountClass = document.querySelector('.cart-count');
+  const cartCountId = document.getElementById('cartCount');
+
+  if (iconBadge) {
+    iconBadge.textContent = total;
+    iconBadge.style.display = total > 0 ? 'inline-flex' : 'none';
+  }
+  if (cartCountClass) {
+    cartCountClass.textContent = total;
+    cartCountClass.style.display = total > 0 ? 'inline-flex' : 'none';
+  }
+  if (cartCountId) {
+    cartCountId.textContent = total;
+    cartCountId.style.display = total > 0 ? 'inline-flex' : 'none';
+  }
+}
+
+// ensure header count is correct on load
+document.addEventListener('DOMContentLoaded', () => {
+  updateHeaderCartCount();
 });
