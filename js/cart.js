@@ -1,10 +1,14 @@
-// Enhanced cart functionality
+// Enhanced cart functionality (compatibility with shop.js)
+
+// Read cart from localStorage: prefer 'herbalCart' (shop.js) but fallback to 'goDownHerbsCart'
 function getCart() {
-    const cart = localStorage.getItem('goDownHerbsCart');
-    return cart ? JSON.parse(cart) : [];
+    const raw = localStorage.getItem('herbalCart') || localStorage.getItem('goDownHerbsCart');
+    return raw ? JSON.parse(raw) : [];
 }
 
 function saveCart(cart) {
+    // Write both keys for compatibility
+    localStorage.setItem('herbalCart', JSON.stringify(cart));
     localStorage.setItem('goDownHerbsCart', JSON.stringify(cart));
     updateCartCount();
     if (window.updateCartDisplay) {
@@ -15,11 +19,19 @@ function saveCart(cart) {
 function updateCartCount() {
     const cart = getCart();
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const cartCount = document.getElementById('cartCount');
-    
-    if (cartCount) {
-        cartCount.textContent = totalItems;
-        cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
+
+    // update elements by id or by class (support both patterns in the codebase)
+    const cartCountId = document.getElementById('cartCount');
+    const cartCountClass = document.querySelector('.cart-count');
+
+    if (cartCountId) {
+        cartCountId.textContent = totalItems;
+        cartCountId.style.display = totalItems > 0 ? 'flex' : 'none';
+    }
+
+    if (cartCountClass) {
+        cartCountClass.textContent = totalItems;
+        cartCountClass.style.display = totalItems > 0 ? 'flex' : 'none';
     }
 }
 
@@ -63,6 +75,7 @@ function updateCartQuantity(productId, quantity) {
 
 function clearCart() {
     localStorage.removeItem('goDownHerbsCart');
+    localStorage.removeItem('herbalCart');
     updateCartCount();
     if (window.updateCartDisplay) {
         updateCartDisplay();
@@ -72,7 +85,11 @@ function clearCart() {
 function getCartTotal() {
     const cart = getCart();
     return cart.reduce((total, item) => {
-        const price = parseFloat(item.price.replace('R', '').replace(',', ''));
+        // price might be either a number or a string like "R450" depending on source
+        let price = item.price;
+        if (typeof price === 'string') {
+            price = parseFloat(price.replace('R', '').replace(',', '')) || 0;
+        }
         return total + (price * item.quantity);
     }, 0);
 }
@@ -129,8 +146,8 @@ function updateCartDisplay() {
                 <img src="${item.image}" alt="${item.name}" class="cart-item-image">
                 <div class="cart-item-details">
                     <h3 class="cart-item-name">${item.name}</h3>
-                    <span class="cart-item-category">${item.category}</span>
-                    <div class="cart-item-price">${item.price}</div>
+                    <span class="cart-item-category">${item.category || ''}</span>
+                    <div class="cart-item-price">${typeof item.price === 'number' ? 'R' + item.price.toFixed(2) : item.price}</div>
                 </div>
                 <div class="cart-item-controls">
                     <div class="quantity-controls">
