@@ -43,11 +43,7 @@
   padding: 2rem 0;
 }
 
-.cart-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-}
+
 
 @media (min-width: 1024px) {
   .cart-grid {
