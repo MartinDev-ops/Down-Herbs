@@ -128,29 +128,17 @@ body {
 }
 
 /* Logo */
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    gap: 12px;
-}
 
-.logo-icon {
-    width: 50px;
+.logo img {
     height: 50px;
-    background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-size: 24px;
+    object-fit: contain;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
 }
+
 
 .brand-name {
     font-family: 'Montserrat', sans-serif;
@@ -3177,9 +3165,6 @@ body.popup-open {
 }
 
 /* Image */
-.about-image {
-    flex: 1 1 300px;
-}
 
 .about-image img {
     width: 100%;
