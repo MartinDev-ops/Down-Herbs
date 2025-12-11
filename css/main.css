@@ -3165,9 +3165,6 @@ body.popup-open {
 }
 
 /* Image */
-.about-image {
-    flex: 1 1 300px;
-}
 
 .about-image img {
     width: 100%;
